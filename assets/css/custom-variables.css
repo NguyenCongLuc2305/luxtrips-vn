@@ -1,7 +1,9 @@
 :root {
     /* ====== COLORS ====== */
-    --bs-primary: #4a6cf7;
-    --bs-secondary: #6c757d;
+    --bs-primary: #ffc107;
+    --bs-secondary: #111111;
+    --bs-body-bg: #ffffff;     
+    --bs-body-color: #333333;  
     --bs-success: #3cb878;
     --bs-danger: #ff4d4f;
     --bs-warning: #f0ad4e;
