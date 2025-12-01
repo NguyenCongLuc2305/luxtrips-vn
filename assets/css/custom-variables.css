@@ -1,0 +1,18 @@
+:root {
+    /* ====== COLORS ====== */
+    --bs-primary: #4a6cf7;
+    --bs-secondary: #6c757d;
+    --bs-success: #3cb878;
+    --bs-danger: #ff4d4f;
+    --bs-warning: #f0ad4e;
+    --bs-info: #17a2b8;
+
+    /* ====== TYPOGRAPHY ====== */
+    --font-primary: "FZPoppins", sans-serif;
+
+    /* ====== BORDER ====== */
+    --bs-border-radius: 8px;
+
+    /* ====== SPACING ====== */
+    --spacing-section: 80px;
+}
