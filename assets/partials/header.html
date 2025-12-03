@@ -1,27 +1,26 @@
-<header class="lux-navbar">
-    <div class="container-fluid d-flex align-items-center py-2">
+<div class="lux-navbar">
+    <div
+        class="container-fluid d-flex align-items-center justify-content-center py-2 border-bottom border-1 border-white">
 
         <!-- LOGO -->
-        <a href="/" class="navbar-brand text-warning fs-3 fw-bold me-4">
-            LUXTRIPS.<span class="fw-light text-white">VN</span>
+        <a href="/" class="navbar-brand text-warning fs-3 me-4">
+            LUXTRIPS.<span class="fs-5">VN</span>
         </a>
 
         <!-- SEARCH -->
-        <div class="flex-grow-1 me-4">
-            <div class="input-group search-box">
-                <span class="input-group-text bg-white border-end-0">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </span>
-                <input type="text" class="form-control border-start-0"
-                       placeholder="Search personalised travel experiences">
-            </div>
+        <div class="input-group search-box me-4">
+            <span class="input-group-text bg-white border-end-0 pr-0">
+                <i class="fa-light fa-magnifying-glass"></i>
+            </span>
+            <input type="text" class="form-control border-start-0 text-12"
+                placeholder="Search personalised travel experiences">
         </div>
 
         <!-- LANGUAGE -->
-        <div class="dropdown me-3">
-            <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">
+        <div class="dropdown header-language me-3 cursor-pointer">
+            <div class="dropdown-toggle d-flex align-items-center text-white" data-bs-toggle="dropdown">
                 <img src="/assets/images/icons/uk.png" width="26">
-            </button>
+            </div>
             <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="#">English</a></li>
                 <li><a class="dropdown-item" href="#">Vietnamese</a></li>
@@ -30,7 +29,7 @@
 
         <!-- HOTLINE -->
         <div class="text-white me-4 small">
-            <i class="fa-solid fa-phone"></i> +84 982 670 909
+            +84 982 670 909z
         </div>
 
         <!-- RIGHT MENU -->
@@ -38,19 +37,15 @@
             <a href="#" class="nav-link">Help</a>
             <a href="#" class="nav-link">Recent views</a>
             <a href="#" class="nav-link">Sign in</a>
-            <a href="#" class="nav-link">Save</a>
+            <a href="#" class="nav-link">Travel Advisor</a>
+            <a href="#" class="nav-link"><img src="/assets/images/icons/date.png" width="26"></a>
+            <div class="d-flex align-items-center gap-2">
+                <a href="#" class="nav-link">Save</a>
+                <a href="#" class="nav-link"><img src="/assets/images/icons/bag.png" width="26"></a>
+                <a href="#" class="nav-link"><span class="badge-cart">10</span></a>
+            </div>
+
         </nav>
-
-        <!-- ICONS -->
-        <div class="d-flex align-items-center gap-3">
-            <i class="fa-regular fa-calendar text-warning fs-5"></i>
-            <i class="fa-regular fa-heart text-warning fs-5"></i>
-
-            <a href="#" class="position-relative text-warning fs-5">
-                <i class="fa-solid fa-bag-shopping"></i>
-                <span class="badge-cart">10</span>
-            </a>
-        </div>
     </div>
 
     <!-- MENU NAV -->
@@ -60,7 +55,7 @@
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">DESTINATIONS</a>
 
                 <!-- MEGA MENU PANEL -->
-                <div class="dropdown-menu mega-panel p-4">
+                <div class="dropdown-mega-menu mega-panel p-4">
                     <div class="row">
 
                         <div class="col-3">
@@ -104,9 +99,184 @@
             <li class="nav-item"><a class="nav-link">EXCLUSIVE TRAVELS</a></li>
             <li class="nav-item"><a class="nav-link">ULTRA LUX TRANSPORTS</a></li>
             <li class="nav-item"><a class="nav-link">ACCOMMODATIONS</a></li>
-            <li class="nav-item"><a class="nav-link">GIFTS</a></li>
+            <li class="nav-item"><a class="nav-link"><img class="mr-19" src="/assets/images/icons/gift.png"
+                        width="18">GIFTS</a></li>
             <li class="nav-item"><a class="nav-link">PERSONALISED DESIGNS</a></li>
         </ul>
     </nav>
 
-</header>
+</div>
+
+<!-- MOBILE HEADER -->
+<div class="mobile-header">
+    <button class="hamburger-btn" id="openMenu">
+        <i class="fa-regular fa-bars"></i>
+    </button>
+
+    <a href="/" class="navbar-brand">
+        LUXTRIPS.<span style="font-size: 14px;">VN</span>
+    </a>
+
+    <div class="mobile-search position-relative">
+        <input type="text" class="form-control" placeholder="Helicopter Sightseeing">
+        <i class="fa-light fa-magnifying-glass search-icon text-14"></i>
+    </div>
+
+    <div class="mobile-icons">
+        <!-- LANGUAGE -->
+        <div class="dropdown header-language me-3 cursor-pointer">
+            <div class="dropdown-toggle d-flex align-items-center text-white" data-bs-toggle="dropdown">
+                <img src="/assets/images/icons/uk.png" width="26">
+            </div>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">English</a></li>
+                <li><a class="dropdown-item" href="#">Vietnamese</a></li>
+            </ul>
+        </div>
+        <a href="#" class="nav-link"><img src="/assets/images/icons/date.png" width="26"></a>
+    </div>
+</div>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu-overlay" id="menuOverlay"></div>
+
+<!-- MOBILE MENU SIDEBAR -->
+<div class="mobile-menu-sidebar" id="mobileSidebar">
+    <div class="mobile-menu-header">
+        <div></div>
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <div class="mobile-menu-top-icons">
+        <!-- LANGUAGE -->
+        <div class="dropdown header-language cursor-pointer">
+            <div class="dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
+                <img src="/assets/images/icons/uk.png" width="26">
+            </div>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">English</a></li>
+                <li><a class="dropdown-item" href="#">Vietnamese</a></li>
+            </ul>
+        </div>
+
+        <i class="fas fa-info-circle"></i>
+        <i class="fas fa-search"></i>
+        <i class="fas fa-calendar"></i>
+        <i class="fas fa-user-plus"></i>
+        <i class="fas fa-user"></i>
+        <i class="fas fa-phone"></i>
+    </div>
+
+    <div class="mobile-search-box position-relative">
+        <input type="text" placeholder="Helicopter Sightseeing">
+        <button><i class="fas fa-search"></i></button>
+    </div>
+
+    <div class="mobile-menu-content">
+        <!-- DESTINATIONS -->
+        <div class="menu-section">
+            <div class="menu-section-title">DESTINATIONS</div>
+            <ul id="destinationsList">
+                <li><a href="#">Hanoi</a></li>
+                <li><a href="#">Ho Chi Minh</a></li>
+                <li><a href="#">Ha Giang</a></li>
+                <li><a href="#">Sapa</a></li>
+                <li class="hidden"><a href="#">Cao Bang</a></li>
+                <li class="hidden"><a href="#">Thai Nguyen</a></li>
+                <li class="hidden"><a href="#">Ha Long Bay</a></li>
+                <li class="hidden"><a href="#">Mai Chau</a></li>
+                <li class="hidden"><a href="#">Ninh Binh</a></li>
+                <li class="hidden"><a href="#">Hue</a></li>
+                <li class="hidden"><a href="#">Quang Binh</a></li>
+                <li class="hidden"><a href="#">Hoi An</a></li>
+                <li class="hidden"><a href="#">Da Nang</a></li>
+                <li class="hidden"><a href="#">Binh Thuan</a></li>
+                <li class="hidden"><a href="#">Nha Trang</a></li>
+                <li class="hidden"><a href="#">Da Lat</a></li>
+                <li class="hidden"><a href="#">Mekong Delta</a></li>
+                <li class="hidden"><a href="#">Phu Quoc</a></li>
+            </ul>
+            <button class="see-more-btn" data-target="destinationsList">See more (less)</button>
+        </div>
+
+        <!-- EXPERIENCES -->
+        <div class="menu-section">
+            <div class="menu-section-title">EXPERIENCES</div>
+            <ul id="experiencesList">
+                <li><a href="#">Cultural Wellness</a></li>
+                <li><a href="#">Bespoke Wellness</a></li>
+                <li><a href="#">Spiritual Wellness</a></li>
+                <li><a href="#">Educational Wellness</a></li>
+                <li class="hidden"><a href="#">Adventure Wellness</a></li>
+                <li class="hidden"><a href="#">Culinary Wellness</a></li>
+                <li class="hidden"><a href="#">Nature Wellness</a></li>
+            </ul>
+            <button class="see-more-btn" data-target="experiencesList">See more (less)</button>
+        </div>
+
+        <!-- EXCLUSIVE TRAVELS -->
+        <div class="menu-section">
+            <div class="menu-section-title">EXCLUSIVE TRAVELS</div>
+        </div>
+
+        <!-- ACCOMMODATIONS -->
+        <div class="menu-section">
+            <div class="menu-section-title">ACCOMMODATIONS</div>
+            <ul id="accommodationsList">
+                <li><a href="#">Resort</a></li>
+                <li><a href="#">Retreat</a></li>
+                <li><a href="#">5* Hotel</a></li>
+                <li><a href="#">Ecolodge</a></li>
+                <li class="hidden"><a href="#">Boutique Hotel</a></li>
+                <li class="hidden"><a href="#">Villa</a></li>
+                <li class="hidden"><a href="#">Homestay</a></li>
+            </ul>
+            <button class="see-more-btn" data-target="accommodationsList">See more (less)</button>
+        </div>
+
+        <!-- ULTRA LUX TRANSPORTS -->
+        <div class="menu-section">
+            <div class="menu-section-title">ULTRA LUX TRANSPORTS</div>
+            <ul id="transportsList">
+                <li><a href="#">Cruise</a></li>
+                <li><a href="#">Sea Plane</a></li>
+                <li><a href="#">Helicopter</a></li>
+                <li><a href="#">Jeep</a></li>
+                <li class="hidden"><a href="#">Limousine</a></li>
+                <li class="hidden"><a href="#">Private Jet</a></li>
+            </ul>
+            <button class="see-more-btn" data-target="transportsList">See more (less)</button>
+        </div>
+
+        <!-- GIFTS -->
+        <div class="menu-section">
+            <div class="menu-section-title"><i class="fas fa-gift me-2"></i>GIFTS</div>
+        </div>
+
+        <!-- PERSONALISED DESIGNS -->
+        <div class="menu-section">
+            <div class="menu-section-title">PERSONALISED DESIGNS</div>
+        </div>
+    </div>
+
+    <div class="mobile-menu-footer">
+        <div class="newsletter-box">
+            <p class="fw-bold">Travel ideas & stories that will inspire you</p>
+            <div class="input-group">
+                <input type="email" class="form-control" placeholder="Signup to our Newsletter">
+                <button><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fas fa-comment"></i></a>
+        </div>
+    </div>
+</div>

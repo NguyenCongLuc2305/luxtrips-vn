@@ -2,19 +2,73 @@
     /* ====== COLORS ====== */
     --bs-primary: #ffc107;
     --bs-secondary: #111111;
-    --bs-body-bg: #ffffff;     
-    --bs-body-color: #333333;  
+    --bs-body-bg: #ffffff;
+    --bs-body-color: #333333;
     --bs-success: #3cb878;
     --bs-danger: #ff4d4f;
     --bs-warning: #f0ad4e;
     --bs-info: #17a2b8;
 
-    /* ====== TYPOGRAPHY ====== */
-    --font-primary: "FZPoppins", sans-serif;
+    --bs-body-font-family: "FZPoppins", sans-serif;
+    --bs-body-font-size: 14;
+    --bs-body-font-weight: 400;
+    --bs-body-line-height: 1.5;
+    --bs-body-color: #333;
+    --bs-body-bg: #fff;
 
     /* ====== BORDER ====== */
-    --bs-border-radius: 8px;
+    --bs-border-radius: 5px;
 
     /* ====== SPACING ====== */
     --spacing-section: 80px;
+}
+
+a {
+    cursor: pointer;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* text */
+
+.text-12 {
+    font-size: 12px;
+}
+
+.text-13 {
+    font-size: 13px;
+}
+
+.text-14 {
+    font-size: 14px;
+}
+
+.fw-bold {
+    font-weight: bold;
+}
+
+
+
+/* padding */
+.pl-0 {
+    padding-left: 0;
+}
+
+.pr-0 {
+    padding-right: 0;
+}
+
+.px-60 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+}
+
+
+
+/* margin */
+
+.mr-19 {
+    margin-right: 19px;
 }
