@@ -23,7 +23,7 @@
 }
 
 .lux-navbar {
-    background: #000;
+    background: var(--bs-secondary);
     border-bottom: 1px solid #3a3a3a;
 }
 
@@ -61,6 +61,10 @@
     justify-content: space-between;
 }
 
+.navbar-brand {
+    font-family: var(--secondary-font-family);
+}
+
 .mobile-header .navbar-brand {
     color: var(--bs-primary);
     font-size: 20px;
@@ -94,7 +98,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(90deg, #000000 0%, #666666 100%);
+    background: linear-gradient(90deg, #000000 0%, #4D4D4D 100%);
 }
 
 .mobile-icons {
@@ -198,7 +202,7 @@
     right: 18px;
     top: 50%;
     transform: translateY(-50%);
-    background: linear-gradient(90deg, #000000 0%, #666666 100%);
+    background: linear-gradient(90deg, #000000 0%, #4D4D4D 100%);
     border: none;
     padding: 8px 15px;
     color: white;
@@ -289,7 +293,7 @@
 }
 
 .newsletter-box .input-group button {
-    background: linear-gradient(90deg, #000000 0%, #666666 100%);
+    background: linear-gradient(90deg, #000000 0%, #4D4D4D 100%);
     border: none;
     border-radius: var(--bs-border-radius);
     color: white;
@@ -310,7 +314,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: linear-gradient(90deg, #000000 0%, #666666 100%);
+    background: linear-gradient(90deg, #000000 0%, #4D4D4D 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -335,7 +339,7 @@
 
 /* MENU BAR */
 .lux-menu {
-    background: #111;
+    background: var(--bs-secondary);
     padding: 6px 0;
     border-top: 1px solid #222;
 }

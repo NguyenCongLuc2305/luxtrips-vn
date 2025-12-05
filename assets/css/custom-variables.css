@@ -1,15 +1,16 @@
 :root {
     /* ====== COLORS ====== */
-    --bs-primary: #ffc107;
-    --bs-secondary: #111111;
+    --bs-primary: #BF882D;
+    --bs-secondary: #3C3C3B;
     --bs-body-bg: #ffffff;
-    --bs-body-color: #333333;
+    --bs-body-color: ##2B2B2A;
     --bs-success: #3cb878;
     --bs-danger: #ff4d4f;
     --bs-warning: #f0ad4e;
     --bs-info: #17a2b8;
 
     --bs-body-font-family: "FZPoppins", sans-serif;
+    --secondary-font-family: "TheAtlantic", sans-serif;
     --bs-body-font-size: 14;
     --bs-body-font-weight: 400;
     --bs-body-line-height: 1.5;

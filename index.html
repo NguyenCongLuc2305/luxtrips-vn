@@ -350,6 +350,140 @@
 
         <!-- body -->
         <main class="mt-5">
+
+
+            <!-- Swiper CSS -->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+            <section class="py-5">
+                <div class="container">
+                    <!-- Header -->
+                    <div class="mb-4 text-center">
+                        <h2 class="h4 fw-bold">Enjoy moments just for you</h2>
+                        <p class="text-muted mb-0">USD per person, based on double occupancy. Prices are subject to
+                            change.</p>
+                        <small class="text-muted">Final price may vary by month of travel.</small>
+                    </div>
+
+                    <!-- Swiper container -->
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+
+                            <!-- Slide: Sapa -->
+                            <div class="swiper-slide">
+                                <a href="/products/sapa" class="text-decoration-none text-reset">
+                                    <div class="card h-100 shadow-sm">
+                                        <img src="/images/sapa.jpg" class="card-img-top img-fluid"
+                                            alt="Sapa – The enchanting misty town"
+                                            style="height:200px; object-fit:cover;">
+                                        <div class="card-body">
+                                            <h3 class="h6 card-title mb-2">Sapa – The enchanting misty town</h3>
+                                            <p class="card-text text-muted mb-2">Black Hmong, Lao Chai, Sapa, Northern
+                                                Vietnam</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="fw-semibold">$17,604</span>
+                                                <span class="badge bg-danger">10% OFF</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Slide: Ninh Binh -->
+                            <div class="swiper-slide">
+                                <a href="/products/ninh-binh" class="text-decoration-none text-reset">
+                                    <div class="card h-100 shadow-sm">
+                                        <img src="/images/ninh-binh.jpg" class="card-img-top img-fluid"
+                                            alt="Ninh Binh – Ha Long Bay on Land"
+                                            style="height:200px; object-fit:cover;">
+                                        <div class="card-body">
+                                            <h3 class="h6 card-title mb-2">Ninh Binh – Ha Long Bay on Land</h3>
+                                            <p class="card-text text-muted mb-2">Ninh Binh, Red River Delta, Northern
+                                                Vietnam</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="fw-semibold">$7,820</span>
+                                                <span class="badge bg-warning text-dark">5% OFF</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Slide: Da Nang -->
+                            <div class="swiper-slide">
+                                <a href="/products/da-nang" class="text-decoration-none text-reset">
+                                    <div class="card h-100 shadow-sm">
+                                        <img src="/images/da-nang.jpg" class="card-img-top img-fluid"
+                                            alt="Da Nang – City in the Heart of Vietnam"
+                                            style="height:200px; object-fit:cover;">
+                                        <div class="card-body">
+                                            <h3 class="h6 card-title mb-2">Da Nang – City in the Heart of Vietnam</h3>
+                                            <p class="card-text text-muted mb-2">Da Nang, Central Vietnam</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="fw-semibold">$8,224</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Slide: Ha Long Bay -->
+                            <div class="swiper-slide">
+                                <a href="/products/ha-long" class="text-decoration-none text-reset">
+                                    <div class="card h-100 shadow-sm">
+                                        <img src="/images/ha-long.jpg" class="card-img-top img-fluid"
+                                            alt="Ha Long Bay – The new 7 wonder of the world"
+                                            style="height:200px; object-fit:cover;">
+                                        <div class="card-body">
+                                            <h3 class="h6 card-title mb-2">Ha Long Bay – The new 7 wonder of the world
+                                            </h3>
+                                            <p class="card-text text-muted mb-2">Northern Vietnam, Kayak, Cave, Sea
+                                                Plane</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="fw-semibold">$11,785</span>
+                                                <span class="badge bg-danger">10% OFF</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <!-- Nút điều hướng -->
+                        <div class="swiper-button-next">aa</div>
+                        <div class="swiper-button-prev">bbb</div>
+
+                        <!-- Dots pagination -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Swiper JS -->
+            <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+            <!-- Khởi tạo Swiper -->
+            <script>
+                const swiper = new Swiper(".mySwiper", {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    breakpoints: {
+                        576: { slidesPerView: 2 },
+                        992: { slidesPerView: 4 }
+                    },
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev"
+                    },
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true
+                    },
+                    grabCursor: true
+                });
+            </script>
+
             <!--------------------- 1. HERO BANNER --------------------->
             <section class="hero-banner">
                 <div class="swiper heroSwiper">
