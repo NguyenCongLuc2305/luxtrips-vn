@@ -8,20 +8,30 @@
     --bs-danger: #ff4d4f;
     --bs-warning: #f0ad4e;
     --bs-info: #17a2b8;
+    --gradient-black-to-gray: linear-gradient(90deg, #000000 0%, #4D4D4D 100%);
 
     --bs-body-font-family: "FZPoppins", sans-serif;
     --secondary-font-family: "TheAtlantic", sans-serif;
     --bs-body-font-size: 14;
     --bs-body-font-weight: 400;
-    --bs-body-line-height: 1.5;
+    --bs-body-line-height: 1.75;
     --bs-body-color: #333;
     --bs-body-bg: #fff;
+    --bs-gutter-x: 1.875 rem;
 
     /* ====== BORDER ====== */
     --bs-border-radius: 5px;
 
     /* ====== SPACING ====== */
     --spacing-section: 80px;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.relative {
+    position: relative;
 }
 
 a {
@@ -31,7 +41,36 @@ a {
 .cursor-pointer {
     cursor: pointer;
 }
+.border-0 {
+    border: none !important;
+}
+.no-shrink {
+    flex-shrink: 0;
+}
+.inline-block {
+    display: inline-block;
+}
+.text-right {
+    text-align: right;
+}
+.ml-13 {
+    margin-left: 13px;
+}
+.fit-cover {
+    object-fit: cover;
+}
 
+.w-100 {
+    width: 100%;
+}
+
+/* color */
+.text-primary {
+    color: var(--bs-primary) !important;
+}
+.text-secondary {
+    color: var(--bs-secondary) !important;
+}
 /* text */
 
 .text-12 {
@@ -45,9 +84,33 @@ a {
 .text-14 {
     font-size: 14px;
 }
+.text-16 {
+    font-size: 16px;
+}
+.text-18 {
+    font-size: 18px;
+}
+.text-20 {
+    font-size: 20px;
+}
+.text-26 {
+    font-size: 26px;
+}
+.text-28 {
+    font-size: 28px;
+}
 
 .fw-bold {
     font-weight: bold;
+}
+.fw-600 {
+    font-weight: 600;
+}
+.fw-500 {
+    font-weight: 500;
+}
+.text-uppercase {
+    text-transform: uppercase;
 }
 
 
@@ -60,13 +123,17 @@ a {
 .pr-0 {
     padding-right: 0;
 }
+.p-8px {
+    padding: 8px;
+}   
 
-.px-60 {
+.px-60px {
     padding-left: 3.75rem;
     padding-right: 3.75rem;
 }
-
-
+.pb-20px {
+    padding-bottom: 20px;
+}
 
 /* margin */
 

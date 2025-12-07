@@ -45,8 +45,8 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
 
     <!-- Style -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -63,41 +63,35 @@
         <!-- <div id="header"></div> -->
 
         <div class="lux-navbar">
-            <div
-                class="container-fluid d-flex align-items-center justify-content-center py-2 border-bottom border-1 border-white">
-
+            <div class="lux-bullet-bar container-fluid d-flex align-items-center justify-content-between">
                 <!-- LOGO -->
-                <a href="/" class="navbar-brand text-warning fs-3 me-4">
+                <a href="/" class="navbar-brand logo-lux text-primary me-4">
                     LUXTRIPS.<span class="fs-5">VN</span>
                 </a>
 
                 <!-- SEARCH -->
-                <div class="input-group search-box me-4">
-                    <span class="input-group-text bg-white border-end-0 pr-0">
-                        <i class="fa-light fa-magnifying-glass"></i>
+                <div class="input-group search-box">
+                    <span class="input-group-text bg-white border-end-0 p-8px pr-0">
+                        <i class="fa-light fa-magnifying-glass text-20 "></i>
                     </span>
-                    <input type="text" class="form-control border-start-0 text-12"
+                    <input type="text" class="form-control border-0 p-8px text-12"
                         placeholder="Search personalised travel experiences">
                 </div>
-
-                <!-- LANGUAGE -->
-                <div class="dropdown header-language me-3 cursor-pointer">
-                    <div class="dropdown-toggle d-flex align-items-center text-white" data-bs-toggle="dropdown">
-                        <img src="/assets/images/icons/uk.png" width="26">
-                    </div>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">English</a></li>
-                        <li><a class="dropdown-item" href="#">Vietnamese</a></li>
-                    </ul>
-                </div>
-
-                <!-- HOTLINE -->
-                <div class="text-white me-4 small">
-                    +84 982 670 909z
-                </div>
-
                 <!-- RIGHT MENU -->
-                <nav class="d-flex align-items-center gap-3 text-white small me-4">
+                <nav class="d-flex align-items-center gap-3 no-shrink flex-nowrap text-white small me-4">
+                    <!-- LANGUAGE -->
+                    <div class="dropdown header-language cursor-pointer">
+                        <div class="dropdown-toggle d-flex align-items-center text-white" data-bs-toggle="dropdown">
+                            <img src="/assets/images/icons/uk.png" width="26">
+                        </div>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Vietnamese</a></li>
+                        </ul>
+                    </div>
+                    <a href="tel:+84982670909" class="text-white text-decoration-none">
+                        +84 982 670 909
+                    </a>
                     <a href="#" class="nav-link">Help</a>
                     <a href="#" class="nav-link">Recent views</a>
                     <a href="#" class="nav-link">Sign in</a>
@@ -114,7 +108,7 @@
 
             <!-- MENU NAV -->
             <nav class="lux-menu">
-                <ul class="nav justify-content-center">
+                <ul class="nav justify-content-between">
                     <li class="nav-item dropdown megamenu">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">DESTINATIONS</a>
 
@@ -346,355 +340,563 @@
         </div>
 
 
-
         <!-- body -->
-        <main class="mt-5">
-
-
-            <!-- Swiper CSS -->
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
-            <section class="py-5">
-                <div class="container">
-                    <!-- Header -->
-                    <div class="mb-4 text-center">
-                        <h2 class="h4 fw-bold">Enjoy moments just for you</h2>
-                        <p class="text-muted mb-0">USD per person, based on double occupancy. Prices are subject to
-                            change.</p>
-                        <small class="text-muted">Final price may vary by month of travel.</small>
-                    </div>
-
-                    <!-- Swiper container -->
-                    <div class="swiper mySwiper">
-                        <div class="swiper-wrapper">
-
-                            <!-- Slide: Sapa -->
-                            <div class="swiper-slide">
-                                <a href="/products/sapa" class="text-decoration-none text-reset">
-                                    <div class="card h-100 shadow-sm">
-                                        <img src="/images/sapa.jpg" class="card-img-top img-fluid"
-                                            alt="Sapa – The enchanting misty town"
-                                            style="height:200px; object-fit:cover;">
-                                        <div class="card-body">
-                                            <h3 class="h6 card-title mb-2">Sapa – The enchanting misty town</h3>
-                                            <p class="card-text text-muted mb-2">Black Hmong, Lao Chai, Sapa, Northern
-                                                Vietnam</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span class="fw-semibold">$17,604</span>
-                                                <span class="badge bg-danger">10% OFF</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- Slide: Ninh Binh -->
-                            <div class="swiper-slide">
-                                <a href="/products/ninh-binh" class="text-decoration-none text-reset">
-                                    <div class="card h-100 shadow-sm">
-                                        <img src="/images/ninh-binh.jpg" class="card-img-top img-fluid"
-                                            alt="Ninh Binh – Ha Long Bay on Land"
-                                            style="height:200px; object-fit:cover;">
-                                        <div class="card-body">
-                                            <h3 class="h6 card-title mb-2">Ninh Binh – Ha Long Bay on Land</h3>
-                                            <p class="card-text text-muted mb-2">Ninh Binh, Red River Delta, Northern
-                                                Vietnam</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span class="fw-semibold">$7,820</span>
-                                                <span class="badge bg-warning text-dark">5% OFF</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- Slide: Da Nang -->
-                            <div class="swiper-slide">
-                                <a href="/products/da-nang" class="text-decoration-none text-reset">
-                                    <div class="card h-100 shadow-sm">
-                                        <img src="/images/da-nang.jpg" class="card-img-top img-fluid"
-                                            alt="Da Nang – City in the Heart of Vietnam"
-                                            style="height:200px; object-fit:cover;">
-                                        <div class="card-body">
-                                            <h3 class="h6 card-title mb-2">Da Nang – City in the Heart of Vietnam</h3>
-                                            <p class="card-text text-muted mb-2">Da Nang, Central Vietnam</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span class="fw-semibold">$8,224</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- Slide: Ha Long Bay -->
-                            <div class="swiper-slide">
-                                <a href="/products/ha-long" class="text-decoration-none text-reset">
-                                    <div class="card h-100 shadow-sm">
-                                        <img src="/images/ha-long.jpg" class="card-img-top img-fluid"
-                                            alt="Ha Long Bay – The new 7 wonder of the world"
-                                            style="height:200px; object-fit:cover;">
-                                        <div class="card-body">
-                                            <h3 class="h6 card-title mb-2">Ha Long Bay – The new 7 wonder of the world
-                                            </h3>
-                                            <p class="card-text text-muted mb-2">Northern Vietnam, Kayak, Cave, Sea
-                                                Plane</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span class="fw-semibold">$11,785</span>
-                                                <span class="badge bg-danger">10% OFF</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                        </div>
-
-                        <!-- Nút điều hướng -->
-                        <div class="swiper-button-next">aa</div>
-                        <div class="swiper-button-prev">bbb</div>
-
-                        <!-- Dots pagination -->
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Swiper JS -->
-            <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-            <!-- Khởi tạo Swiper -->
-            <script>
-                const swiper = new Swiper(".mySwiper", {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                    breakpoints: {
-                        576: { slidesPerView: 2 },
-                        992: { slidesPerView: 4 }
-                    },
-                    navigation: {
-                        nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev"
-                    },
-                    pagination: {
-                        el: ".swiper-pagination",
-                        clickable: true
-                    },
-                    grabCursor: true
-                });
-            </script>
-
+        <main class="site-content">
             <!--------------------- 1. HERO BANNER --------------------->
-            <section class="hero-banner">
-                <div class="swiper heroSwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="/assets/images/uploads/banner-home.png" alt="Ha Long Bay">
-                            <div class="hero-content">
-                                <h1>NEVER TRIED BEFORE</h1>
-                                <p>Exclusive luxury experiences in Vietnam</p>
-                                <a href="#request-quote" class="btn-discover">Discover</a>
+            <section class="hero-banner p-0">
+                <div class="hero-section">
+                    <div class="section-1-swiper">
+                        <!-- Navigation đặt trước hoặc sau .swiper đều được -->
+                        <div class="container section-1-navigation">
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+
+                        <!-- Swiper container -->
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide slide-1">
+                                    <div class="hero-content container">
+                                        <h1 class="hero-title text-26 text-white fw-600 text-uppercase">EXPERIENCE
+                                            THINGS YOU MAY HAVE NEVER TRIED BEFORE</h1>
+                                        <p class="hero-subtitle text-white text-16">Personalise Luxury Travel
+                                            Experiences of Your Own</p>
+
+                                        <div class="search-container">
+                                            <input type="text" class="search-input" id="searchInput"
+                                                placeholder="Helicopter Sightseeing">
+                                            <button class="btn-gradient">Discover</button>
+
+                                            <div class="search-popup" id="searchPopup">
+                                                <div>
+                                                    <div class="search-section-title">Hot Searches</div>
+                                                    <div class="search-tags" id="hotSearches">
+                                                        <button class="search-tag">Hanoi Exclusive Day Trips</button>
+                                                        <button class="search-tag">Halong Bay Seaplane Trips</button>
+                                                        <button class="search-tag">Jetski</button>
+                                                        <button class="search-tag">Ninh Binh Private Trips</button>
+                                                        <button class="search-tag">Private Honeymoon Designs</button>
+                                                        <button class="search-tag">Luxury Trains</button>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <div class="search-section-title">Recent Searches</div>
+                                                    <div class="search-tags" id="recentSearches">
+                                                        <button class="search-tag">Hanoi</button>
+                                                        <button class="search-tag">Ho Chi Minh City</button>
+                                                        <button class="search-tag">Ha Giang Exclusive Trips</button>
+                                                        <button class="search-tag">Helicopter</button>
+                                                        <button class="search-tag">JW Marriott Phu Quoc</button>
+                                                        <button class="search-tag">Cruise Trips</button>
+                                                        <button class="search-tag">Six Senses Ninh Van Bay</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide slide-2">
+                                    <div class="hero-content container">
+                                        <h1 class="hero-title text-26 text-white fw-600 text-uppercase">EXPERIENCE
+                                            THINGS YOU MAY HAVE NEVER TRIED BEFORE</h1>
+                                        <p class="hero-subtitle text-white text-16">Personalise Luxury Travel
+                                            Experiences of Your Own</p>
+
+                                        <div class="search-container">
+                                            <input type="text" class="search-input" id="searchInput"
+                                                placeholder="Helicopter Sightseeing">
+                                            <button class="btn-gradient">Discover</button>
+
+                                            <div class="search-popup" id="searchPopup">
+                                                <div>
+                                                    <div class="search-section-title">Hot Searches</div>
+                                                    <div class="search-tags" id="hotSearches">
+                                                        <button class="search-tag">Hanoi Exclusive Day Trips</button>
+                                                        <button class="search-tag">Halong Bay Seaplane Trips</button>
+                                                        <button class="search-tag">Jetski</button>
+                                                        <button class="search-tag">Ninh Binh Private Trips</button>
+                                                        <button class="search-tag">Private Honeymoon Designs</button>
+                                                        <button class="search-tag">Luxury Trains</button>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <div class="search-section-title">Recent Searches</div>
+                                                    <div class="search-tags" id="recentSearches">
+                                                        <button class="search-tag">Hanoi</button>
+                                                        <button class="search-tag">Ho Chi Minh City</button>
+                                                        <button class="search-tag">Ha Giang Exclusive Trips</button>
+                                                        <button class="search-tag">Helicopter</button>
+                                                        <button class="search-tag">JW Marriott Phu Quoc</button>
+                                                        <button class="search-tag">Cruise Trips</button>
+                                                        <button class="search-tag">Six Senses Ninh Van Bay</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide slide-3">
+                                    <div class="hero-content container">
+                                        <h1 class="hero-title text-26 text-white fw-600 text-uppercase">EXPERIENCE
+                                            THINGS YOU MAY HAVE NEVER TRIED BEFORE</h1>
+                                        <p class="hero-subtitle text-white text-16">Personalise Luxury Travel
+                                            Experiences of Your Own</p>
+
+                                        <div class="search-container">
+                                            <input type="text" class="search-input" id="searchInput"
+                                                placeholder="Helicopter Sightseeing">
+                                            <button class="btn-gradient">Discover</button>
+
+                                            <div class="search-popup" id="searchPopup">
+                                                <div>
+                                                    <div class="search-section-title">Hot Searches</div>
+                                                    <div class="search-tags" id="hotSearches">
+                                                        <button class="search-tag">Hanoi Exclusive Day Trips</button>
+                                                        <button class="search-tag">Halong Bay Seaplane Trips</button>
+                                                        <button class="search-tag">Jetski</button>
+                                                        <button class="search-tag">Ninh Binh Private Trips</button>
+                                                        <button class="search-tag">Private Honeymoon Designs</button>
+                                                        <button class="search-tag">Luxury Trains</button>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <div class="search-section-title">Recent Searches</div>
+                                                    <div class="search-tags" id="recentSearches">
+                                                        <button class="search-tag">Hanoi</button>
+                                                        <button class="search-tag">Ho Chi Minh City</button>
+                                                        <button class="search-tag">Ha Giang Exclusive Trips</button>
+                                                        <button class="search-tag">Helicopter</button>
+                                                        <button class="search-tag">JW Marriott Phu Quoc</button>
+                                                        <button class="search-tag">Cruise Trips</button>
+                                                        <button class="search-tag">Six Senses Ninh Van Bay</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <img src="/assets/images/uploads/banner-home.png" alt="Ha Long Bay">
-                            <div class="hero-content">
-                                <h1>NEVER TRIED BEFORE</h1>
-                                <p>Exclusive luxury experiences in Vietnam</p>
-                                <a href="#request-quote" class="btn-discover">Discover</a>
-                            </div>
-                        </div>
-                        <!-- Thêm slide nếu muốn -->
                     </div>
                 </div>
             </section>
-
 
             <!--------------------- 2. RED RIVER RAMBLE HIGHLIGHT --------------------->
             <section class="section-highlight">
                 <div class="container">
-                    <div class="highlight-grid">
-                        <div class="highlight-img">
-                            <img src="images/red-river-ramble.jpg" alt="Red River Ramble">
+                    <!-- Swiper -->
+                    <div class="swiper highlight-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="highlight-grid">
+                                    <div class="highlight-img">
+                                        <img src="/assets/images/uploads/red-river-ramble.png" alt="Red River Ramble">
+                                    </div>
+                                    <div class="highlight-content">
+                                        <h2 class="section-title">Red River Ramble</h2>
+                                        <p>
+                                            An exclusive luxury trip designed for VVIP customers seeking an
+                                            extraordinary experience in Northern Vietnam. Explore the majestic Red River
+                                            & its surroundings on a breathtaking journey through the region. You'll ride
+                                            vintage jeeps along the winding Road of Happiness, & glide along the
+                                            magnificent Nho Que River in the Tu San Canyon on a thrilling jet ski ride.
+                                            You'll also indulge in private helicopter rides, luxury accommodation, &
+                                            fine dining experiences, personalized excursions of cultural & historical
+                                            sites
+                                        </p>
+                                        <div class="text-center"><a href="#"
+                                                class="btn-gradient inline-block">Learn More</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="highlight-grid">
+                                    <div class="highlight-img">
+                                        <img src="/assets/images/uploads/red-river-ramble.png" alt="Red River Ramble">
+                                    </div>
+                                    <div class="highlight-content">
+                                        <h2 class="section-title">Red River Ramble</h2>
+                                        <p>
+                                            An exclusive luxury trip designed for VVIP customers seeking an
+                                            extraordinary experience in Northern Vietnam. Explore the majestic Red River
+                                            & its surroundings on a breathtaking journey through the region. You'll ride
+                                            vintage jeeps along the winding Road of Happiness, & glide along the
+                                            magnificent Nho Que River in the Tu San Canyon on a thrilling jet ski ride.
+                                            You'll also indulge in private helicopter rides, luxury accommodation, &
+                                            fine dining experiences, personalized excursions of cultural & historical
+                                            sites
+                                        </p>
+                                        <div class="text-center"><a href="#"
+                                                class="btn-gradient inline-block">Learn More</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="highlight-grid">
+                                    <div class="highlight-img">
+                                        <img src="/assets/images/uploads/red-river-ramble.png" alt="Red River Ramble">
+                                    </div>
+                                    <div class="highlight-content">
+                                        <h2 class="section-title">Red River Ramble</h2>
+                                        <p>
+                                            An exclusive luxury trip designed for VVIP customers seeking an
+                                            extraordinary experience in Northern Vietnam. Explore the majestic Red River
+                                            & its surroundings on a breathtaking journey through the region. You'll ride
+                                            vintage jeeps along the winding Road of Happiness, & glide along the
+                                            magnificent Nho Que River in the Tu San Canyon on a thrilling jet ski ride.
+                                            You'll also indulge in private helicopter rides, luxury accommodation, &
+                                            fine dining experiences, personalized excursions of cultural & historical
+                                            sites
+                                        </p>
+                                        <div class="text-center"><a href="#"
+                                                class="btn-gradient inline-block">Learn More</a></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="highlight-content">
-                            <h2 class="section-title yellow">Red River Ramble</h2>
-                            <p>
-                                An exclusive luxury trip designed for VVIP customers seeking an extraordinary experience
-                                in Northern Vietnam. Explore the majestic Red River & its surroundings on a breathtaking
-                                journey through the region. You'll ride vintage Jeeps along the winding Road of
-                                Happiness,
-                                a glide along the magnificent Nho Quế River in the Tu San Canyon on a thrilling jetski
-                                ride.
-                                You'll also indulge in private helicopter rides, luxury accommodation & fine dining
-                                experiences,
-                                personalized excursions of cultural & historical sites.
-                            </p>
-                            <a href="#" class="btn-learn-more">Learn More</a>
-                        </div>
+                        <div class="swiper-pagination"></div>
                     </div>
+
                 </div>
             </section>
 
 
-            <!--------------------- 3. WHAT YOU'LL RECEIVE (4 Ô ICON) ----->
+            <!--------------------- 3. WHAT YOU'LL RECEIVE ----->
             <section class="section-benefits">
                 <div class="container">
-                    <h2 class="section-title yellow text-center">What you'll receive</h2>
+                    <h2 class="section-title">What you'll receive</h2>
 
-                    <div class="benefits-grid">
-                        <div class="benefit-item">
-                            <img src="images/icon-personalised.svg" alt="Luxury Personalised Design">
-                            <h3>Luxury Personalised Design</h3>
-                            <p>We’ll plan your trip around your specific interests, tastes and preferences...</p>
-                            <a href="#" class="btn-small">Learn more</a>
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="benefit-item text-center h-100">
+                                <img src="assets/images/uploads/icon-personalised.png" alt="Luxury Personalised Design"
+                                    class="mb-5">
+                                <h3 class="h5">Luxury Personalised Design</h3>
+                                <p class="mb-5">We’ll plan your trip around your specific interests, tastes and
+                                    preferences...</p>
+                                <a href="#" class="btn-gradient">Learn more</a>
+                            </div>
                         </div>
 
-                        <div class="benefit-item">
-                            <img src="images/icon-experts.svg" alt="20+ Year Experienced">
-                            <h3>20+ Year Experienced Savvy Experts</h3>
-                            <p>Our expert guides and brilliant travel concierges are hand-picked...</p>
-                            <a href="#" class="btn-small">Contact</a>
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="benefit-item text-center h-100">
+                                <img src="assets/images/uploads/icon-experts.png" alt="20+ Year Experienced"
+                                    class="mb-5">
+                                <h3 class="h5">20+ Year Experienced Savvy Experts</h3>
+                                <p class="mb-5">Our expert guides and brilliant travel concierges are hand-picked...</p>
+                                <a href="#" class="btn-gradient">Contact</a>
+                            </div>
                         </div>
 
-                        <div class="benefit-item">
-                            <img src="images/icon-responsible.svg" alt="Responsible Travel">
-                            <h3>Responsible Travel</h3>
-                            <p>Our luxury trips are designed with responsible travel principles...</p>
-                            <a href="#" class="btn-small">See more</a>
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="benefit-item text-center h-100">
+                                <img src="assets/images/uploads/icon-responsible.png" alt="Responsible Travel"
+                                    class="mb-5">
+                                <h3 class="h5">Responsible Travel</h3>
+                                <p class="mb-5">Our luxury trips are designed with responsible travel principles...</p>
+                                <a href="#" class="btn-gradient">See more</a>
+                            </div>
                         </div>
 
-                        <div class="benefit-item">
-                            <img src="images/icon-ai.svg" alt="AI (Artificial Intelligence)">
-                            <h3>AI (Artificial Intelligence) Gurl Supreme</h3>
-                            <p>Compare & Choose suitable Travel Experiences for your own...</p>
-                            <a href="#" class="btn-small">Experience Now</a>
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="benefit-item text-center h-100">
+                                <img src="assets/images/uploads/icon-ai.png" alt="AI (Artificial Intelligence)"
+                                    class="mb-5">
+                                <h3 class="h5">AI (Artificial Intelligence) Gurl Supreme</h3>
+                                <p class="mb-5">Compare & Choose suitable Travel Experiences for your own...</p>
+                                <a href="#" class="btn-gradient">Experience Now</a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="ai-cta text-center">
-                        <p>Find out more about what <strong>luxtrips.vn</strong> can do for you <span
-                                class="arrow">→</span></p>
+                    <div class="text-right mt-5">
+                        Eind out more about what Luxtrips.vn can do for you
+                        <img class="ml-13" src="/assets/images/icons/arrow-next.svg" alt="">
                     </div>
                 </div>
             </section>
+
 
 
             <!--------------------- 4. PERSONALIZED TRAVEL TRENDS 2025 --------------------->
-            <section class="section-trends">
+            <section class="section-4">
                 <div class="container">
-                    <h2 class="section-title yellow">Enjoy Moments Just for You</h2>
-                    <p class="section-subtitle text-center">Explore & Experience Personalised Travel Trends 2025</p>
+                    <!-- Header -->
+                    <div class="mb-4 text-center">
+                        <h2 class="section-title">Enjoy moments just for you</h2>
+                        <p class="text-18 fw-500 text-left">Explore & Experience Personalised Travel Trends 2025</p>
+                    </div>
+                    <div class="section-4-swiper">
+                        <div class="swiper-button-prev-border swiper4-prev"></div>
+                        <div class="swiper-button-next-border swiper4-next"></div>
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="#" class="text-decoration-none text-reset">
+                                        <div class="card h-100 section-4-card">
+                                            <img src="assets/images/uploads/sapa.png"
+                                                class="card-img-top img-fluid fit-cover"
+                                                alt="Sapa – The enchanting misty town">
+                                            <div class="card-body">
+                                                <h3 class="h6 card-title fw-500 mb-3">Sapa – The enchanting misty town
+                                                </h3>
+                                                <p class="card-text text-muted mb-3">Black Hmong, Lao Chai, Sapa,
+                                                    Northern
+                                                    Vietnam</p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="fw-500">$17,604</span>
+                                                    <span class="span-gradient">10% OFF</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
 
-                    <div class="trends-slider">
-                        <div class="trend-card">
-                            <img src="images/trend-sapa.jpg" alt="Sapa">
-                            <div class="trend-info">
-                                <h4>Sapa - The enchanting misty town</h4>
-                                <p>Black Hmong, Lao Chai, Sapa, Northern Vietnam</p>
-                                <p class="price">From <strong>$17,804</strong> <span class="discount">10% OFF</span></p>
-                            </div>
-                        </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="text-decoration-none text-reset">
+                                        <div class="card h-100 section-4-card">
+                                            <img src="assets/images/uploads/ninh-binh.png"
+                                                class="card-img-top img-fluid fit-cover"
+                                                alt="Ninh Binh – Ha Long Bay on Land">
+                                            <div class="card-body">
+                                                <h3 class="h6 card-title fw-500 mb-3">Ninh Binh – Ha Long Bay on Land
+                                                </h3>
+                                                <p class="card-text text-muted mb-3">Ninh Binh, Red River Delta,
+                                                    Northern
+                                                    Vietnam</p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="fw-500">$7,820</span>
+                                                    <span class="span-gradient">5% OFF</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
 
-                        <div class="trend-card">
-                            <img src="images/trend-ninhbinh.jpg" alt="Ninh Binh - Ha Long Bay on Land">
-                            <div class="trend-info">
-                                <h4>Ninh Binh - Ha Long Bay on Land</h4>
-                                <p>Ninh Binh, Red River Delta, Northern Vietnam</p>
-                                <p class="price">From <strong>$7,820</strong> <span class="discount">5% OFF</span></p>
-                            </div>
-                        </div>
+                                <div class="swiper-slide">
+                                    <a href="/products/da-nang" class="text-decoration-none text-reset">
+                                        <div class="card h-100 section-4-card">
+                                            <img src="assets/images/uploads/da-nang.png"
+                                                class="card-img-top img-fluid fit-cover"
+                                                alt="Da Nang – City in the Heart of Vietnam">
+                                            <div class="card-body">
+                                                <h3 class="h6 card-title fw-500 mb-3">Da Nang – City in the Heart of
+                                                    Vietnam
+                                                </h3>
+                                                <p class="card-text text-muted mb-3">Da Nang, Central Vietnam</p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="fw-500">$8,224</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
 
-                        <div class="trend-card">
-                            <img src="images/trend-danang.jpg" alt="Da Nang">
-                            <div class="trend-info">
-                                <h4>Da Nang - City in the Heart of Vietnam</h4>
-                                <p>Da Nang, Central Vietnam</p>
-                                <p class="price">From <strong>$9,224</strong></p>
-                            </div>
-                        </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="text-decoration-none text-reset">
+                                        <div class="card h-100 section-4-card">
+                                            <img src="assets/images/uploads/ha-long.png"
+                                                class="card-img-top img-fluid fit-cover"
+                                                alt="Ha Long Bay – The new 7 wonder of the world">
+                                            <div class="card-body">
+                                                <h3 class="h6 card-title fw-500 mb-3">Ha Long Bay – The new 7 wonder of
+                                                    the
+                                                    world
+                                                </h3>
+                                                <p class="card-text text-muted mb-3">Northern Vietnam, Kayak, Cave, Sea
+                                                    Plane</p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="fw-500">$11,785</span>
+                                                    <span class="span-gradient">10% OFF</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
 
-                        <div class="trend-card">
-                            <img src="images/trend-halong.jpg" alt="Ha Long Bay">
-                            <div class="trend-info">
-                                <h4>Ha Long Bay - The new 7 wonder of the world</h4>
-                                <p>Northern Vietnam, Ha Long Bay, Kayak, Cave, Spa, Hano...</p>
-                                <p class="price">From <strong>$11,785</strong> <span class="discount">10% OFF</span></p>
+                                <div class="swiper-slide">
+                                    <a href="#" class="text-decoration-none text-reset">
+                                        <div class="card h-100 section-4-card">
+                                            <img src="assets/images/uploads/ninh-binh.png"
+                                                class="card-img-top img-fluid fit-cover"
+                                                alt="Ha Long Bay – The new 7 wonder of the world">
+                                            <div class="card-body">
+                                                <h3 class="h6 card-title fw-500 mb-3">Ha Long Bay – The new 7 wonder of
+                                                    the
+                                                    world
+                                                </h3>
+                                                <p class="card-text text-muted mb-3">Northern Vietnam, Kayak, Cave, Sea
+                                                    Plane</p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="fw-500">$11,785</span>
+                                                    <span class="span-gradient">10% OFF</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <p class="mt-5">* USD per person , based on double occupancy . Prices are subject to change . <br>
+                        As itineraries are custom - designed for you , the final price will vary and is also based on the month of travel .</p>
                 </div>
             </section>
-
 
             <!--------------------- 5. CATEGORIES (CULTURE, RELAXING, BUSINESS...) --------------------->
             <section class="section-categories">
                 <div class="container">
                     <h2 class="section-title yellow">Choose Your Own Way of Experience & Explore the World</h2>
 
-                    <div class="categories-grid">
-                        <a href="#" class="cat-item">
-                            <img src="images/cat-culture.jpg" alt="Culture & Exploration">
-                            <span>CULTURE & EXPLORATION</span>
-                        </a>
-                        <a href="#" class="cat-item">
-                            <img src="images/cat-relaxing.jpg" alt="Relaxing Trips">
-                            <span>RELAXING TRIPS</span>
-                        </a>
-                        <a href="#" class="cat-item">
-                            <img src="images/cat-business.jpg" alt="For Business">
-                            <span>FOR BUSINESS</span>
-                        </a>
-                        <a href="#" class="cat-item">
-                            <img src="images/cat-luxury.jpg" alt="Luxury Trips">
-                            <span>LUXURY TRIPS</span>
-                        </a>
-                        <a href="#" class="cat-item">
-                            <img src="images/cat-adventure.jpg" alt="Adventures">
-                            <span>ADVENTURES</span>
-                        </a>
-                        <a href="#" class="cat-item">
-                            <img src="images/cat-activities.jpg" alt="Activities">
-                            <span>ACTIVITIES</span>
-                        </a>
-                        <a href="#" class="cat-item">
-                            <img src="images/cat-philanthropy.jpg" alt="Philanthropy">
-                            <span>PHILANTHROPY</span>
-                        </a>
-                        <a href="#" class="cat-item">
-                            <img src="images/cat-private.jpg" alt="Private Trips">
-                            <span>PRIVATE TRIPS</span>
-                        </a>
-                        <a href="#" class="cat-item">
-                            <img src="images/cat-family.jpg" alt="For Family">
-                            <span>FOR FAMILY</span>
-                        </a>
-                        <a href="#" class="cat-item">
-                            <img src="images/cat-exclusive.jpg" alt="Exclusive Experiences">
-                            <span>EXCLUSIVE EXPERIENCES</span>
-                        </a>
+                    <div class="section-5-swiper relative">
+
+                        <!-- Navigation đặt trước hoặc sau .swiper đều được -->
+                        <div class="swiper-button-prev-border swiper5-prev"></div>
+                        <div class="swiper-button-next-border swiper5-next"></div>
+
+                        <!-- Swiper container -->
+                        <div class="swiper swiper5">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><a href="#" class="section-5-item">
+                                        <img src="assets/images/uploads/cat-culture.png" alt="Culture & Exploration">
+                                        <p>CULTURE & EXPLORATION</p>
+                                    </a>
+                                    <a href="#" class="section-5-item">
+                                        <img src="assets/images/uploads/cat-relaxing.png" alt="Relaxing Trips">
+                                        <p>RELAXING TRIPS</p>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide"><a href="#" class="section-5-item">
+                                        <img src="assets/images/uploads/cat-business.png" alt="For Business">
+                                        <p>FOR BUSINESS</p>
+                                    </a>
+                                    <a href="#" class="section-5-item">
+                                        <img src="assets/images/uploads/cat-luxury.png" alt="Luxury Trips">
+                                        <p>LUXURY TRIPS</p>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide"><a href="#" class="section-5-item">
+                                        <img src="assets/images/uploads/cat-adventure.png" alt="Adventures">
+                                        <p>ADVENTURES</p>
+                                    </a>
+                                    <a href="#" class="section-5-item">
+                                        <img src="assets/images/uploads/cat-activities.png" alt="Activities">
+                                        <p>ACTIVITIES</p>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide"> <a href="#" class="section-5-item">
+                                        <img src="assets/images/uploads/cat-adventure-2.png" alt="Adventures">
+                                        <p>ADVENTURES</p>
+                                    </a>
+                                    <a href="#" class="section-5-item">
+                                        <img src="assets/images/uploads/cat-activities-2.png" alt="Activities">
+                                        <p>ACTIVITIES</p>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide"><a href="#" class="section-5-item">
+                                        <img src="assets/images/uploads/cat-philanthropy.png" alt="Philanthropy">
+                                        <p>PHILANTHROPY</p>
+                                    </a>
+                                    <a href="#" class="section-5-item">
+                                        <img src="assets/images/uploads/cat-private.png" alt="Private Trips">
+                                        <p>PRIVATE TRIPS</p>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide"><a href="#" class="section-5-item">
+                                        <img src="assets/images/uploads/cat-family.png" alt="For Family">
+                                        <p>FOR FAMILY</p>
+                                    </a>
+                                    <a href="#" class="section-5-item">
+                                        <img src="assets/images/uploads/cat-exclusive.png" alt="Exclusive Experiences">
+                                        <p>EXCLUSIVE EXPERIENCES</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
 
 
             <!--------------------- 6. STORIES & EXPERIENCE JOURNEYS --------------------->
-            <section class="section-stories">
+            <section class="section-6">
                 <div class="container">
-                    <h2 class="section-title yellow">Explore Stories & Experience Journeys with Luxtrips.vn</h2>
+                    <h2 class="section-title">Explore Stories & Experience Journeys with Luxtrips.vn</h2>
+                    <div class="section-6-swiper relative">
+                        <div class="swiper-button-prev-border swiper6-prev"></div>
+                        <div class="swiper-button-next-border swiper6-next"></div>
+                        <div class="swiper swiper6">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="#" class="text-decoration-none text-reset">
+                                        <div class="section-6-item">
+                                            <img src="assets/images/uploads/story-sapa.png"
+                                                class="section-6-img-top w-100 img-fluid fit-cover"
+                                                alt="Sapa, a place of enchanting beauty and cultural diversity">
+                                            <div class="section-6-body mt-3">
+                                                <h3 class="h6 section-6-title fw-500 mb-3">Sapa, a place of enchanting
+                                                    beauty
+                                                    and cultural diversity
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
 
-                    <div class="stories-slider">
-                        <div class="story-card">
-                            <img src="images/story-sapa.jpg" alt="Sapa">
-                            <p>Sapa, a place of enchanting beauty and cultural diversity</p>
-                        </div>
-                        <div class="story-card">
-                            <img src="images/story-hagiang.jpg" alt="Ha Giang">
-                            <p>Embark on an epic adventure from Sapa to Ha Giang with a thrilling helicopter ride over
-                                picturesque landscape</p>
-                        </div>
-                        <div class="story-card">
-                            <img src="images/story-mountain-to-sea.jpg" alt="From Mountains to Seascape">
-                            <p>From Mountains to Seascape – Ha Long Bay</p>
+                                <div class="swiper-slide">
+                                    <a href="#" class="text-decoration-none text-reset">
+                                        <div class="section-6-item">
+                                            <img src="assets/images/uploads/story-hagiang.png"
+                                                class="section-6-img-top w-100 img-fluid fit-cover" alt="Embark on an epic adventure from Sapa to Ha Giang with a thrilling helicopter ride over
+                                picturesque landscape">
+                                            <div class="section-6-body mt-3">
+                                                <h3 class="h6 section-6-title fw-500 mb-3">Embark on an epic adventure
+                                                    from
+                                                    Sapa to
+                                                    Ha Giang with a thrilling helicopter ride over
+                                                    picturesque landscape
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="/products/da-nang" class="text-decoration-none text-reset">
+                                        <div class="section-6-item">
+                                            <img src="assets/images/uploads/story-mountain-to-sea.png"
+                                                class="section-6-img-top w-100 img-fluid fit-cover"
+                                                alt="From Mountains to Seascape – Ha Long Bay">
+                                            <div class="section-6-body mt-3">
+                                                <h3 class="h6 section-6-title fw-500 mb-3">From Mountains to Seascape –
+                                                    Ha
+                                                    Long Bay
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="/products/da-nang" class="text-decoration-none text-reset">
+                                        <div class="section-6-item">
+                                            <img src="assets/images/uploads/story-mountain-to-sea.png"
+                                                class="section-6-img-top w-100 img-fluid fit-cover"
+                                                alt="From Mountains to Seascape – Ha Long Bay">
+                                            <div class="section-6-body mt-3">
+                                                <h3 class="h6 section-6-title fw-500 mb-3">From Mountains to Seascape –
+                                                    Ha
+                                                    Long Bay
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -704,28 +906,23 @@
             <!--------------------- 7. ABOUT TEXT + CTA --------------------->
             <section class="section-about">
                 <div class="container">
-                    <h2 class="section-title yellow">More Information</h2>
-                    <div class="about-content">
-                        <p>
-                            Vietnam is fast becoming a top destination for discerning travellers seeking luxury travel
-                            experiences. At the forefront of this movement is
-                            <strong>luxtrips.vn</strong>, a leading brand known for curating personalised journeys that
-                            combine comfort, culture, and elegance...
-                        </p>
-                        <!-- Đoạn văn còn lại bạn có thể copy từ ảnh -->
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="section-title accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                    aria-controls="flush-collapseOne">
+                                    More Information
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to
+                                    demonstrate the <code>.accordion-flush</code> class. This is the first item's
+                                    accordion body.</div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </section>
-
-
-            <!--------------------- 8. BIG CTA PRE-QUEST QUOTE --------------------->
-            <section class="section-cta-final">
-                <div class="container">
-                    <h2>Let's Experience Unique and Personalised Journeys. Send us your request & get 01 step closer to
-                        Experiences that are Designed Just for You</h2>
-                    <a href="#request-quote" class="btn-cta-large">REQUEST A QUOTE</a>
-                    <p class="cta-phone">Talk with our Luxury Personalised Travel Experts on <strong>+84 982 670
-                            909</strong></p>
                 </div>
             </section>
         </main>
@@ -735,106 +932,9 @@
 
     <!-- Load JS -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-
-    <!-- load header -->
-    <script>
-        fetch("/assets/partials/header.html")
-            .then(res => res.text())
-            .then(html => document.getElementById("header").innerHTML = html);
-    </script>
-
-    <script>
-        fetch("/assets/partials/footer.html")
-            .then(res => res.text())
-            .then(html => document.getElementById("footer").innerHTML = html);
-    </script>
-
-    <!-- ==================== JS ==================== -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        // Hero Slider
-        const heroSwiper = new Swiper('.heroSwiper', {
-            loop: true,
-            autoplay: { delay: 6000, disableOnInteraction: false },
-            effect: 'fade',
-            speed: 1500,
-        });
-
-        // Smooth scroll cho nút Discover
-        document.querySelector('.btn-discover').addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector('#request-quote')?.scrollIntoView({ behavior: 'smooth' });
-        });
-
-        // Back to top (tuỳ chọn)
-        window.addEventListener('scroll', function () {
-            const backToTop = document.querySelector('.back-to-top');
-            if (window.scrollY > 500) {
-                backToTop?.classList.add('show');
-            } else {
-                backToTop?.classList.remove('show');
-            }
-        });
-    </script>
-
-
-    <script>
-        // Mobile menu toggle
-        const openMenuBtn = document.getElementById('openMenu');
-        const closeMenuBtn = document.getElementById('closeMenu');
-        const menuOverlay = document.getElementById('menuOverlay');
-        const mobileSidebar = document.getElementById('mobileSidebar');
-
-        openMenuBtn.addEventListener('click', () => {
-            mobileSidebar.classList.add('active');
-            menuOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        closeMenuBtn.addEventListener('click', () => {
-            mobileSidebar.classList.remove('active');
-            menuOverlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-
-        menuOverlay.addEventListener('click', () => {
-            mobileSidebar.classList.remove('active');
-            menuOverlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-
-        // See more / See less functionality
-        const seeMoreButtons = document.querySelectorAll('.see-more-btn');
-
-        seeMoreButtons.forEach(button => {
-            const targetId = button.getAttribute('data-target');
-            const targetList = document.getElementById(targetId);
-            const allItems = targetList.querySelectorAll('li');
-
-            // Store items that should be toggleable (index 4 and beyond)
-            const toggleableItems = Array.from(allItems).slice(4);
-
-            button.addEventListener('click', function () {
-                const isExpanded = button.textContent.trim() === 'See less';
-
-                if (isExpanded) {
-                    // Collapse - add hidden class
-                    toggleableItems.forEach(item => {
-                        item.classList.add('hidden');
-                    });
-                    this.textContent = 'See more (less)';
-                } else {
-                    // Expand - remove hidden class
-                    toggleableItems.forEach(item => {
-                        item.classList.remove('hidden');
-                    });
-                    this.textContent = 'See less';
-                }
-            });
-        });
-    </script>
-
-
+    <!-- Swiper JS -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 
 </body>
