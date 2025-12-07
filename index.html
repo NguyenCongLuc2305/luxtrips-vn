@@ -78,7 +78,7 @@
                         placeholder="Search personalised travel experiences">
                 </div>
                 <!-- RIGHT MENU -->
-                <nav class="d-flex align-items-center gap-3 no-shrink flex-nowrap text-white small me-4">
+                <nav class="d-flex align-items-center gap-3 no-shrink flex-nowrap text-white small">
                     <!-- LANGUAGE -->
                     <div class="dropdown header-language cursor-pointer">
                         <div class="dropdown-toggle d-flex align-items-center text-white" data-bs-toggle="dropdown">
@@ -177,7 +177,7 @@
 
             <div class="mobile-search position-relative">
                 <input type="text" class="form-control" placeholder="Helicopter Sightseeing">
-                <i class="fa-light fa-magnifying-glass search-icon text-14"></i>
+                <i class="fa-light fw-500 fa-magnifying-glass search-icon text-17"></i>
             </div>
 
             <div class="mobile-icons">
@@ -218,13 +218,15 @@
                         <li><a class="dropdown-item" href="#">Vietnamese</a></li>
                     </ul>
                 </div>
-
-                <i class="fas fa-info-circle"></i>
-                <i class="fas fa-search"></i>
-                <i class="fas fa-calendar"></i>
-                <i class="fas fa-user-plus"></i>
-                <i class="fas fa-user"></i>
-                <i class="fas fa-phone"></i>
+                <a href="#"><img src="/assets/images/icons/information - mobile.png" width="40" height="40"
+                        alt="information - mobile"></a>
+                <a href="#"><img src="/assets/images/icons/recent view - mobile.png" width="40" height="40"
+                        alt="recent view - mobile"></a>
+                <a href="#"><img src="/assets/images/icons/Booking form - Mobile (2).png" width="40" height="40"
+                        alt="Booking form - Mobile"></a>
+                <a href="#"><img src="/assets/images/icons/sign up - mobile.png" width="40" height="40"
+                        alt="sign up - mobile"></a>
+                <a href="#"><img src="/assets/images/icons/hotline.png" width="40" height="40" alt="hotline"></a>
             </div>
 
             <div class="mobile-search-box position-relative">
@@ -329,12 +331,17 @@
                 </div>
 
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fas fa-comment"></i></a>
+                    <a href="#"><img src="/assets/images/icons/facebook - black.png" width="40" height="40"
+                            alt="facebook"></a>
+                    <a href="#"><img src="/assets/images/icons/youtube - black.png" width="40" height="40"
+                            alt="youtube"></a>
+                    <a href="#"><img src="/assets/images/icons/tiktok - black.png" width="40" height="40"
+                            alt="tiktok"></a>
+                    <a href="#"><img src="/assets/images/icons/instagram - black.png" width="40" height="40"
+                            alt="instagram"></a>
+                    <a href="#"><img src="/assets/images/icons/whatsapp - black.png" width="40" height="40"
+                            alt="whatsapp"></a>
+                    <a href="#"><img src="/assets/images/icons/zalo - black.png" width="40" height="40" alt="zalo"></a>
                 </div>
             </div>
         </div>
@@ -352,6 +359,8 @@
                             <div class="swiper-button-next"></div>
                         </div>
 
+                        <div class="swiper-pagination swiper-pagination-section-1"></div>
+
                         <!-- Swiper container -->
                         <div class="swiper">
                             <div class="swiper-wrapper">
@@ -363,11 +372,15 @@
                                             Experiences of Your Own</p>
 
                                         <div class="search-container">
-                                            <input type="text" class="search-input" id="searchInput"
+                                            <input type="text" class="search-input"
                                                 placeholder="Helicopter Sightseeing">
-                                            <button class="btn-gradient">Discover</button>
+                                            <button class="btn-gradient">
+                                                <span class="section__1-icon--pc show-pc">Discover</span>
+                                                <span class="section__1-icon--mobile show-mobile"><i
+                                                        class="fa-light fa-magnifying-glass fw-500 search-icon text-26"></i></span>
+                                            </button>
 
-                                            <div class="search-popup" id="searchPopup">
+                                            <div class="search-popup">
                                                 <div>
                                                     <div class="search-section-title">Hot Searches</div>
                                                     <div class="search-tags" id="hotSearches">
@@ -404,11 +417,11 @@
                                             Experiences of Your Own</p>
 
                                         <div class="search-container">
-                                            <input type="text" class="search-input" id="searchInput"
+                                            <input type="text" class="search-input"
                                                 placeholder="Helicopter Sightseeing">
                                             <button class="btn-gradient">Discover</button>
 
-                                            <div class="search-popup" id="searchPopup">
+                                            <div class="search-popup">
                                                 <div>
                                                     <div class="search-section-title">Hot Searches</div>
                                                     <div class="search-tags" id="hotSearches">
@@ -445,11 +458,11 @@
                                             Experiences of Your Own</p>
 
                                         <div class="search-container">
-                                            <input type="text" class="search-input" id="searchInput"
+                                            <input type="text" class="search-input"
                                                 placeholder="Helicopter Sightseeing">
                                             <button class="btn-gradient">Discover</button>
 
-                                            <div class="search-popup" id="searchPopup">
+                                            <div class="search-popup">
                                                 <div>
                                                     <div class="search-section-title">Hot Searches</div>
                                                     <div class="search-tags" id="hotSearches">
@@ -485,17 +498,17 @@
             </section>
 
             <!--------------------- 2. RED RIVER RAMBLE HIGHLIGHT --------------------->
-            <section class="section-highlight">
+            <section class="section-section__2">
                 <div class="container">
                     <!-- Swiper -->
-                    <div class="swiper highlight-swiper">
+                    <div class="swiper section__2-swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <div class="highlight-grid">
-                                    <div class="highlight-img">
+                                <div class="section__2-grid">
+                                    <div class="section__2-img">
                                         <img src="/assets/images/uploads/red-river-ramble.png" alt="Red River Ramble">
                                     </div>
-                                    <div class="highlight-content">
+                                    <div class="section__2-content">
                                         <h2 class="section-title">Red River Ramble</h2>
                                         <p>
                                             An exclusive luxury trip designed for VVIP customers seeking an
@@ -507,17 +520,17 @@
                                             fine dining experiences, personalized excursions of cultural & historical
                                             sites
                                         </p>
-                                        <div class="text-center"><a href="#"
-                                                class="btn-gradient inline-block">Learn More</a></div>
+                                        <div class="text-center"><a href="#" class="btn-gradient inline-block">Learn
+                                                More</a></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="highlight-grid">
-                                    <div class="highlight-img">
+                                <div class="section__2-grid">
+                                    <div class="section__2-img">
                                         <img src="/assets/images/uploads/red-river-ramble.png" alt="Red River Ramble">
                                     </div>
-                                    <div class="highlight-content">
+                                    <div class="section__2-content">
                                         <h2 class="section-title">Red River Ramble</h2>
                                         <p>
                                             An exclusive luxury trip designed for VVIP customers seeking an
@@ -529,17 +542,17 @@
                                             fine dining experiences, personalized excursions of cultural & historical
                                             sites
                                         </p>
-                                        <div class="text-center"><a href="#"
-                                                class="btn-gradient inline-block">Learn More</a></div>
+                                        <div class="text-center"><a href="#" class="btn-gradient inline-block">Learn
+                                                More</a></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="highlight-grid">
-                                    <div class="highlight-img">
+                                <div class="section__2-grid">
+                                    <div class="section__2-img">
                                         <img src="/assets/images/uploads/red-river-ramble.png" alt="Red River Ramble">
                                     </div>
-                                    <div class="highlight-content">
+                                    <div class="section__2-content">
                                         <h2 class="section-title">Red River Ramble</h2>
                                         <p>
                                             An exclusive luxury trip designed for VVIP customers seeking an
@@ -551,13 +564,13 @@
                                             fine dining experiences, personalized excursions of cultural & historical
                                             sites
                                         </p>
-                                        <div class="text-center"><a href="#"
-                                                class="btn-gradient inline-block">Learn More</a></div>
+                                        <div class="text-center"><a href="#" class="btn-gradient inline-block">Learn
+                                                More</a></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-pagination"></div>
+                        <div class="swiper-pagination swiper-pagination-section-2"></div>
                     </div>
 
                 </div>
@@ -565,59 +578,69 @@
 
 
             <!--------------------- 3. WHAT YOU'LL RECEIVE ----->
-            <section class="section-benefits">
+            <section class="section-3">
                 <div class="container">
                     <h2 class="section-title">What you'll receive</h2>
 
-                    <div class="row g-4">
-                        <div class="col-12 col-md-6 col-lg-3">
-                            <div class="benefit-item text-center h-100">
-                                <img src="assets/images/uploads/icon-personalised.png" alt="Luxury Personalised Design"
-                                    class="mb-5">
-                                <h3 class="h5">Luxury Personalised Design</h3>
-                                <p class="mb-5">We’ll plan your trip around your specific interests, tastes and
-                                    preferences...</p>
-                                <a href="#" class="btn-gradient">Learn more</a>
+                    <!-- SWIPER -->
+                    <div class="swiper section-3-swiper">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+                                <div class="section-3-item swiper-item text-center h-100">
+                                    <img src="assets/images/uploads/icon-personalised.png"
+                                        alt="Luxury Personalised Design" class="mb-5">
+                                    <h3 class="h5">Luxury Personalised Design</h3>
+                                    <p class="mb-5">We’ll plan your trip around your specific interests, tastes and
+                                        preferences...</p>
+                                    <a href="#" class="btn-gradient">Learn more</a>
+                                </div>
                             </div>
+
+                            <div class="swiper-slide">
+                                <div class="section-3-item swiper-item text-center h-100">
+                                    <img src="assets/images/uploads/icon-experts.png" alt="20+ Year Experienced"
+                                        class="mb-5">
+                                    <h3 class="h5">20+ Year Experienced Savvy Experts</h3>
+                                    <p class="mb-5">Our expert guides and brilliant travel concierges are hand-picked...
+                                    </p>
+                                    <a href="#" class="btn-gradient">Contact</a>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="section-3-item swiper-item text-center h-100">
+                                    <img src="assets/images/uploads/icon-responsible.png" alt="Responsible Travel"
+                                        class="mb-5">
+                                    <h3 class="h5">Responsible Travel</h3>
+                                    <p class="mb-5">Our luxury trips are designed with responsible travel principles...
+                                    </p>
+                                    <a href="#" class="btn-gradient">See more</a>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="section-3-item swiper-item text-center h-100">
+                                    <img src="assets/images/uploads/icon-ai.png" alt="AI" class="mb-5">
+                                    <h3 class="h5">AI (Artificial Intelligence) Gurl Supreme</h3>
+                                    <p class="mb-5">Compare & Choose suitable Travel Experiences for your own...</p>
+                                    <a href="#" class="btn-gradient">Experience Now</a>
+                                </div>
+                            </div>
+
                         </div>
 
-                        <div class="col-12 col-md-6 col-lg-3">
-                            <div class="benefit-item text-center h-100">
-                                <img src="assets/images/uploads/icon-experts.png" alt="20+ Year Experienced"
-                                    class="mb-5">
-                                <h3 class="h5">20+ Year Experienced Savvy Experts</h3>
-                                <p class="mb-5">Our expert guides and brilliant travel concierges are hand-picked...</p>
-                                <a href="#" class="btn-gradient">Contact</a>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-3">
-                            <div class="benefit-item text-center h-100">
-                                <img src="assets/images/uploads/icon-responsible.png" alt="Responsible Travel"
-                                    class="mb-5">
-                                <h3 class="h5">Responsible Travel</h3>
-                                <p class="mb-5">Our luxury trips are designed with responsible travel principles...</p>
-                                <a href="#" class="btn-gradient">See more</a>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-3">
-                            <div class="benefit-item text-center h-100">
-                                <img src="assets/images/uploads/icon-ai.png" alt="AI (Artificial Intelligence)"
-                                    class="mb-5">
-                                <h3 class="h5">AI (Artificial Intelligence) Gurl Supreme</h3>
-                                <p class="mb-5">Compare & Choose suitable Travel Experiences for your own...</p>
-                                <a href="#" class="btn-gradient">Experience Now</a>
-                            </div>
-                        </div>
+                        <!-- Pagination -->
+                        <div class="swiper-pagination mt-4"></div>
                     </div>
 
                     <div class="text-right mt-5">
-                        Eind out more about what Luxtrips.vn can do for you
+                        Find out more about what Luxtrips.vn can do for you
                         <img class="ml-13" src="/assets/images/icons/arrow-next.svg" alt="">
                     </div>
                 </div>
             </section>
+
 
 
 
@@ -742,7 +765,8 @@
                         </div>
                     </div>
                     <p class="mt-5">* USD per person , based on double occupancy . Prices are subject to change . <br>
-                        As itineraries are custom - designed for you , the final price will vary and is also based on the month of travel .</p>
+                        As itineraries are custom - designed for you , the final price will vary and is also based on
+                        the month of travel .</p>
                 </div>
             </section>
 
@@ -909,8 +933,8 @@
                     <div class="accordion accordion-flush" id="accordionFlushExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingOne">
-                                <button class="section-title accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                <button class="section-title accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
                                     aria-controls="flush-collapseOne">
                                     More Information
                                 </button>

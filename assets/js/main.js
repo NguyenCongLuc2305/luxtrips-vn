@@ -4,26 +4,62 @@ fetch("/assets/partials/footer.html")
             .then(html => document.getElementById("footer").innerHTML = html);
 
 // banner swiper
+// const swiper = new Swiper(".section-1-swiper .swiper", {
+//   loop: true,
+//   speed: 1000,
+//   effect: "slide",
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+  
+// });
+
 const swiper = new Swiper(".section-1-swiper .swiper", {
   loop: true,
   speed: 1000,
   effect: "slide",
+  spaceBetween: 40,
+  // Navigation cho PC
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  
+  // Pagination cho mobile
+  pagination: {
+    el: ".swiper-pagination-section-1",
+    clickable: true,
+  },
+  
 });
 
 // swiper for
-const swiperHighlight = new Swiper(".highlight-swiper", {
+const swiperHighlight = new Swiper(".section__2-swiper", {
   loop: true,
   speed: 1000,
   effect: "slide",
+  spaceBetween: 40,
   pagination: {
-    el: ".swiper-pagination",
+    el: ".swiper-pagination-section-2",
     clickable: true,
   },
 });
+
+
+var benefitsSwiper = new Swiper(".section-3-swiper", {
+    loop: true,
+    spaceBetween: 40,
+    breakpoints: {
+        0: { 
+            slidesPerView: 2,
+        },
+        992: {
+            slidesPerView: 4
+        }
+    }
+});
+
 
 // banner swiper
 const section4Swiper = new Swiper(".section-4-swiper .swiper", {
@@ -37,8 +73,8 @@ const section4Swiper = new Swiper(".section-4-swiper .swiper", {
     prevEl: ".swiper4-prev",
   },
   breakpoints: {
-    768: { slidesPerView: 2 },
-    1024: { slidesPerView: 4 },
+    0: { slidesPerView: 2 },
+    992: { slidesPerView: 4 },
   },
 });
 
@@ -53,8 +89,8 @@ const section5Swiper = new Swiper(".section-5-swiper .swiper", {
     prevEl: ".swiper5-prev",
   },
   breakpoints: {
-    768: { slidesPerView: 2 },
-    1199: { slidesPerView: 5 }
+    0: { slidesPerView: 2 },
+    992: { slidesPerView: 5 }
   },
 });
 
@@ -69,8 +105,8 @@ const section6Swiper = new Swiper(".section-6-swiper .swiper", {
     prevEl: document.querySelector('.section-6-swiper .swiper6-prev'),
   },
   breakpoints: {
-    768: { slidesPerView: 2 },
-    1199: { slidesPerView: 3 }
+    0: { slidesPerView: 2 },
+    992: { slidesPerView: 3 }
   },
 });
 
@@ -140,54 +176,49 @@ seeMoreButtons.forEach((button) => {
   });
 });
 
-// Hot search keywords rotation
-const hotKeywords = [
-  "Hanoi Exclusive Day Trips",
-  "Halong Bay Seaplane Trips",
-  "Jetski",
-  "Ninh Binh Private Trips",
-  "Private Honeymoon Designs",
-  "Luxury Trains",
-  "Helicopter Tours",
-  "Private Yacht Charter",
-  "Spa Retreat Packages",
-  "Mountain Trekking Adventures",
-];
 
-let currentKeywordIndex = 0;
-const searchInput = document.getElementById("searchInput");
+// Tự động lấy hot keywords từ slide đầu tiên
+const hotKeywords = Array.from(
+  document.querySelectorAll("#hotSearches .search-tag")
+).map(tag => tag.textContent);
 
-function rotateKeyword() {
-  searchInput.placeholder = hotKeywords[currentKeywordIndex];
-  currentKeywordIndex = (currentKeywordIndex + 1) % hotKeywords.length;
-}
+let index = 0;
 
-// Rotate keywords every 3 seconds
-setInterval(rotateKeyword, 3000);
+// Lấy tất cả search inputs và popups
+const searchInputs = document.querySelectorAll(".search-input");
+const searchPopups = document.querySelectorAll(".search-popup");
 
-// Search popup functionality
-const searchPopup = document.getElementById("searchPopup");
+// Xoay placeholder cho tất cả inputs
+setInterval(() => {
+  searchInputs.forEach(input => {
+    input.placeholder = hotKeywords[index];
+  });
+  index = (index + 1) % hotKeywords.length;
+}, 3000);
 
-searchInput.addEventListener("focus", () => {
-  searchPopup.classList.add("active");
-});
-
-// Close popup when clicking outside
-document.addEventListener("click", (e) => {
-  if (!e.target.closest(".search-container")) {
-    searchPopup.classList.remove("active");
-  }
-});
-
-// Handle tag clicks
-document.querySelectorAll(".search-tag").forEach((tag) => {
-  tag.addEventListener("click", (e) => {
-    searchInput.value = e.target.textContent;
-    searchPopup.classList.remove("active");
+// Xử lý từng search container
+searchInputs.forEach((input, i) => {
+  const popup = searchPopups[i];
+  
+  // Mở popup khi focus
+  input.addEventListener("focus", () => {
+    popup.classList.add("active");
+  });
+  
+  // Xử lý click tag trong popup này
+  popup.querySelectorAll(".search-tag").forEach(tag => {
+    tag.addEventListener("click", () => {
+      input.value = tag.textContent;
+      popup.classList.remove("active");
+    });
   });
 });
 
-// Prevent popup from closing when clicking inside it
-searchPopup.addEventListener("click", (e) => {
-  e.stopPropagation();
+// Đóng tất cả popups khi click bên ngoài
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".search-container")) {
+    searchPopups.forEach(popup => {
+      popup.classList.remove("active");
+    });
+  }
 });

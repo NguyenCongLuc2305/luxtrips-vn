@@ -11,6 +11,10 @@ section {
   padding: 100px 0 0;
 }
 
+.site-content{
+    overflow-x: hidden;
+}
+
 .section-title {
   font-size: 1.875rem;
   font-weight: 600;
@@ -77,6 +81,7 @@ section {
   height: 45px;
   border-radius: 50%;
   cursor: pointer;
+  pointer-events: auto;
 }
 .swiper-navigation-icon{
     width: 12px !important;
@@ -362,6 +367,9 @@ section {
 .hero-subtitle {
   margin-bottom: 3.875rem;
 }
+.section-1-swiper .swiper{
+  overflow: visible;
+}
 
 .section-1-swiper .swiper-slide {
   display: flex;
@@ -380,6 +388,7 @@ section {
     transform: translateX(-50%);
     z-index: 99;
     position: absolute;
+    pointer-events: none;
 }
 
 .slide-1 {
@@ -469,23 +478,36 @@ section {
 .search-tag:hover {
   background: #e0e0e0;
 }
+.swiper-pagination-section-1 {
+  bottom: 40px !important;
+}
+
+.swiper-pagination-section-1 .swiper-pagination-bullet{
+  background-color: #fff;
+  opacity: 0.5;
+}
+.swiper-pagination-section-1 .swiper-pagination-bullet-active{
+  background-color: #fff;
+  opacity: 1;
+}
+
 
 /* ==================== 2. HIGHLIGHT - RED RIVER RAMBLE ==================== */
-.highlight-swiper {
+.section__2-swiper {
   padding-bottom: 70px;
 }
-.highlight-grid {
+.section__2-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 40px;
   align-items: center;
 }
-.highlight-content p {
+.section__2-content p {
   margin-bottom: 42px;
 }
 
-.highlight-img img {
-  border-radius: 12px;
+.section__2-img img {
+  width: 100%;
 }
 
 .btn-learn-more {
@@ -505,7 +527,7 @@ section {
 }
 
 /* ==================== 3. WHAT YOU'LL RECEIVE ==================== */
-.benefit-item {
+.section-3-item {
   min-height: 435px;
   display: flex;
   flex-wrap: wrap;
