@@ -287,6 +287,9 @@
   .hero-subtitle {
     font-size: 0.9rem;
   }
+  .search-popup, .search-popup-header, .search-popup-mobile{
+    min-width: auto;
+  }
 
   /* section 2 */
   .section__2-grid {
@@ -333,6 +336,10 @@
     padding: 11px 18px;
   }
 
+  .footer-bottom{
+    text-align: center;
+  }
+
   /* section 1 */
   .section__1-icon--mobile i {
     font-size: 27px;
@@ -347,6 +354,13 @@
     display: none !important;
   }
 }
+
+@media (max-width: 1300px) {
+  .lux-menu .nav{
+    gap: 0;
+  }
+}
+
 
 @media (max-width: 1400px) {
   .search-box {
