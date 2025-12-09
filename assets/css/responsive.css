@@ -89,7 +89,7 @@
   right: -100%;
   width: 100%;
   height: 100%;
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   z-index: 9999;
   transition: right 0.3s ease;
   overflow-y: auto;
@@ -100,7 +100,6 @@
 }
 
 .mobile-menu-header {
-  background: var(--bs-body-bg);
   padding: 2px 15px;
   display: flex;
   justify-content: space-between;
@@ -161,7 +160,6 @@
 .mobile-menu-content .menu-section-title {
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 15px;
   text-transform: uppercase;
 }
 .menu-section {
@@ -184,7 +182,6 @@
 .menu-section ul li a {
   color: var(--bs-secondary);
   text-decoration: none;
-  font-size: 14px;
   display: block;
 }
 
@@ -215,7 +212,6 @@
 .mobile-menu-footer {
   padding: 20px 15px 50px;
   border-top: 1px solid #ddd;
-  background: var(--bs-body-bg);
 }
 
 .newsletter-box {
@@ -273,6 +269,15 @@
 .section-4 .swiper-slide,
 .section-6 .swiper-slide {
   min-width: 300px;
+}
+
+@media (max-width: 768px) {
+  .hero-banner .swiper-slide,
+  .section-3 .swiper-slide,
+  .section-4 .swiper-slide,
+  .section-6 .swiper-slide {
+    min-width: 240px;
+  }
 }
 
 @media (max-width: 992px) {
