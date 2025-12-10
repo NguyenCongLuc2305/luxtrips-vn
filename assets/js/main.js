@@ -3,6 +3,46 @@ fetch("/assets/partials/footer.html")
   .then((res) => res.text())
   .then((html) => (document.getElementById("footer").innerHTML = html));
 
+// Show/hide elements on scroll
+window.addEventListener("scroll", function () {
+  const scrollPosition = window.scrollY;
+  const mobileBottomNav = document.getElementById("mobileBottomNav");
+  const floatingActions = document.getElementById("floatingActions");
+  const companyInfo = document.getElementById("companyInfo");
+
+  // Show when scrolled down 100px
+  if (scrollPosition > 100) {
+    mobileBottomNav.classList.add("show");
+    floatingActions.classList.add("show");
+    companyInfo.classList.add("show");
+  } else {
+    mobileBottomNav.classList.remove("show");
+    floatingActions.classList.remove("show");
+    companyInfo.classList.remove("show");
+  }
+});
+
+// Scroll to top functionality
+document.getElementById("scrollTop").addEventListener("click", function (e) {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+
+// Chat button
+document.getElementById("chatBtn").addEventListener("click", function (e) {
+  e.preventDefault();
+  alert("Mở chat support");
+});
+
+// Save button
+document.getElementById("saveBtn").addEventListener("click", function (e) {
+  e.preventDefault();
+  alert("Xem danh sách đã lưu (10 items)");
+});
+
 // Sticky menu
 
 const navbar = document.getElementById("headerSticky");
@@ -15,7 +55,6 @@ window.addEventListener("scroll", function () {
     navbar.classList.remove("sticky");
   }
 });
-
 
 const navbarMobile = document.getElementById("headerStickyMobile");
 const navbarMobileOffset = navbar.offsetTop;

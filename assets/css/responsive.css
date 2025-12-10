@@ -67,6 +67,7 @@
   font-size: 24px;
   cursor: pointer;
 }
+
 /* MOBILE MENU SIDEBAR */
 .mobile-menu-overlay {
   display: none;
@@ -157,11 +158,13 @@
 .mobile-menu-content {
   padding: 20px;
 }
+
 .mobile-menu-content .menu-section-title {
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
 }
+
 .menu-section {
   margin-bottom: 25px;
 }
@@ -264,6 +267,7 @@
   text-decoration: none;
   margin-top: 0;
 }
+
 .hero-banner .swiper-slide,
 .section-3 .swiper-slide,
 .section-4 .swiper-slide,
@@ -271,12 +275,147 @@
   min-width: 300px;
 }
 
+/* Mobile Bottom Navigation */
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: transform 0.4s ease-out;
+}
+
+.mobile-bottom-nav.show {
+  transform: translateY(0);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  flex: 1;
+  padding: 5px;
+  transition: all 0.3s;
+}
+
+.nav-item:hover {
+  color: #ff6b6b;
+}
+
+.nav-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.nav-label {
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Floating Action Buttons */
+.floating-actions {
+  position: fixed;
+  right: 20px;
+  bottom: 90px;
+  z-index: 999;
+  display: none;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.floating-actions.show {
+  display: flex;
+}
+
+.floating-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  position: relative;
+}
+
+.floating-btn:hover {
+  transform: scale(1.1);
+  color: white;
+}
+.floating-btn.save-btn{
+  margin-bottom: 20px;
+}
+
+.floating-btn .badge {
+  position: absolute;
+  top: -12px;
+  right: -6px;
+  background-color: #ffc107;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  width: 21px;
+  height: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+}
+.floating-btn .save-bag{
+  position: absolute;
+  bottom: -20px;
+  right: -0;
+  background-color: #ffc107;
+  color: white;
+  font-size: 10px;
+  border-radius: var(--bs-border-radius);
+  width: 40px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hide on desktop */
+@media (min-width: 768px) {
+
+  .mobile-bottom-nav,
+  .company-info {
+    display: none !important;
+  }
+}
+
+
 @media (max-width: 768px) {
+
   .hero-banner .swiper-slide,
   .section-3 .swiper-slide,
   .section-4 .swiper-slide,
   .section-6 .swiper-slide {
     min-width: 240px;
+  }
+
+  /* Show only on mobile */
+  .mobile-bottom-nav.show {
+    display: block;
   }
 }
 
@@ -284,6 +423,7 @@
   section {
     padding: 60px 0;
   }
+
   /* ==================== 1. HERO BANNER ==================== */
   .hero-title {
     font-size: 1.8rem;
@@ -292,8 +432,15 @@
   .hero-subtitle {
     font-size: 0.9rem;
   }
-  .search-popup, .search-popup-header, .search-popup-mobile{
+
+  .search-popup,
+  .search-popup-header,
+  .search-popup-mobile {
     min-width: auto;
+  }
+
+  .footer-info {
+    text-align: center;
   }
 
   /* section 2 */
@@ -305,6 +452,7 @@
   .section__2-img {
     order: 2;
   }
+
   .section__2-img img {
     width: 100%;
   }
@@ -320,7 +468,7 @@
 }
 
 @media (max-width: 1199px) {
-  .lux-navbar > .container-fluid {
+  .lux-navbar>.container-fluid {
     display: none !important;
   }
 
@@ -333,15 +481,17 @@
   .show-mobile {
     display: flex;
   }
+
   .search-container {
     width: 100%;
     max-width: none;
   }
+
   .btn-gradient {
     padding: 11px 18px;
   }
 
-  .footer-bottom{
+  .footer-bottom {
     text-align: center;
   }
 
@@ -353,6 +503,7 @@
 }
 
 @media (min-width: 1200px) {
+
   .mobile-header,
   .swiper-pagination-section-1,
   .show-mobile {
@@ -361,7 +512,7 @@
 }
 
 @media (max-width: 1300px) {
-  .lux-menu .nav{
+  .lux-menu .nav {
     gap: 0;
   }
 }
@@ -371,6 +522,7 @@
   .search-box {
     margin-right: 15px;
   }
+
   .navbar-brand {
     font-size: 30px;
   }
