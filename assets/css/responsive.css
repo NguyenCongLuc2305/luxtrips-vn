@@ -25,6 +25,7 @@
   margin: 0 15px;
   /* max-width: 200px; */
   min-height: 35px;
+  position: relative;
 }
 
 .mobile-search input {
@@ -268,7 +269,7 @@
   margin-top: 0;
 }
 
-.hero-banner .swiper-slide,
+.section-1-banner .swiper-slide,
 .section-3 .swiper-slide,
 .section-4 .swiper-slide,
 .section-6 .swiper-slide {
@@ -285,11 +286,13 @@
   z-index: 1000;
   transform: translateY(100%);
   transition: transform 0.4s ease-out;
+  border-top: .5px solid #222;
 }
 
 .mobile-bottom-nav.show {
   transform: translateY(0);
 }
+
 
 .mobile-bottom-nav.show .nav-top-bottom {
   opacity: 1;
@@ -309,8 +312,6 @@
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  color: #333;
-  padding: 5px;
   transition: all 0.3s;
 }
 
@@ -319,18 +320,60 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 5px;
+  background-color: #fff;
+  border-radius: 50%;
 }
 
 .mobile-bottom-nav .nav-top-bottom {
-  margin-top: -20px;
+  margin-top: -25px;
   opacity: 0;
   transition: all .1s ease;
+  position: relative;
 }
 
-.mobile-bottom-nav .icon-top-bottom-mobile img {
-  border: 5px solid white;
-  border-radius: 100%;
-  background-color: white;
+.mobile-bottom-nav .nav-top-bottom img {
+  position: relative;
+  z-index: 3;
+}
+
+.mobile-bottom-nav .icon-top-bottom-mobile {
+  position: relative;
+}
+
+.mobile-bottom-nav .nav-item.active .not-current,
+.mobile-bottom-nav .nav-item .current-page {
+  display: none;
+}
+
+.mobile-bottom-nav .nav-item.active .current-page {
+  display: block;
+}
+
+.mobile-bottom-nav .icon-top-bottom-mobile::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 51px;
+  border: .5px solid #222;
+  border-radius: 50%;
+  pointer-events: none;
+  background-color: #fff;
+}
+
+.mobile-bottom-nav .icon-top-bottom-mobile::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 37px;
+  background-color: #fff;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .mobile-bottom-nav .nav-label {
@@ -415,7 +458,7 @@
 
 @media (max-width: 768px) {
 
-  .hero-banner .swiper-slide,
+  .section-1-banner .swiper-slide,
   .section-3 .swiper-slide,
   .section-4 .swiper-slide,
   .section-6 .swiper-slide {
@@ -429,7 +472,15 @@
     padding: 60px 0;
   }
 
-  /* ==================== 1. HERO BANNER ==================== */
+  /* ==================== 1. section-1 BANNER ==================== */
+  .section-1-title {
+    font-size: 1.8rem;
+  }
+
+  .section-1-subtitle {
+    font-size: 0.9rem;
+  }
+
   .search-popup,
   .search-popup-header,
   .search-popup-mobile {
@@ -438,6 +489,14 @@
 
   .footer-info {
     text-align: center;
+  }
+
+  .mobile-search {
+    position: static;
+  }
+
+  .search-popup-mobile {
+    margin: 0 15px;
   }
 
   /* section 2 */
@@ -463,10 +522,14 @@
     margin-top: 0;
   }
 
-  .section-6-product-2 .trustpilot-header{
+  .section-6-product-2 .trustpilot-header {
     margin-bottom: 30px;
   }
-  
+
+  .section-2-product .destinations-info {
+    margin-top: 40px;
+  }
+
 }
 
 @media (max-width: 1199px) {
@@ -477,6 +540,7 @@
     margin-top: 0;
     gap: 0;
   }
+
   .g-50px {
     --bs-gutter-x: 1.875rem;
     --bs-gutter-y: 1.875rem;
@@ -495,12 +559,22 @@
   }
 
   .mobile-header,
+  #home-page .swiper-pagination-section-1,
   .show-mobile {
     display: flex;
   }
 
-  .site-content{
+  .site-content {
     padding-top: 74px;
+  }
+
+  .section-1-banner .swiper-slide,
+  .section-1-banner .swiper-slide img {
+    min-height: 485px;
+  }
+
+  .section-title {
+    font-size: 1.625rem;
   }
 
   .search-container {
@@ -522,13 +596,21 @@
     font-weight: bolder;
   }
 
-  .section-title {
-    font-size: 26px;
-  }
-
   /* Show only on mobile */
   .mobile-bottom-nav.show {
     display: block;
+  }
+
+  .footer-info {
+    padding-bottom: 100px !important;
+  }
+
+  .section-3__product-3 .feature-number {
+    font-size: 30px;
+  }
+
+  .section-3__product-3 .feature-text h4 {
+    font-size: 16px;
   }
 }
 
@@ -540,9 +622,9 @@
   }
 
   .mobile-header,
-  .swiper-pagination-section-1,
+  #home-page .swiper-pagination-section-1,
   .show-mobile {
-    display: none !important;
+    display: none;
   }
 }
 

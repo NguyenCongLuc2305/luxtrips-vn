@@ -37,17 +37,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const scrollPosition = window.scrollY;
     const mobileBottomNav = document.getElementById("mobileBottomNav");
     const floatingActions = document.getElementById("floatingActions");
-    const companyInfo = document.getElementById("companyInfo");
 
-    if (mobileBottomNav && floatingActions && companyInfo) {
+    if (mobileBottomNav && floatingActions) {
       if (scrollPosition > 100) {
         mobileBottomNav.classList.add("show");
         floatingActions.classList.add("show");
-        companyInfo.classList.add("show");
       } else {
         mobileBottomNav.classList.remove("show");
         floatingActions.classList.remove("show");
-        companyInfo.classList.remove("show");
       }
     }
   });
@@ -74,12 +71,28 @@ document.getElementById("saveBtn").addEventListener("click", function (e) {
   alert("Xem danh sách đã lưu (10 items)");
 });
 
+
+/// demo chuyển icon với current page 
+document.addEventListener("DOMContentLoaded", function() {
+    const currentPage = location.pathname.split("/").slice(-1)[0]; // lấy tên file hiện tại
+    
+    // Nếu đang ở trang chủ (thường là index.html hoặc rỗng)
+    if (currentPage === "index.html" || currentPage === "" || currentPage === "/") {
+        document.getElementById("home").classList.add("active");
+    }
+    // Nếu đang ở trends.html
+    if (currentPage === "trends.html") {
+        document.getElementById("trends").classList.add("active");
+    }
+});
+
+
 // swiper
 const swiper = new Swiper(".section-1-swiper .swiper", {
   loop: true,
   speed: 1000,
   effect: "slide",
-  spaceBetween: 40,
+  spaceBetween: 30,
   // Navigation cho PC
   navigation: {
     nextEl: ".swiper-button-next",
@@ -98,7 +111,7 @@ const swiperHighlight = new Swiper(".section__2-swiper", {
   loop: true,
   speed: 1000,
   effect: "slide",
-  spaceBetween: 40,
+  spaceBetween: 30,
   pagination: {
     el: ".swiper-pagination-section-2",
     clickable: true,
@@ -107,7 +120,7 @@ const swiperHighlight = new Swiper(".section__2-swiper", {
 
 var benefitsSwiper = new Swiper(".section-3-swiper", {
   loop: true,
-  spaceBetween: 40,
+  spaceBetween: 30,
   breakpoints: {
     0: {
       slidesPerView: 2,
@@ -121,7 +134,7 @@ var benefitsSwiper = new Swiper(".section-3-swiper", {
 /// product-2
 const reviewsSwiper = new Swiper(".reviewsSwiper .swiper", {
   slidesPerView: 1,
-  spaceBetween: 40,
+  spaceBetween: 30,
   loop: true,
   navigation: {
     nextEl: ".swiper-button-next-review-product",
@@ -140,11 +153,11 @@ const reviewsSwiper = new Swiper(".reviewsSwiper .swiper", {
 });
 
 // banner swiper
-const section4Swiper = new Swiper(".section-4-swiper .swiper", {
+const section4Swiper = new Swiper("#section-4-swiper .swiper", {
   loop: true,
   speed: 1000,
   slidesPerView: 1,
-  spaceBetween: 40,
+  spaceBetween: 30,
   effect: "slide",
   navigation: {
     nextEl: ".swiper4-next",
@@ -156,11 +169,59 @@ const section4Swiper = new Swiper(".section-4-swiper .swiper", {
   },
 });
 
+const section4SwiperProduct2 = new Swiper("#section-4__product--group-2 .swiper", {
+  loop: true,
+  speed: 1000,
+  slidesPerView: 1,
+  spaceBetween: 30,
+  effect: "slide",
+  navigation: {
+    nextEl: ".swiper4__product-2--next",
+    prevEl: ".swiper4__product-2--prev",
+  },
+  breakpoints: {
+    0: { slidesPerView: 2 },
+    992: { slidesPerView: 4 },
+  },
+});
+
+const section4SwiperProduct3 = new Swiper("#section-4__product--group-3 .swiper", {
+  loop: true,
+  speed: 1000,
+  slidesPerView: 1,
+  spaceBetween: 30,
+  effect: "slide",
+  navigation: {
+    nextEl: ".swiper4__product-3--next",
+    prevEl: ".swiper4__product-3--prev",
+  },
+  breakpoints: {
+    0: { slidesPerView: 2 },
+    992: { slidesPerView: 4 },
+  },
+});
+
+const product3Swiper = new Swiper("#product-3__swiper .swiper", {
+  loop: true,
+  speed: 1000,
+  slidesPerView: 1,
+  spaceBetween: 30,
+  effect: "slide",
+  navigation: {
+    nextEl: ".product-3__swiper--next",
+    prevEl: ".product-3__swiper--prev",
+  },
+  breakpoints: {
+    0: { slidesPerView: 2 },
+    992: { slidesPerView: 4 },
+  },
+});
+
 const section5Swiper = new Swiper(".section-5-swiper .swiper", {
   loop: true,
   speed: 1000,
   slidesPerView: 1,
-  spaceBetween: 40,
+  spaceBetween: 30,
   effect: "slide",
   navigation: {
     nextEl: ".swiper5-next",
@@ -176,7 +237,7 @@ const section6Swiper = new Swiper(".section-6-swiper .swiper", {
   loop: true,
   speed: 1000,
   slidesPerView: 1,
-  spaceBetween: 40,
+  spaceBetween: 30,
   effect: "slide",
   navigation: {
     nextEl: document.querySelector(".section-6-swiper .swiper6-next"),

@@ -205,7 +205,7 @@
                 <img src="assets/images/logo/logo-header.png" width="118" height="20" alt="logo-header">
             </a>
 
-            <div class="mobile-search position-relative search-container-mobile">
+            <div class="mobile-search search-container-mobile">
                 <input type="text" class="form-control border-0 p-8px text-12 search-input-mobile"
                     placeholder="Search personalised travel experiences">
 
@@ -408,8 +408,58 @@
 
         <!-- body -->
         <main class="site-content">
+            <!--------------------- 1. section-1 BANNER --------------------->
+            <section class="section-1-banner p-0">
+                <div class="section-1-section">
+                    <div class="section-1-swiper">
+                        <!-- pagination -->
+                        <div class="swiper-pagination swiper-pagination-section-1"></div>
+                        <!-- Swiper container -->
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="/assets/images/uploads/3. PRODUCT CATEGORY 2-113.png" alt="slide 1">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1600"
+                                        alt="slide 2">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1600"
+                                        alt="slide 3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--------------------- section-2 --------------------->
+            <section class="section-2-product">
+                <div class="container">
+                    <div class="breadcrumb">
+                        <span>Home</span>
+                        <span class="px-2">/</span>
+                        <a class="breadcrumb-link text-body" href="#">Destinations</a>
+                    </div>
+                    <div class="section-2-product__content">
+                        <h2 class="section-title">Trip Types & Travel Styles</h2>
+                        <p class="desc pre-line">Finding the travel style that is right for you is an essential part of
+                            designing the perfect
+                            tailor-made tour. To ignite your imagination and highlight exciting experiences you may not
+                            have considered, we've created a variety of travel styles that will make planning more fun.
+
+                            Browse below at the range of possibilities and then contact our experts - we'll marry your
+                            style with the perfect destination, a tailored mix of activities and experiences and a pace
+                            that is just right for you.
+                        </p>
+                        <a href="#" class="btn-gradient inline-block mt-5">Request a Quote</a>
+                    </div>
+                </div>
+            </section>
+
             <!--------------------- 3. SECTION 3 --------------------->
-            <section class="section-3-product-2">
+            <section class="section-3-product-2 pt-0">
                 <div class="container">
                     <div class="row g-40px">
                         <div class="col-md-6">
@@ -535,7 +585,7 @@
             </section>
 
             <!--------------------- 7. ABOUT TEXT + CTA --------------------->
-            <section class="section-about">
+            <section class="section-7">
                 <div class="container">
                     <div class="accordion accordion-flush" id="accordionFlushExample">
                         <div class="accordion-item">
@@ -554,6 +604,18 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <!-- section 8 breadcrumb -->
+            <section>
+                <div class="container">
+                    <div class="breadcrumb">
+                        <span>Home</span>
+                        <span class="px-2">/</span>
+                        <a class="breadcrumb-link text-body" href="#">Destinations</a>
+                    </div>
+                    <div class="border-top border-secondary"></div>
                 </div>
             </section>
 
@@ -621,7 +683,7 @@
                 </div>
             </section>
 
-
+            <!-- section 6 Excellent -->
             <section class="section-6-product-2">
                 <div class="container">
                     <div class="trustpilot-section row">
@@ -749,9 +811,12 @@
         <!-- Mobile Bottom Navigation -->
         <div class="mobile-bottom-nav" id="mobileBottomNav">
             <div class="nav-container">
-                <a href="#" class="nav-item">
+                <a href="index.html" class="nav-item" id="home">
                     <div class="nav-icon">
-                        <img src="/assets/images/icons/homepage - mobile.png" width="25" height="25" alt="icon home">
+                        <img class="current-page" src="/assets/images/icons/homepage - mobile.png" width="25"
+                            height="25" alt="icon home">
+                        <img class="not-current" src="/assets/images/icons/homepage-mobile-white.png" width="25"
+                            height="25" alt="icon home">
                     </div>
                     <div class="nav-label">Home</div>
                 </a>
@@ -762,9 +827,12 @@
                     </div>
                     <div class="nav-label">Recent Views</div>
                 </a>
-                <a href="#" class="nav-item nav-top-bottom">
+                <a href="trends.html" class="nav-item nav-top-bottom" id="trends">
                     <div class="nav-icon icon-top-bottom-mobile">
-                        <img src="/assets/images/icons/trends - mobile.png" width="45" height="45" alt="trends">
+                        <img class="not-current" src="/assets/images/icons/trends - mobile.png" width="50" height="50"
+                            alt="trends">
+                        <img class="current-page" src="/assets/images/icons/trends-mobile-trend.png" width="50"
+                            height="50" alt="trends">
                     </div>
                     <div class="nav-label">Trends</div>
                 </a>

@@ -8,27 +8,32 @@
 
 /* ==================== SECTION COMMON ==================== */
 .g-40px {
-    --bs-gutter-x: 2.5rem;
-    --bs-gutter-y: 2.5rem;
-    row-gap: 2.5rem;
-    margin-top: 0;
-    gap: 0;
+  --bs-gutter-x: 2.5rem;
+  --bs-gutter-y: 2.5rem;
+  row-gap: 2.5rem;
+  margin-top: 0;
+  gap: 0;
 }
 
 .g-50px {
-    --bs-gutter-x: 3.125rem;
-    --bs-gutter-y: 3.125rem;
-    row-gap: 3.125rem;
-    margin-top: 0;
-    gap: 0;
+  --bs-gutter-x: 3.125rem;
+  --bs-gutter-y: 3.125rem;
+  row-gap: 3.125rem;
+  margin-top: 0;
+  gap: 0;
+}
+
+.g-24px {
+  --bs-gutter-y: 1.5rem;
 }
 
 section {
   padding: 50px 0;
 }
- 
+
 .site-content {
-  padding-top: 118px; /* chieu cao header */
+  padding-top: 118px;
+  /* chieu cao header */
   overflow-x: hidden;
 }
 
@@ -36,7 +41,7 @@ section {
   font-size: 1.875rem;
   font-weight: 600;
   color: var(--bs-primary);
-  margin-bottom: 0.75rem;
+  margin-bottom: 2.5rem;
   text-align: left;
 }
 
@@ -72,7 +77,7 @@ section {
   padding: 13px 35px;
   border-radius: var(--bs-border-radius);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 14px;
   cursor: pointer;
   transition: all 0.3s;
   text-decoration: none;
@@ -304,6 +309,7 @@ section {
 /* khi sticky */
 #headerSticky {
   position: fixed;
+  height: 118px;
 }
 
 #headerStickyMobile {
@@ -314,6 +320,11 @@ section {
   z-index: 9999;
   width: 100%;
   animation: slideDown 0.4s ease;
+  height: 74px;
+}
+
+#navbarPlaceholder {
+  height: 0px;
 }
 
 @keyframes slideDown {
@@ -412,6 +423,10 @@ section {
   background-color: #4b4b4b;
 }
 
+.megamenu .mega-panel li:hover a {
+  color: var(--bs-primary);
+}
+
 .megamenu .mega-panel li:hover::before {
   background-color: var(--bs-primary);
 }
@@ -495,13 +510,13 @@ section {
   color: var(--bs-primary);
 }
 
-/* ==================== 1. HERO BANNER ==================== */
-.hero-section {
+/* ==================== 1. section-1 BANNER ==================== */
+.section-1-section {
   position: relative;
   z-index: 9;
 }
 
-.hero-subtitle {
+.section-1-subtitle {
   margin-bottom: 3.875rem;
 }
 
@@ -518,6 +533,13 @@ section {
   min-height: 460px;
 }
 
+.section-1-swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 460px;
+}
+
 .section-1-navigation {
   position: absolute;
   width: 100%;
@@ -530,8 +552,17 @@ section {
   pointer-events: none;
 }
 
+.image img {
+  width: 100%;
+  height: 100%;
+}
+
 .slide-1 {
   background-image: url("/assets/images/uploads/hero-bg-1.png");
+}
+
+#product-category-3 .slide-1 {
+  background-image: url("/assets/images/uploads/4.\ PRODUCT\ CATEGORY\ 3-139.png");
 }
 
 .slide-2 {
@@ -695,9 +726,6 @@ section {
 }
 
 /* ==================== 4. TRENDS  ==================== */
-.section-4-swiper {
-  position: relative;
-}
 
 .section-trends {
   background: #000;
@@ -845,14 +873,6 @@ section {
   color: #000;
 }
 
-.about-content p {
-  font-size: 1.1rem;
-  line-height: 1.9;
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: center;
-}
-
 /* ==================== 8. FINAL CTA ==================== */
 
 .btn-cta-large {
@@ -876,13 +896,83 @@ section {
   font-size: 1.4rem;
 }
 
+
+
+/* ================= production category 1 ================== */
+.section-2-product .destinations-info {
+  min-width: 350px;
+  background-color: #ffefd5;
+  padding: 20px 25px;
+  border-radius: var(--bs-border-radius);
+}
+
+.section-4-product-1 .sub-title {
+  padding: 50px 0 20px;
+}
+
+.section-3-product .destination-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--bs-border-radius);
+  height: 100%;
+  display: block;
+}
+
+.section-3-product .destination-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.section-3-product .destination-card:hover img {
+  transform: scale(1.05);
+}
+
+.section-3-product .destination-label {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.section-4-product .destination-list {
+  list-style: none;
+  padding: 0;
+}
+
+.section-4-product .destination-list li {
+  margin-bottom: 20px;
+}
+
+.destination-list li:before {
+  content: "• ";
+  color: #333;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.destination-list a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.destination-list a:hover {
+  color: var(--bs-primary);
+}
+
 /* ====================== page product category 2 =================== */
 
 
 /* ----- section 3 ------ */
-.section-3-product-2 .section-title{
+.section-3-product-2 .section-title {
   margin-bottom: 0;
 }
+
 .section-3-product-2 .card-item {
   position: relative;
   overflow: hidden;
@@ -928,7 +1018,7 @@ section {
   color: #191919;
 }
 
-.section-6-product-2 .swiper{
+.section-6-product-2 .swiper {
   height: auto;
 }
 
@@ -944,7 +1034,8 @@ section {
   margin-bottom: 12px;
   line-height: 1.4;
 }
-.section-6-product-2 .review-stars{
+
+.section-6-product-2 .review-stars {
   margin-bottom: 12px;
 }
 
@@ -962,9 +1053,100 @@ section {
 .section-6-product-2 .author-name {
   color: #666;
 }
-.swiper-button-next-review-product{
+
+.swiper-button-next-review-product {
   right: -70px;
 }
-.swiper-button-next-next-product{
+
+.swiper-button-next-next-product {
   left: -70px;
+}
+
+
+/* ======================= product 3 ====== */
+
+
+.section-3__product-3 .feature-item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.section-3__product-3 .feature-number {
+  color: var(--bs-primary);
+  font-size: 40px;
+  font-weight: 600;
+  margin-right: 15px;
+}
+
+.section-3__product-3 .feature-text h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.section-4__product-3 .transport-card {
+  position: relative;
+  border-radius: var(--bs-border-radius);
+  overflow: hidden;
+  cursor: pointer;
+  display: block;
+}
+
+.section-4__product-3 .transport-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section-4__product-3 .transport-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 20px;
+}
+.section-4__product-3 .swiper-slide{
+  min-width: 250px;
+}
+
+.section-4__product-3 .transport-title {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.btn-color-primary {
+  background-color: var(--bs-primary);
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: var(--bs-border-radius);
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-color-primary:hover {
+  background-color: var(--bs-secondary);
+}
+
+
+.vimeo-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    border-radius: var(--bs-border-radius);
+    overflow: hidden;
+}
+
+.vimeo-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
 }

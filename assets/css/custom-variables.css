@@ -15,7 +15,7 @@
     --bs-body-font-size: 16px;
     --bs-body-font-weight: 400;
     --bs-body-line-height: 1.75;
-    --bs-body-color: #333;
+    --bs-body-color: #2D2D2B;
     --bs-body-bg: #fff;
     --bs-gutter-x: 1.875rem;
     --bs-gutter-y: 1.875rem;
@@ -25,6 +25,10 @@
 
     /* ====== SPACING ====== */
     --spacing-section: 80px;
+}
+.row {
+    --bs-gutter-x: 1.875rem;
+    --bs-gutter-y: 1.875rem;
 }
 
 body{
@@ -37,8 +41,14 @@ body{
 
 a {
     cursor: pointer;
+    color: var(--bs-body-color);
+    transition: all .3s ease;
 }
 
+
+a:hover{
+    color: var(--bs-primary);
+}
 .cursor-pointer {
     cursor: pointer;
 }
@@ -76,6 +86,12 @@ a {
 .text-secondary {
     color: var(--bs-secondary) !important;
 }
+.text-body{
+    color: var(--bs-body-color);
+}
+.text-decoration-none{
+    text-decoration: none;
+}
 /* text */
 
 .text-12 {
@@ -104,6 +120,9 @@ a {
 .text-28 {
     font-size: 28px;
 }
+.text-30 {
+    font-size: 30px;
+}
 
 .fw-bold {
     font-weight: bold;
@@ -119,6 +138,10 @@ a {
 }
 .text-uppercase {
     text-transform: uppercase;
+}
+
+.line-height-1{
+    line-height: 1;
 }
 
 
@@ -147,6 +170,15 @@ a {
     padding-left: 15px;
     padding-right: 15px;
 }
+.py-24px{
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.py-30px{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
 
 /* margin */
 
@@ -158,4 +190,8 @@ a {
 }
 .mb-15px{
     margin-bottom: 15px;
+}
+
+.pre-line {
+    white-space: pre-line;
 }
