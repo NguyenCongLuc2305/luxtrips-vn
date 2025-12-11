@@ -290,7 +290,8 @@
 .mobile-bottom-nav.show {
   transform: translateY(0);
 }
-.mobile-bottom-nav.show .nav-top-bottom{
+
+.mobile-bottom-nav.show .nav-top-bottom {
   opacity: 1;
 }
 
@@ -320,15 +321,16 @@
   margin-bottom: 5px;
 }
 
-.mobile-bottom-nav .nav-top-bottom{
+.mobile-bottom-nav .nav-top-bottom {
   margin-top: -20px;
   opacity: 0;
   transition: all .1s ease;
 }
-.mobile-bottom-nav .icon-top-bottom-mobile img{
-   border: 5px solid white;
-   border-radius: 100%;
-   background-color: white;
+
+.mobile-bottom-nav .icon-top-bottom-mobile img {
+  border: 5px solid white;
+  border-radius: 100%;
+  background-color: white;
 }
 
 .mobile-bottom-nav .nav-label {
@@ -371,7 +373,8 @@
   transform: scale(1.1);
   color: white;
 }
-.floating-btn.save-btn{
+
+.floating-btn.save-btn {
   margin-bottom: 20px;
 }
 
@@ -390,7 +393,8 @@
   justify-content: center;
   border: 1px solid white;
 }
-.floating-btn .save-bag{
+
+.floating-btn .save-bag {
   position: absolute;
   bottom: -20px;
   right: -0;
@@ -406,9 +410,7 @@
 }
 
 /* Hide on desktop */
-@media (min-width: 768px) {
-
-}
+@media (min-width: 768px) {}
 
 
 @media (max-width: 768px) {
@@ -428,14 +430,6 @@
   }
 
   /* ==================== 1. HERO BANNER ==================== */
-  .hero-title {
-    font-size: 1.8rem;
-  }
-
-  .hero-subtitle {
-    font-size: 0.9rem;
-  }
-
   .search-popup,
   .search-popup-header,
   .search-popup-mobile {
@@ -468,9 +462,29 @@
   .section-5-swiper .swiper-slide:nth-child(even) {
     margin-top: 0;
   }
+
+  .section-6-product-2 .trustpilot-header{
+    margin-bottom: 30px;
+  }
+  
 }
 
 @media (max-width: 1199px) {
+  .g-40px {
+    --bs-gutter-x: 2.5rem;
+    --bs-gutter-y: 2.5rem;
+    row-gap: 2.5rem;
+    margin-top: 0;
+    gap: 0;
+  }
+  .g-50px {
+    --bs-gutter-x: 1.875rem;
+    --bs-gutter-y: 1.875rem;
+    row-gap: 1.875rem;
+    margin-top: 0;
+    gap: 0;
+  }
+
   .lux-navbar>.container-fluid {
     display: none !important;
   }
@@ -483,6 +497,10 @@
   .mobile-header,
   .show-mobile {
     display: flex;
+  }
+
+  .site-content{
+    padding-top: 74px;
   }
 
   .search-container {
@@ -503,6 +521,11 @@
     font-size: 27px;
     font-weight: bolder;
   }
+
+  .section-title {
+    font-size: 26px;
+  }
+
   /* Show only on mobile */
   .mobile-bottom-nav.show {
     display: block;

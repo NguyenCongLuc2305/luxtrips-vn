@@ -17,7 +17,8 @@
     --bs-body-line-height: 1.75;
     --bs-body-color: #333;
     --bs-body-bg: #fff;
-    --bs-gutter-x: 1.875 rem;
+    --bs-gutter-x: 1.875rem;
+    --bs-gutter-y: 1.875rem;
 
     /* ====== BORDER ====== */
     --bs-border-radius: 5px;
@@ -151,4 +152,10 @@ a {
 
 .mr-19 {
     margin-right: 19px;
+}
+.mb-0{
+    margin-bottom: 0;
+}
+.mb-15px{
+    margin-bottom: 15px;
 }

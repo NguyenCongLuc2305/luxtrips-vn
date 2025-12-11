@@ -3,23 +3,54 @@ fetch("/assets/partials/footer.html")
   .then((res) => res.text())
   .then((html) => (document.getElementById("footer").innerHTML = html));
 
-// Show/hide elements on scroll
-window.addEventListener("scroll", function () {
-  const scrollPosition = window.scrollY;
-  const mobileBottomNav = document.getElementById("mobileBottomNav");
-  const floatingActions = document.getElementById("floatingActions");
-  const companyInfo = document.getElementById("companyInfo");
+// Sticky pc
+// window.addEventListener("scroll", function () {
+//   const navbar = document.getElementById("headerSticky");
+//   const placeholder = document.getElementById("navbarPlaceholder");
+//   const navbarHeight = navbar.offsetHeight;
+//   if (window.scrollY > 5) {
+//     navbar.classList.add("sticky");
+//     placeholder.style.height = navbarHeight + "px"; // GIỮ CHỖ KHÔNG GIẬT
+//   } else {
+//     navbar.classList.remove("sticky");
+//     placeholder.style.height = "0px";
+//   }
+// });
 
-  // Show when scrolled down 100px
-  if (scrollPosition > 100) {
-    mobileBottomNav.classList.add("show");
-    floatingActions.classList.add("show");
-    companyInfo.classList.add("show");
-  } else {
-    mobileBottomNav.classList.remove("show");
-    floatingActions.classList.remove("show");
-    companyInfo.classList.remove("show");
-  }
+// // sticky mobile
+// window.addEventListener("scroll", function () {
+//   const navbarMobile = document.getElementById("headerStickyMobile");
+//   const placeholderMobile = document.getElementById("navbarPlaceholderMobile");
+//   const navbarMobileHeight = navbarMobile.offsetHeight;
+//   if (window.scrollY > 10) {
+//     navbarMobile.classList.add("sticky");
+//     placeholderMobile.style.height = navbarMobileHeight + "px"; // GIỮ CHỖ KHÔNG GIẬT
+//   } else {
+//     navbarMobile.classList.remove("sticky");
+//     placeholderMobile.style.height = "0px";
+//   }
+// });
+
+// mobileBottomNav
+document.addEventListener("DOMContentLoaded", () => {
+  window.addEventListener("scroll", function () {
+    const scrollPosition = window.scrollY;
+    const mobileBottomNav = document.getElementById("mobileBottomNav");
+    const floatingActions = document.getElementById("floatingActions");
+    const companyInfo = document.getElementById("companyInfo");
+
+    if (mobileBottomNav && floatingActions && companyInfo) {
+      if (scrollPosition > 100) {
+        mobileBottomNav.classList.add("show");
+        floatingActions.classList.add("show");
+        companyInfo.classList.add("show");
+      } else {
+        mobileBottomNav.classList.remove("show");
+        floatingActions.classList.remove("show");
+        companyInfo.classList.remove("show");
+      }
+    }
+  });
 });
 
 // Scroll to top functionality
@@ -41,30 +72,6 @@ document.getElementById("chatBtn").addEventListener("click", function (e) {
 document.getElementById("saveBtn").addEventListener("click", function (e) {
   e.preventDefault();
   alert("Xem danh sách đã lưu (10 items)");
-});
-
-// Sticky menu
-
-const navbar = document.getElementById("headerSticky");
-const navbarOffset = navbar.offsetTop;
-
-window.addEventListener("scroll", function () {
-  if (window.pageYOffset >= navbarOffset) {
-    navbar.classList.add("sticky");
-  } else {
-    navbar.classList.remove("sticky");
-  }
-});
-
-const navbarMobile = document.getElementById("headerStickyMobile");
-const navbarMobileOffset = navbar.offsetTop;
-
-window.addEventListener("scroll", function () {
-  if (window.pageYOffset >= navbarMobileOffset) {
-    navbarMobile.classList.add("sticky");
-  } else {
-    navbarMobile.classList.remove("sticky");
-  }
 });
 
 // swiper
@@ -107,6 +114,27 @@ var benefitsSwiper = new Swiper(".section-3-swiper", {
     },
     992: {
       slidesPerView: 4,
+    },
+  },
+});
+
+/// product-2
+const reviewsSwiper = new Swiper(".reviewsSwiper .swiper", {
+  slidesPerView: 1,
+  spaceBetween: 40,
+  loop: true,
+  navigation: {
+    nextEl: ".swiper-button-next-review-product",
+    prevEl: ".swiper-button-prev-review-product",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    992: {
+      slidesPerView: 2,
+      spaceBetween: 30,
     },
   },
 });
