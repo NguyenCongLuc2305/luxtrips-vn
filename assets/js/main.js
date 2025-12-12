@@ -3,34 +3,6 @@ fetch("/assets/partials/footer.html")
   .then((res) => res.text())
   .then((html) => (document.getElementById("footer").innerHTML = html));
 
-// Sticky pc
-// window.addEventListener("scroll", function () {
-//   const navbar = document.getElementById("headerSticky");
-//   const placeholder = document.getElementById("navbarPlaceholder");
-//   const navbarHeight = navbar.offsetHeight;
-//   if (window.scrollY > 5) {
-//     navbar.classList.add("sticky");
-//     placeholder.style.height = navbarHeight + "px"; // GIỮ CHỖ KHÔNG GIẬT
-//   } else {
-//     navbar.classList.remove("sticky");
-//     placeholder.style.height = "0px";
-//   }
-// });
-
-// // sticky mobile
-// window.addEventListener("scroll", function () {
-//   const navbarMobile = document.getElementById("headerStickyMobile");
-//   const placeholderMobile = document.getElementById("navbarPlaceholderMobile");
-//   const navbarMobileHeight = navbarMobile.offsetHeight;
-//   if (window.scrollY > 10) {
-//     navbarMobile.classList.add("sticky");
-//     placeholderMobile.style.height = navbarMobileHeight + "px"; // GIỮ CHỖ KHÔNG GIẬT
-//   } else {
-//     navbarMobile.classList.remove("sticky");
-//     placeholderMobile.style.height = "0px";
-//   }
-// });
-
 // mobileBottomNav
 document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", function () {
