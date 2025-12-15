@@ -61,191 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// swiper
-const swiper = new Swiper(".section-1-swiper .swiper", {
-  loop: true,
-  speed: 1000,
-  effect: "slide",
-  spaceBetween: 30,
-  // Navigation cho PC
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-
-  // Pagination cho mobile
-  pagination: {
-    el: ".swiper-pagination-section-1",
-    clickable: true,
-  },
-});
-
-// swiper for
-const swiperHighlight = new Swiper(".section__2-swiper", {
-  loop: true,
-  speed: 1000,
-  effect: "slide",
-  spaceBetween: 30,
-  pagination: {
-    el: ".swiper-pagination-section-2",
-    clickable: true,
-  },
-});
-
-var benefitsSwiper = new Swiper(".section-3-swiper", {
-  loop: true,
-  spaceBetween: 30,
-  breakpoints: {
-    0: {
-      slidesPerView: 2,
-    },
-    992: {
-      slidesPerView: 4,
-    },
-  },
-});
-
-/// product-2
-const reviewsSwiper = new Swiper(".reviewsSwiper .swiper", {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  loop: true,
-  navigation: {
-    nextEl: ".swiper-button-next-review-product",
-    prevEl: ".swiper-button-prev-review-product",
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-    992: {
-      slidesPerView: 2,
-      spaceBetween: 30,
-    },
-  },
-});
-
-// banner swiper
-const section4Swiper = new Swiper("#section-4-swiper .swiper", {
-  loop: true,
-  speed: 1000,
-  slidesPerView: 1,
-  spaceBetween: 30,
-  effect: "slide",
-  navigation: {
-    nextEl: ".swiper4-next",
-    prevEl: ".swiper4-prev",
-  },
-  breakpoints: {
-    0: { slidesPerView: 2 },
-    992: { slidesPerView: 4 },
-  },
-});
-
-const section4SwiperProduct2 = new Swiper(
-  "#section-4__product--group-2 .swiper",
-  {
-    loop: true,
-    speed: 1000,
-    slidesPerView: 1,
-    spaceBetween: 30,
-    effect: "slide",
-    navigation: {
-      nextEl: ".swiper4__product-2--next",
-      prevEl: ".swiper4__product-2--prev",
-    },
-    breakpoints: {
-      0: { slidesPerView: 2 },
-      992: { slidesPerView: 4 },
-    },
-  }
-);
-
-const section4SwiperProduct3 = new Swiper(
-  "#section-4__product--group-3 .swiper",
-  {
-    loop: true,
-    speed: 1000,
-    slidesPerView: 1,
-    spaceBetween: 30,
-    effect: "slide",
-    navigation: {
-      nextEl: ".swiper4__product-3--next",
-      prevEl: ".swiper4__product-3--prev",
-    },
-    breakpoints: {
-      0: { slidesPerView: 2 },
-      992: { slidesPerView: 4 },
-    },
-  }
-);
-
-const product3Swiper = new Swiper("#product-3__swiper .swiper", {
-  loop: true,
-  speed: 1000,
-  slidesPerView: 1,
-  spaceBetween: 30,
-  effect: "slide",
-  navigation: {
-    nextEl: ".product-3__swiper--next",
-    prevEl: ".product-3__swiper--prev",
-  },
-  breakpoints: {
-    0: { slidesPerView: 2 },
-    992: { slidesPerView: 4 },
-  },
-});
-
-const section5Swiper = new Swiper(".section-5-swiper .swiper", {
-  loop: true,
-  speed: 1000,
-  slidesPerView: 1,
-  spaceBetween: 30,
-  effect: "slide",
-  navigation: {
-    nextEl: ".swiper5-next",
-    prevEl: ".swiper5-prev",
-  },
-  breakpoints: {
-    0: { slidesPerView: 2 },
-    992: { slidesPerView: 5 },
-  },
-});
-
-const section6Swiper = new Swiper(".section-6-swiper .swiper", {
-  loop: true,
-  speed: 1000,
-  slidesPerView: 1,
-  spaceBetween: 30,
-  effect: "slide",
-  navigation: {
-    nextEl: document.querySelector(".section-6-swiper .swiper6-next"),
-    prevEl: document.querySelector(".section-6-swiper .swiper6-prev"),
-  },
-  breakpoints: {
-    0: { slidesPerView: 2 },
-    992: { slidesPerView: 3 },
-  },
-});
-
-
-const section3SubProduct1Swiper = new Swiper("#section-3__sub-product-1--swiper .swiper", {
-  loop: true,
-  speed: 1000,
-  slidesPerView: 1,
-  spaceBetween: 30,
-  effect: "slide",
-  navigation: {
-    nextEl: document.querySelector(".sub-product-1--next"),
-    prevEl: document.querySelector(".sub-product-1--prev"),
-  },
-  breakpoints: {
-    0: { slidesPerView: 3 },
-    992: { slidesPerView: 7 },
-  },
-});
-
 // Back to top (tuỳ chọn)
 window.addEventListener("scroll", function () {
   const backToTop = document.querySelector(".back-to-top");
@@ -431,4 +246,196 @@ function toggleContent() {
     btn.innerHTML =
       'See more <span class="arrow" id="arrow"><i class="fa-light fa-angle-right"></i></span>';
   }
+}
+
+
+// Mobile Filter Modal
+const mobileFilterBtn = document.getElementById("mobileFilterBtn");
+const mobileFilterEl = document.getElementById("mobileFilterModal");
+
+if (mobileFilterBtn && mobileFilterEl) {
+  const mobileFilterModal = new bootstrap.Modal(mobileFilterEl);
+
+  mobileFilterBtn.addEventListener("click", () => {
+    mobileFilterModal.show();
+  });
+}
+
+
+const sortDropdownToggle = document.getElementById("sortDropdownToggle")
+const sortDropdownMenu = document.getElementById("sortDropdownMenu")
+const sortSelectedText = document.getElementById("sortSelectedText")
+
+if (sortDropdownToggle && sortDropdownMenu) {
+  // Toggle dropdown
+  sortDropdownToggle.addEventListener("click", (e) => {
+    e.stopPropagation()
+    sortDropdownToggle.classList.toggle("active")
+    sortDropdownMenu.classList.toggle("show")
+  })
+
+  // Handle option selection
+  sortDropdownMenu.querySelectorAll(".sort-option").forEach((option) => {
+    option.addEventListener("click", (e) => {
+      const value = e.target.getAttribute("data-value")
+
+      // Update selected text
+      sortSelectedText.textContent = value
+
+      // Update active state
+      sortDropdownMenu.querySelectorAll(".sort-option").forEach((opt) => {
+        opt.classList.remove("active")
+      })
+      e.target.classList.add("active")
+
+      // Close dropdown
+      sortDropdownToggle.classList.remove("active")
+      sortDropdownMenu.classList.remove("show")
+
+      // Sort activities
+      sortActivities(value)
+    })
+  })
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!sortDropdownToggle.contains(e.target) && !sortDropdownMenu.contains(e.target)) {
+      sortDropdownToggle.classList.remove("active")
+      sortDropdownMenu.classList.remove("show")
+    }
+  })
+}
+
+// Clear Filters
+const clearFiltersBtn = document.getElementById("clearFilters")
+if (clearFiltersBtn) {
+  clearFiltersBtn.addEventListener("click", () => {
+    // Clear all checkboxes
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]')
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = false
+    })
+
+    // Apply filters (in this case, show all items)
+    applyFilters()
+  })
+}
+
+function sortActivities(sortType) {
+  const grid = document.getElementById("activityGrid")
+  const cards = Array.from(grid.children)
+
+  cards.sort((a, b) => {
+    // Get price from each card
+    const priceA = Number.parseFloat(a.querySelector(".price-amount").textContent.replace(/[$,]/g, ""))
+    const priceB = Number.parseFloat(b.querySelector(".price-amount").textContent.replace(/[$,]/g, ""))
+
+    // Get rating from each card (count stars)
+    const starsA = a.querySelectorAll(".stars").length
+    const starsB = b.querySelectorAll(".stars").length
+
+    switch (sortType) {
+      case "Latest":
+        return 0 // Keep current order for latest
+      case "Oldest":
+        return 0 // Reverse order for oldest
+      case "Most Luxury":
+        return priceB - priceA // Highest price first
+      case "Regular":
+        return priceA - priceB // Lowest price first
+      case "Relevance":
+      default:
+        return 0 // Default order
+    }
+  })
+
+  // Re-append sorted cards
+  cards.forEach((card) => grid.appendChild(card))
+}
+
+// Filter Functionality
+function applyFilters() {
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked')
+  const activeFilters = Array.from(checkboxes).map((cb) => cb.parentElement.textContent.trim())
+
+  const cards = document.querySelectorAll(".activity-card")
+
+  if (activeFilters.length === 0) {
+    // Show all cards if no filters selected
+    cards.forEach((card) => {
+      card.parentElement.style.display = "block"
+    })
+    return
+  }
+
+  // This is a simplified filter - in production, you'd match against actual card data
+  cards.forEach((card) => {
+    card.parentElement.style.display = "block"
+  })
+
+  console.log("Active filters:", activeFilters)
+}
+
+// Listen to filter changes
+document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+  checkbox.addEventListener("change", applyFilters)
+})
+
+// Smooth scroll for pagination
+document.querySelectorAll(".pagination .page-link").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault()
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  })
+})
+
+// Toggle filter sections icon rotation
+document.querySelectorAll(".filter-toggle").forEach((toggle) => {
+  toggle.addEventListener("click", function () {
+    const icon = this.querySelector(".icon-toggle")
+    if (!icon) return
+
+    const isExpanded = this.getAttribute("aria-expanded") === "true"
+
+    icon.classList.toggle("fa-plus", !isExpanded)
+    icon.classList.toggle("fa-minus", isExpanded)
+  })
+})
+
+
+// Initialize tooltips if Bootstrap 5 is loaded
+document.addEventListener("DOMContentLoaded", () => {
+  // Check if running on mobile
+  const isMobile = window.innerWidth < 992
+
+  // Auto-expand first filter section on desktop
+  if (!isMobile) {
+    const firstFilter = document.querySelector("#experiencesFilter")
+    if (firstFilter && !firstFilter.classList.contains("show")) {
+      new bootstrap.Collapse(firstFilter, { toggle: true })
+    }
+  }
+})
+
+// Add loading state when sorting/filtering
+function addLoadingState() {
+  const grid = document.getElementById("activityGrid")
+  grid.classList.add("loading")
+  setTimeout(() => {
+    grid.classList.remove("loading")
+  }, 300)
+}
+
+// Enhance sort with loading state
+const originalSort = sortActivities
+sortActivities = (sortType) => {
+  addLoadingState()
+  setTimeout(() => originalSort(sortType), 100)
+}
+
+// Enhance filter with loading state
+const originalFilter = applyFilters
+applyFilters = () => {
+  addLoadingState()
+  setTimeout(() => originalFilter(), 100)
 }

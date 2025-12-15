@@ -501,6 +501,17 @@
 
   .mobile-search {
     position: static;
+    display: flex;
+    align-items: center;
+  }
+  .search-input-mobile{
+   width: 78%;
+   margin-right: 5px;
+  }
+  .search-icon{
+    position: static !important;
+    transform: none !important;
+    height: 34px !important;
   }
 
   .search-popup-mobile {

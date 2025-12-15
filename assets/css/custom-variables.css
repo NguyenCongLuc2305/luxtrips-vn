@@ -16,6 +16,7 @@
     --bs-body-font-weight: 400;
     --bs-body-line-height: 1.75;
     --bs-body-color: #2D2D2B;
+    --bs-border-color: rgba(0, 0, 0, 0.175);
     --bs-body-bg: #fff;
     --bs-gutter-x: 1.875rem;
     --bs-gutter-y: 1.875rem;
@@ -79,6 +80,10 @@ a:hover{
     width: 100%;
 }
 
+.min-width-none{
+    min-width: auto !important;
+}
+
 /* color */
 .text-primary {
     color: var(--bs-primary) !important;
@@ -128,6 +133,9 @@ a:hover{
 }
 .text-30 {
     font-size: 30px;
+}
+.text-21{
+    font-size: 21px !important;
 }
 
 .fw-bold {
