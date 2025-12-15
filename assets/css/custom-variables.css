@@ -92,6 +92,9 @@ a:hover{
 .text-decoration-none{
     text-decoration: none;
 }
+.float-right {
+    float: right;
+}
 /* text */
 
 .text-10 {

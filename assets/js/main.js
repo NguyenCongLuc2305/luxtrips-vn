@@ -43,21 +43,23 @@ document.getElementById("saveBtn").addEventListener("click", function (e) {
   alert("Xem danh sách đã lưu (10 items)");
 });
 
+/// demo chuyển icon với current page
+document.addEventListener("DOMContentLoaded", function () {
+  const currentPage = location.pathname.split("/").slice(-1)[0]; // lấy tên file hiện tại
 
-/// demo chuyển icon với current page 
-document.addEventListener("DOMContentLoaded", function() {
-    const currentPage = location.pathname.split("/").slice(-1)[0]; // lấy tên file hiện tại
-    
-    // Nếu đang ở trang chủ (thường là index.html hoặc rỗng)
-    if (currentPage === "index.html" || currentPage === "" || currentPage === "/") {
-        document.getElementById("home").classList.add("active");
-    }
-    // Nếu đang ở trends.html
-    if (currentPage === "trends.html") {
-        document.getElementById("trends").classList.add("active");
-    }
+  // Nếu đang ở trang chủ (thường là index.html hoặc rỗng)
+  if (
+    currentPage === "index.html" ||
+    currentPage === "" ||
+    currentPage === "/"
+  ) {
+    document.getElementById("home").classList.add("active");
+  }
+  // Nếu đang ở trends.html
+  if (currentPage === "trends.html") {
+    document.getElementById("trends").classList.add("active");
+  }
 });
-
 
 // swiper
 const swiper = new Swiper(".section-1-swiper .swiper", {
@@ -141,37 +143,43 @@ const section4Swiper = new Swiper("#section-4-swiper .swiper", {
   },
 });
 
-const section4SwiperProduct2 = new Swiper("#section-4__product--group-2 .swiper", {
-  loop: true,
-  speed: 1000,
-  slidesPerView: 1,
-  spaceBetween: 30,
-  effect: "slide",
-  navigation: {
-    nextEl: ".swiper4__product-2--next",
-    prevEl: ".swiper4__product-2--prev",
-  },
-  breakpoints: {
-    0: { slidesPerView: 2 },
-    992: { slidesPerView: 4 },
-  },
-});
+const section4SwiperProduct2 = new Swiper(
+  "#section-4__product--group-2 .swiper",
+  {
+    loop: true,
+    speed: 1000,
+    slidesPerView: 1,
+    spaceBetween: 30,
+    effect: "slide",
+    navigation: {
+      nextEl: ".swiper4__product-2--next",
+      prevEl: ".swiper4__product-2--prev",
+    },
+    breakpoints: {
+      0: { slidesPerView: 2 },
+      992: { slidesPerView: 4 },
+    },
+  }
+);
 
-const section4SwiperProduct3 = new Swiper("#section-4__product--group-3 .swiper", {
-  loop: true,
-  speed: 1000,
-  slidesPerView: 1,
-  spaceBetween: 30,
-  effect: "slide",
-  navigation: {
-    nextEl: ".swiper4__product-3--next",
-    prevEl: ".swiper4__product-3--prev",
-  },
-  breakpoints: {
-    0: { slidesPerView: 2 },
-    992: { slidesPerView: 4 },
-  },
-});
+const section4SwiperProduct3 = new Swiper(
+  "#section-4__product--group-3 .swiper",
+  {
+    loop: true,
+    speed: 1000,
+    slidesPerView: 1,
+    spaceBetween: 30,
+    effect: "slide",
+    navigation: {
+      nextEl: ".swiper4__product-3--next",
+      prevEl: ".swiper4__product-3--prev",
+    },
+    breakpoints: {
+      0: { slidesPerView: 2 },
+      992: { slidesPerView: 4 },
+    },
+  }
+);
 
 const product3Swiper = new Swiper("#product-3__swiper .swiper", {
   loop: true,
@@ -221,6 +229,23 @@ const section6Swiper = new Swiper(".section-6-swiper .swiper", {
   },
 });
 
+
+const section3SubProduct1Swiper = new Swiper("#section-3__sub-product-1--swiper .swiper", {
+  loop: true,
+  speed: 1000,
+  slidesPerView: 1,
+  spaceBetween: 30,
+  effect: "slide",
+  navigation: {
+    nextEl: document.querySelector(".sub-product-1--next"),
+    prevEl: document.querySelector(".sub-product-1--prev"),
+  },
+  breakpoints: {
+    0: { slidesPerView: 3 },
+    992: { slidesPerView: 7 },
+  },
+});
+
 // Back to top (tuỳ chọn)
 window.addEventListener("scroll", function () {
   const backToTop = document.querySelector(".back-to-top");
@@ -260,30 +285,28 @@ const seeMoreButtons = document.querySelectorAll(".see-more-btn");
 
 seeMoreButtons.forEach((button) => {
   const targetId = button.getAttribute("data-target");
+  if (!targetId) return;
+
   const targetList = document.getElementById(targetId);
+  if (!targetList) return; // ⬅️ FIX LỖI
+
   const allItems = targetList.querySelectorAll("li");
 
-  // Store items that should be toggleable (index 4 and beyond)
   const toggleableItems = Array.from(allItems).slice(4);
 
   button.addEventListener("click", function () {
     const isExpanded = button.textContent.trim() === "See less";
 
-    if (isExpanded) {
-      // Collapse - add hidden class
-      toggleableItems.forEach((item) => {
-        item.classList.add("hidden");
-      });
-      this.textContent = "See more (less)";
-    } else {
-      // Expand - remove hidden class
-      toggleableItems.forEach((item) => {
-        item.classList.remove("hidden");
-      });
-      this.textContent = "See less";
-    }
+    toggleableItems.forEach((item) => {
+      item.classList.toggle("hidden", isExpanded);
+    });
+
+    this.textContent = isExpanded
+      ? "See more (less)"
+      : "See less";
   });
 });
+
 
 // Tự động lấy hot keywords từ slide đầu tiên
 const hotKeywords = Array.from(
@@ -392,3 +415,20 @@ document.addEventListener("click", (e) => {
     });
   }
 });
+
+function toggleContent() {
+  const extraContent = document.getElementById("extraContent");
+  const btn = document.getElementById("seeMoreBtn");
+  const arrow = document.getElementById("arrow");
+
+  extraContent.classList.toggle("show");
+  arrow.classList.toggle("up");
+
+  if (extraContent.classList.contains("show")) {
+    btn.innerHTML =
+      'See less <span class="arrow up" id="arrow"><i class="fa-light fa-angle-right"></i></span>';
+  } else {
+    btn.innerHTML =
+      'See more <span class="arrow" id="arrow"><i class="fa-light fa-angle-right"></i></span>';
+  }
+}

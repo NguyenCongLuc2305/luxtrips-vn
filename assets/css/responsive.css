@@ -190,7 +190,7 @@
 }
 
 .menu-section ul li a:hover {
-  color: var(--primary-color);
+  color: var(--bs-primary);
 }
 
 .menu-section ul li.hidden {
@@ -198,7 +198,7 @@
 }
 
 .see-more-btn {
-  color: var(--primary-color);
+  color: var(--bs-secondary);
   text-decoration: underline;
   cursor: pointer;
   font-size: 14px;
@@ -210,6 +210,14 @@
 }
 
 .see-more-btn:hover {
+  color: var(--bs-primary);
+}
+
+.btn-primary-color{
+  color: var(--bs-primary);
+}
+
+.btn-primary-color:hover{
   color: var(--bs-secondary);
 }
 

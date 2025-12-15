@@ -557,7 +557,7 @@ section {
   background-image: url("/assets/images/uploads/4.\ PRODUCT\ CATEGORY\ 3-139.png");
 }
 
-.section-1__sub-product-1 .slide-1{
+.section-1__sub-product-1 .slide-1 {
   background-image: url("/assets/images/uploads/6. PRODUCT SUB - CATEGORY 1-147.png");
 }
 
@@ -1101,7 +1101,8 @@ section {
   right: 0;
   padding: 25px 20px;
 }
-.section-4__product-3 .swiper-slide{
+
+.section-4__product-3 .swiper-slide {
   min-width: 250px;
 }
 
@@ -1131,31 +1132,66 @@ section {
 
 
 .vimeo-wrapper {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* 16:9 */
-    border-radius: var(--bs-border-radius);
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  border-radius: var(--bs-border-radius);
+  overflow: hidden;
 }
 
 .vimeo-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
 }
 
 
 /* ============= sub product category 1 ============== */
 
-.section-1__sub-product-1 .section-1__content{
+.section-1__sub-product-1 .section-1__content {
   max-width: 260px;
   float: right;
 }
 
-.section-1__sub-product-1 .btn-white{
+.section-1__sub-product-1 .btn-white {
   font-size: 1rem;
   padding: 13px 26px;
+}
+
+.section-2__sub-product-1--content .arrow {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.section-2__sub-product-1--content .arrow.up {
+  transform: rotate(180deg);
+}
+
+.section-2__sub-product-1--content .extra-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.section-2__sub-product-1--content .extra-content.show {
+  max-height: 500px;
+}
+
+.section-2__sub-product-1--content .info-section {
+  display: flex;
+  gap: 100px;
+  margin: 40px 0;
+}
+
+.section-3__sub-product-1--content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 130px;
+  text-align: center;
+  justify-content: space-between;
 }
