@@ -549,6 +549,10 @@
     margin-top: 40px;
   }
 
+  .section-1-title, .section-1-subtitle{
+    text-align: center;
+  }
+
 }
 
 @media (max-width: 1199px) {

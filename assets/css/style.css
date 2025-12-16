@@ -81,6 +81,11 @@ section {
   cursor: pointer;
   transition: all 0.3s;
   text-decoration: none;
+  height: 50px;
+}
+
+.btn-gradient:hover {
+  color: #fff !important;
 }
 
 .btn-white {
@@ -98,7 +103,7 @@ section {
 
 .btn-white:hover {
   background-color: var(--bs-primary);
-  color: #fff;
+  color: #fff !important;
 }
 
 /* span-gradient */
@@ -715,10 +720,17 @@ section {
 
 /* ==================== 3. WHAT YOU'LL RECEIVE ==================== */
 .section-3-item {
-  min-height: 453px;
+  min-height: 522px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-end;
+}
+.section-3-item h3{
+  min-height: 60px;
+}
+.section-3-item p{
+  min-height: 140px;
 }
 
 /* ==================== 4. TRENDS  ==================== */
