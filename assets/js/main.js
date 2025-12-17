@@ -261,6 +261,19 @@ if (mobileFilterBtn && mobileFilterEl) {
   });
 }
 
+// Toggle filter sections icon rotation
+document.querySelectorAll(".filter-toggle").forEach((toggle) => {
+  toggle.addEventListener("click", function () {
+    const icon = this.querySelector(".icon-toggle")
+    if (!icon) return
+
+    const isExpanded = this.getAttribute("aria-expanded") === "true"
+
+    icon.classList.toggle("fa-plus", !isExpanded)
+    icon.classList.toggle("fa-minus", isExpanded)
+  })
+})
+
 
 const sortDropdownToggle = document.getElementById("sortDropdownToggle")
 const sortDropdownMenu = document.getElementById("sortDropdownMenu")
@@ -389,33 +402,22 @@ document.querySelectorAll(".pagination .page-link").forEach((link) => {
   })
 })
 
-// Toggle filter sections icon rotation
-document.querySelectorAll(".filter-toggle").forEach((toggle) => {
-  toggle.addEventListener("click", function () {
-    const icon = this.querySelector(".icon-toggle")
-    if (!icon) return
-
-    const isExpanded = this.getAttribute("aria-expanded") === "true"
-
-    icon.classList.toggle("fa-plus", !isExpanded)
-    icon.classList.toggle("fa-minus", isExpanded)
-  })
-})
 
 
-// Initialize tooltips if Bootstrap 5 is loaded
-document.addEventListener("DOMContentLoaded", () => {
-  // Check if running on mobile
-  const isMobile = window.innerWidth < 992
 
-  // Auto-expand first filter section on desktop
-  if (!isMobile) {
-    const firstFilter = document.querySelector("#experiencesFilter")
-    if (firstFilter && !firstFilter.classList.contains("show")) {
-      new bootstrap.Collapse(firstFilter, { toggle: true })
-    }
-  }
-})
+// // Initialize tooltips if Bootstrap 5 is loaded
+// document.addEventListener("DOMContentLoaded", () => {
+//   // Check if running on mobile
+//   const isMobile = window.innerWidth < 992
+
+//   // Auto-expand first filter section on desktop
+//   if (!isMobile) {
+//     const firstFilter = document.querySelector("#experiencesFilter")
+//     if (firstFilter && !firstFilter.classList.contains("show")) {
+//       new bootstrap.Collapse(firstFilter, { toggle: true })
+//     }
+//   }
+// })
 
 // Add loading state when sorting/filtering
 function addLoadingState() {

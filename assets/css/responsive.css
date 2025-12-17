@@ -41,7 +41,7 @@
   top: 50%;
   transform: translateY(-50%);
   color: #999;
-  width: 31px;
+  width: 42px;
   height: 31px;
   border-radius: var(--bs-border-radius);
   color: #fff;
@@ -53,7 +53,6 @@
 
 .mobile-icons {
   display: flex;
-  gap: 15px;
   align-items: center;
 }
 
@@ -213,11 +212,11 @@
   color: var(--bs-primary);
 }
 
-.btn-primary-color{
+.btn-primary-color {
   color: var(--bs-primary);
 }
 
-.btn-primary-color:hover{
+.btn-primary-color:hover {
   color: var(--bs-secondary);
 }
 
@@ -378,7 +377,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 50px;
-  height: 37px;
+  height: 40px;
   background-color: #fff;
   pointer-events: none;
   z-index: 2;
@@ -466,12 +465,12 @@
 
 @media (max-width: 768px) {
 
-  .section-1-banner .swiper-slide,
+  /* .section-1-banner .swiper-slide,
   .section-3 .swiper-slide,
   .section-4 .swiper-slide,
   .section-6 .swiper-slide {
     min-width: 240px;
-  }
+  } */
 
 }
 
@@ -504,11 +503,13 @@
     display: flex;
     align-items: center;
   }
-  .search-input-mobile{
-   width: 78%;
-   margin-right: 5px;
+
+  .search-input-mobile {
+    width: 78%;
+    margin-right: 5px;
   }
-  .search-icon{
+
+  .search-icon {
     position: static !important;
     transform: none !important;
     height: 34px !important;
@@ -537,6 +538,26 @@
   }
 
   /* section 5 */
+  .section-5-swiper .swiper-button-prev-border {
+    left: -10px;
+  }
+
+  .section-5-swiper .swiper-button-next-border {
+    right: -10px;
+  }
+
+  .swiper-button-next-border,
+  .swiper-button-prev-border {
+    width: 35px;
+    height: 35px;
+  }
+
+  .swiper-button-next-border::before,
+  .swiper-button-prev-border::before {
+    width: 12px;
+    height: 12px;
+  }
+
   .section-5-swiper .swiper-slide:nth-child(even) {
     margin-top: 0;
   }
@@ -549,10 +570,17 @@
     margin-top: 40px;
   }
 
-  .section-1-title, .section-1-subtitle{
+  .section-1-title,
+  .section-1-subtitle {
     text-align: center;
   }
 
+  .section-4-card{
+    min-height: auto;
+  }
+  .section-6-title{
+    min-height: 96px;
+  }
 }
 
 @media (max-width: 1199px) {
