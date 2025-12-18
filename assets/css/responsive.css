@@ -479,6 +479,13 @@
     padding: 60px 0;
   }
 
+  .section-1-banner{
+    padding-top: 0;
+  }
+  #product-detail-1 .section-1-banner {
+    padding: 0;
+  }
+
   /* ==================== 1. section-1 BANNER ==================== */
   .section-1-title {
     font-size: 1.8rem;
