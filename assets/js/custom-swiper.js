@@ -183,3 +183,31 @@ const section3SubProduct1Swiper = new Swiper("#section-3__sub-product-1--swiper 
     992: { slidesPerView: 7 },
   },
 });
+
+// swiper này dùng chung cho TOÀN BỘ website
+document.querySelectorAll("[data-swiper]").forEach((wrapper) => {
+  const swiperEl = wrapper.querySelector(".swiper");
+
+  if (!swiperEl) return;
+
+  new Swiper(swiperEl, {
+    loop: wrapper.dataset.loop === "true",
+    speed: Number(wrapper.dataset.speed) || 1000,
+    spaceBetween: Number(wrapper.dataset.space) || 30,
+    effect: wrapper.dataset.effect || "slide",
+
+    navigation: {
+      nextEl: wrapper.dataset.next,
+      prevEl: wrapper.dataset.prev,
+    },
+
+    breakpoints: {
+      0: {
+        slidesPerView: Number(wrapper.dataset.slidesMobile) || 1,
+      },
+      992: {
+        slidesPerView: Number(wrapper.dataset.slidesDesktop) || 1,
+      },
+    },
+  });
+});

@@ -94,6 +94,9 @@ ul li{
 }
 
 /* color */
+.border-bottom{
+    border-bottom: 1px solid var(--bs-body-color) !important;
+}
 .text-primary {
     color: var(--bs-primary) !important;
 }
@@ -210,6 +213,16 @@ ul li{
 }
 .pt-100{
     padding-top: 100px;
+}
+.pt-10px{
+    padding-top: 10px;
+}
+.pt-30px{
+    padding-top: 30px;
+}
+
+.pl-50px{
+    padding-left: 50px;
 }
 
 /* margin */

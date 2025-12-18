@@ -231,22 +231,63 @@ document.addEventListener("click", (e) => {
   }
 });
 
-function toggleContent() {
-  const extraContent = document.getElementById("extraContent");
-  const btn = document.getElementById("seeMoreBtn");
-  const arrow = document.getElementById("arrow");
+// function toggleContent() {
+//   const extraContent = document.getElementById("extraContent");
+//   const btn = document.getElementById("seeMoreBtn");
+//   const arrow = document.getElementById("arrow");
 
-  extraContent.classList.toggle("show");
-  arrow.classList.toggle("up");
+//   extraContent.classList.toggle("show");
+//   arrow.classList.toggle("up");
 
-  if (extraContent.classList.contains("show")) {
-    btn.innerHTML =
-      'See less <span class="arrow up" id="arrow"><i class="fa-light fa-angle-right"></i></span>';
+//   if (extraContent.classList.contains("show")) {
+//     btn.innerHTML =
+//       'See less <span class="arrow up" id="arrow"><i class="fa-light fa-angle-right"></i></span>';
+//   } else {
+//     btn.innerHTML =
+//       'See more <span class="arrow" id="arrow"><i class="fa-light fa-angle-right"></i></span>'; 
+//   }
+// }
+
+// function toggleContent(btn) {
+//   const wrapper = btn.closest(".toggle-wrapper");
+//   const extraContent = wrapper.querySelector(".extra-content");
+//   const arrow = btn.querySelector(".arrow");
+
+//   extraContent.classList.toggle("show");
+//   arrow.classList.toggle("up");
+
+//   if (extraContent.classList.contains("show")) {
+//     btn.childNodes[0].nodeValue = "See less ";
+//   } else {
+//     btn.childNodes[0].nodeValue = "See more ";
+//   }
+// }
+
+function toggleContent(btn) {
+  const wrapper = btn.closest(".toggle-wrapper");
+  const extraContent = wrapper.querySelector(".extra-content");
+  const arrow = btn.querySelector(".arrow");
+
+  const isOpen = extraContent.classList.contains("show");
+
+  if (isOpen) {
+    // Đóng
+    extraContent.style.height = extraContent.scrollHeight + "px";
+    requestAnimationFrame(() => {
+      extraContent.style.height = "0px";
+    });
+    extraContent.classList.remove("show");
+    arrow.classList.remove("up");
+    btn.childNodes[0].nodeValue = "See more ";
   } else {
-    btn.innerHTML =
-      'See more <span class="arrow" id="arrow"><i class="fa-light fa-angle-right"></i></span>';
+    // Mở
+    extraContent.classList.add("show");
+    extraContent.style.height = extraContent.scrollHeight + "px";
+    arrow.classList.add("up");
+    btn.childNodes[0].nodeValue = "See less ";
   }
 }
+
 
 
 // Mobile Filter Modal
