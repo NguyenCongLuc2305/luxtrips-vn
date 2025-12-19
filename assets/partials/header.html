@@ -1,44 +1,66 @@
-<div class="lux-navbar">
-    <div
-        class="container-fluid d-flex align-items-center justify-content-center py-2 border-bottom border-1 border-white">
-
+<!-- header PC -->
+<div id="headerSticky" class="lux-navbar show-pc">
+    <div class="lux-bullet-bar container d-flex align-items-center justify-content-between">
         <!-- LOGO -->
-        <a href="/" class="navbar-brand text-warning fs-3 me-4">
-            LUXTRIPS.<span class="fs-5">VN</span>
+        <a href="/index.html" class="navbar-brand logo-lux color-primary me-4">
+            <img src="assets/images/logo/logo-header.png" width="212" height="36" alt="logo-header">
         </a>
 
         <!-- SEARCH -->
-        <div class="input-group search-box me-4">
-            <span class="input-group-text bg-white border-end-0 pr-0">
-                <i class="fa-light fa-magnifying-glass"></i>
+        <div class="input-group search-box search-container-header">
+            <span class="input-group-text bg-white border-end-0 p-8px pr-0">
+                <i class="fa-light fa-magnifying-glass text-20 "></i>
             </span>
-            <input type="text" class="form-control border-start-0 text-12"
+            <input type="text" class="form-control border-0 p-8px text-12 search-input-header"
                 placeholder="Search personalised travel experiences">
-        </div>
 
-        <!-- LANGUAGE -->
-        <div class="dropdown header-language me-3 cursor-pointer">
-            <div class="dropdown-toggle d-flex align-items-center text-white" data-bs-toggle="dropdown">
-                <img src="/assets/images/icons/uk.png" width="26">
+            <div class="search-popup-header">
+                <div>
+                    <div class="search-section-title">Hot Searches</div>
+                    <div class="search-tags" id="hotSearches">
+                        <button class="search-tag">Hanoi Exclusive Day Trips</button>
+                        <button class="search-tag">Halong Bay Seaplane Trips</button>
+                        <button class="search-tag">Jetski</button>
+                        <button class="search-tag">Ninh Binh Private Trips</button>
+                        <button class="search-tag">Private Honeymoon Designs</button>
+                        <button class="search-tag">Luxury Trains</button>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="search-section-title">Recent Searches</div>
+                    <div class="search-tags" id="recentSearches">
+                        <button class="search-tag">Hanoi</button>
+                        <button class="search-tag">Ho Chi Minh City</button>
+                        <button class="search-tag">Ha Giang Exclusive Trips</button>
+                        <button class="search-tag">Helicopter</button>
+                        <button class="search-tag">JW Marriott Phu Quoc</button>
+                        <button class="search-tag">Cruise Trips</button>
+                        <button class="search-tag">Six Senses Ninh Van Bay</button>
+                    </div>
+                </div>
             </div>
-            <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="#">English</a></li>
-                <li><a class="dropdown-item" href="#">Vietnamese</a></li>
-            </ul>
         </div>
-
-        <!-- HOTLINE -->
-        <div class="text-white me-4 small">
-            +84 982 670 909z
-        </div>
-
         <!-- RIGHT MENU -->
-        <nav class="d-flex align-items-center gap-3 text-white small me-4">
+        <nav class="d-flex align-items-center gap-3 no-shrink flex-nowrap text-white small">
+            <!-- LANGUAGE -->
+            <div class="dropdown header-language cursor-pointer">
+                <div class="dropdown-toggle d-flex align-items-center text-white" data-bs-toggle="dropdown">
+                    <img src="/assets/images/icons/uk.png" width="26">
+                </div>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">English</a></li>
+                    <li><a class="dropdown-item" href="#">Vietnamese</a></li>
+                </ul>
+            </div>
+            <a href="tel:+84982670909" class="text-white text-decoration-none">
+                +84 982 670 909
+            </a>
             <a href="#" class="nav-link">Help</a>
             <a href="#" class="nav-link">Recent views</a>
             <a href="#" class="nav-link">Sign in</a>
             <a href="#" class="nav-link">Travel Advisor</a>
-            <a href="#" class="nav-link"><img src="/assets/images/icons/date.png" width="26"></a>
+            <span class="nav-link open-booking-btn cursor-pointer" id="openBooking" ><img src="/assets/images/icons/date.png" width="26"></span>
             <div class="d-flex align-items-center gap-2">
                 <a href="#" class="nav-link">Save</a>
                 <a href="#" class="nav-link"><img src="/assets/images/icons/bag.png" width="26"></a>
@@ -47,87 +69,120 @@
 
         </nav>
     </div>
+    <div class="border-top border-secondary"></div>
 
     <!-- MENU NAV -->
-    <nav class="lux-menu">
-        <ul class="nav justify-content-center">
+    <nav class="lux-menu container">
+        <ul class="nav d-flex align-items-center gap-30">
             <li class="nav-item dropdown megamenu">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">DESTINATIONS</a>
+                <a href="/product-category-1.html" class="nav-link">DESTINATIONS</a>
 
                 <!-- MEGA MENU PANEL -->
-                <div class="dropdown-mega-menu mega-panel p-4">
-                    <div class="row">
+                <div class="dropdown-mega-menu mega-panel d-flex">
+                    <ul class="list-unstyled">
+                        <li><a href="#">Hanoi</a></li>
+                        <li><a href="/sub-product-category-1.html">Ho Chi Minh</a></li>
+                        <li><a href="#">Ha Giang</a></li>
+                        <li><a href="#">Sapa</a></li>
+                        <li><a href="#">Cao Bang</a></li>
+                        <li><a href="#">Thai Nguyen</a></li>
+                        <li><a href="#">Ha Long Bay</a></li>
+                    </ul>
 
-                        <div class="col-3">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Hanoi</a></li>
-                                <li><a href="/sub-product-category-1.html">Ho Chi Minh</a></li>
-                                <li><a href="#">Ha Giang</a></li>
-                                <li><a href="#">Sapa</a></li>
-                                <li><a href="#">Cao Bang</a></li>
-                                <li><a href="#">Thai Nguyen</a></li>
-                                <li><a href="#">Ha Long Bay</a></li>
-                            </ul>
-                        </div>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Mai Chau</a></li>
+                        <li><a href="#">Ninh Binh</a></li>
+                        <li><a href="#">Hue</a></li>
+                        <li><a href="#">Quang Binh</a></li>
+                        <li><a href="#">Hoi An</a></li>
+                        <li><a href="#">Da Nang</a></li>
+                    </ul>
 
-                        <div class="col-3">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Mai Chau</a></li>
-                                <li><a href="#">Ninh Binh</a></li>
-                                <li><a href="#">Hue</a></li>
-                                <li><a href="#">Quang Binh</a></li>
-                                <li><a href="#">Hoi An</a></li>
-                                <li><a href="#">Da Nang</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="col-3">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Binh Thuan</a></li>
-                                <li><a href="#">Nha Trang</a></li>
-                                <li><a href="#">Da Lat</a></li>
-                                <li><a href="#">Mekong Delta</a></li>
-                                <li><a href="#">Phu Quoc</a></li>
-                            </ul>
-                        </div>
-
-                    </div>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Binh Thuan</a></li>
+                        <li><a href="#">Nha Trang</a></li>
+                        <li><a href="#">Da Lat</a></li>
+                        <li><a href="#">Mekong Delta</a></li>
+                        <li><a href="#">Phu Quoc</a></li>
+                    </ul>
                 </div>
             </li>
 
-            <li class="nav-item"><a href="/product-category-2.html" class="nav-link">EXPERIENCES</a></li>
             <li class="nav-item dropdown megamenu">
-                        <a href="/product-category-3.html" class="nav-link">EXCLUSIVE TRAVELS</a>
-                        <!-- MEGA MENU PANEL -->
-                        <div class="dropdown-mega-menu mega-panel d-flex">
-                            <ul class="list-unstyled">
-                                <li><a href="/product-detail-1.html">A Culinary Adventure across 03 regions of Vietnam</a></li>
-                            </ul>
-                        </div>
-                    </li>
+                <a href="/product-category-2.html" class="nav-link">EXPERIENCES</a>
+                <!-- MEGA MENU PANEL -->
+                <div class="dropdown-mega-menu mega-panel d-flex">
+                    <ul class="list-unstyled">
+                        <li><a href="#">Cultural Welness</a></li>
+                        <li><a href="#">Bespoke Wellness</a></li>
+                        <li><a href="#">Spiritual Wellness</a></li>
+                        <li><a href="#">Educational Wellness</a></li>
+                        <li><a href="#">Workational Wellness</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item dropdown megamenu">
+                <a href="/product-category-3.html" class="nav-link">EXCLUSIVE TRAVELS</a>
+                <!-- MEGA MENU PANEL -->
+                <div class="dropdown-mega-menu mega-panel d-flex">
+                    <ul class="list-unstyled">
+                        <li><a href="/product-detail-1.html">A Culinary Adventure across 03 regions of
+                                Vietnam</a></li>
+                    </ul>
+                </div>
+            </li>
             <li class="nav-item"><a class="nav-link">ULTRA LUX TRANSPORTS</a></li>
             <li class="nav-item"><a class="nav-link">ACCOMMODATIONS</a></li>
             <li class="nav-item"><a class="nav-link"><img class="mr-19" src="/assets/images/icons/gift.png"
                         width="18">GIFTS</a></li>
-            <li class="nav-item"><a href="/product-category-3.html" class="nav-link">PERSONALISED DESIGNS</a></li>
+            <li class="nav-item"><a href="/product-category-3.html" class="nav-link">PERSONALISED DESIGNS</a>
+            </li>
         </ul>
     </nav>
 
 </div>
 
 <!-- MOBILE HEADER -->
-<div class="mobile-header">
+<div id="headerStickyMobile" class="mobile-header">
     <button class="hamburger-btn" id="openMenu">
         <i class="fa-regular fa-bars"></i>
     </button>
 
-    <a href="/" class="navbar-brand">
-        LUXTRIPS.<span style="font-size: 14px;">VN</span>
+    <a href="/" class="navbar-brand ml-13">
+        <img src="assets/images/logo/logo-header.png" width="118" height="20" alt="logo-header">
     </a>
 
-    <div class="mobile-search position-relative">
-        <input type="text" class="form-control" placeholder="Helicopter Sightseeing">
-        <i class="fa-light fa-magnifying-glass search-icon text-14"></i>
+    <div class="mobile-search search-container-mobile">
+        <input type="text" class="form-control border-0 p-8px text-12 search-input-mobile"
+            placeholder="Search personalised travel experiences">
+
+        <div class="search-popup-mobile">
+            <div>
+                <div class="search-section-title">Hot Searches</div>
+                <div class="search-tags" id="hotSearches">
+                    <button class="search-tag">Hanoi Exclusive Day Trips</button>
+                    <button class="search-tag">Halong Bay Seaplane Trips</button>
+                    <button class="search-tag">Jetski</button>
+                    <button class="search-tag">Ninh Binh Private Trips</button>
+                    <button class="search-tag">Private Honeymoon Designs</button>
+                    <button class="search-tag">Luxury Trains</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="search-section-title">Recent Searches</div>
+                <div class="search-tags" id="recentSearches">
+                    <button class="search-tag">Hanoi</button>
+                    <button class="search-tag">Ho Chi Minh City</button>
+                    <button class="search-tag">Ha Giang Exclusive Trips</button>
+                    <button class="search-tag">Helicopter</button>
+                    <button class="search-tag">JW Marriott Phu Quoc</button>
+                    <button class="search-tag">Cruise Trips</button>
+                    <button class="search-tag">Six Senses Ninh Van Bay</button>
+                </div>
+            </div>
+        </div>
+        <i class="fa-light fw-500 fa-magnifying-glass search-icon text-17"></i>
     </div>
 
     <div class="mobile-icons">
@@ -168,13 +223,17 @@
                 <li><a class="dropdown-item" href="#">Vietnamese</a></li>
             </ul>
         </div>
-
-        <i class="fas fa-info-circle"></i>
-        <i class="fas fa-search"></i>
-        <i class="fas fa-calendar"></i>
-        <i class="fas fa-user-plus"></i>
-        <i class="fas fa-user"></i>
-        <i class="fas fa-phone"></i>
+        <a href="#"><img src="/assets/images/icons/information - mobile.png" width="40" height="40"
+                alt="information - mobile"></a>
+        <a href="#"><img src="/assets/images/icons/recent view - mobile.png" width="40" height="40"
+                alt="recent view - mobile"></a>
+        <a href="#"><img src="/assets/images/icons/Booking form - Mobile (2).png" width="40" height="40"
+                alt="Booking form - Mobile"></a>
+        <a href="#"><img src="/assets/images/icons/sign up - mobile.png" width="40" height="40"
+                alt="sign up - mobile"></a>
+        <a href="#"><img src="/assets/images/icons/sign in - mobile.png" width="40" height="40"
+                alt="sign in - mobile"></a>
+        <a href="#"><img src="/assets/images/icons/hotline.png" width="40" height="40" alt="hotline"></a>
     </div>
 
     <div class="mobile-search-box position-relative">
@@ -279,12 +338,13 @@
         </div>
 
         <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-whatsapp"></i></a>
-            <a href="#"><i class="fas fa-comment"></i></a>
+            <a href="#"><img src="/assets/images/icons/facebook - black.png" width="40" height="40" alt="facebook"></a>
+            <a href="#"><img src="/assets/images/icons/youtube - black.png" width="40" height="40" alt="youtube"></a>
+            <a href="#"><img src="/assets/images/icons/tiktok - black.png" width="40" height="40" alt="tiktok"></a>
+            <a href="#"><img src="/assets/images/icons/instagram - black.png" width="40" height="40"
+                    alt="instagram"></a>
+            <a href="#"><img src="/assets/images/icons/whatsapp - black.png" width="40" height="40" alt="whatsapp"></a>
+            <a href="#"><img src="/assets/images/icons/zalo - black.png" width="40" height="40" alt="zalo"></a>
         </div>
     </div>
 </div>

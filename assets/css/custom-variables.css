@@ -245,6 +245,10 @@ ul li{
     margin-bottom: 10px;
 }
 
+.mt-20{
+    margin-top: 20px;
+}
+
 .pre-line {
     white-space: pre-line;
 }

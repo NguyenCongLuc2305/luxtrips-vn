@@ -3,6 +3,29 @@ fetch("/assets/partials/footer.html")
   .then((res) => res.text())
   .then((html) => (document.getElementById("footer").innerHTML = html));
 
+// load header
+fetch("/assets/partials/header.html")
+  .then((res) => res.text())
+  .then((html) => {
+    document.getElementById("header").innerHTML = html;
+
+    const script = document.createElement("script");
+    script.src = "/assets/js/header.js";
+    document.body.appendChild(script);
+  });
+
+
+// load popup booking
+fetch("/assets/partials/popup-booking.html")
+  .then((res) => res.text())
+  .then((html) => {
+    document.getElementById("popup-booking").innerHTML = html;
+
+    const script = document.createElement("script");
+    script.src = "/assets/js/popup-booking.js";
+    document.body.appendChild(script);
+  });
+
 // mobileBottomNav
 document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", function () {
@@ -71,57 +94,6 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Mobile menu toggle
-const openMenuBtn = document.getElementById("openMenu");
-const closeMenuBtn = document.getElementById("closeMenu");
-const menuOverlay = document.getElementById("menuOverlay");
-const mobileSidebar = document.getElementById("mobileSidebar");
-
-openMenuBtn.addEventListener("click", () => {
-  mobileSidebar.classList.add("active");
-  menuOverlay.classList.add("active");
-  document.body.style.overflow = "hidden";
-});
-
-closeMenuBtn.addEventListener("click", () => {
-  mobileSidebar.classList.remove("active");
-  menuOverlay.classList.remove("active");
-  document.body.style.overflow = "auto";
-});
-
-menuOverlay.addEventListener("click", () => {
-  mobileSidebar.classList.remove("active");
-  menuOverlay.classList.remove("active");
-  document.body.style.overflow = "auto";
-});
-
-// See more / See less functionality
-const seeMoreButtons = document.querySelectorAll(".see-more-btn");
-
-seeMoreButtons.forEach((button) => {
-  const targetId = button.getAttribute("data-target");
-  if (!targetId) return;
-
-  const targetList = document.getElementById(targetId);
-  if (!targetList) return; // ⬅️ FIX LỖI
-
-  const allItems = targetList.querySelectorAll("li");
-
-  const toggleableItems = Array.from(allItems).slice(4);
-
-  button.addEventListener("click", function () {
-    const isExpanded = button.textContent.trim() === "See less";
-
-    toggleableItems.forEach((item) => {
-      item.classList.toggle("hidden", isExpanded);
-    });
-
-    this.textContent = isExpanded
-      ? "See more (less)"
-      : "See less";
-  });
-});
-
 
 // Tự động lấy hot keywords từ slide đầu tiên
 const hotKeywords = Array.from(
@@ -169,68 +141,6 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// Lấy tất cả search inputs và popups
-const searchInputsHeader = document.querySelectorAll(".search-input-header");
-const searchPopupsHeader = document.querySelectorAll(".search-popup-header");
-
-// Xử lý từng search container
-searchInputsHeader.forEach((input, i) => {
-  const popup = searchPopupsHeader[i];
-
-  // Mở popup khi focus
-  input.addEventListener("focus", () => {
-    popup.classList.add("active-popup-header");
-  });
-
-  // Xử lý click tag trong popup này
-  popup.querySelectorAll(".search-tag").forEach((tag) => {
-    tag.addEventListener("click", () => {
-      input.value = tag.textContent;
-      popup.classList.remove("active-popup-header");
-    });
-  });
-});
-
-// Đóng tất cả popups khi click bên ngoài
-document.addEventListener("click", (e) => {
-  if (!e.target.closest(".search-container-header")) {
-    searchPopupsHeader.forEach((popup) => {
-      popup.classList.remove("active-popup-header");
-    });
-  }
-});
-
-// Lấy tất cả search inputs và popups
-const searchInputsMobile = document.querySelectorAll(".search-input-mobile");
-const searchPopupsMobile = document.querySelectorAll(".search-popup-mobile");
-
-// Xử lý từng search container
-searchInputsMobile.forEach((input, i) => {
-  const popup = searchPopupsMobile[i];
-
-  // Mở popup khi focus
-  input.addEventListener("focus", () => {
-    popup.classList.add("active-popup-mobile");
-  });
-
-  // Xử lý click tag trong popup này
-  popup.querySelectorAll(".search-tag").forEach((tag) => {
-    tag.addEventListener("click", () => {
-      input.value = tag.textContent;
-      popup.classList.remove("active-popup-mobile");
-    });
-  });
-});
-
-// Đóng tất cả popups khi click bên ngoài
-document.addEventListener("click", (e) => {
-  if (!e.target.closest(".search-container-mobile")) {
-    searchPopupsMobile.forEach((popup) => {
-      popup.classList.remove("active-popup-mobile");
-    });
-  }
-});
-
 // function toggleContent() {
 //   const extraContent = document.getElementById("extraContent");
 //   const btn = document.getElementById("seeMoreBtn");
@@ -244,7 +154,7 @@ document.addEventListener("click", (e) => {
 //       'See less <span class="arrow up" id="arrow"><i class="fa-light fa-angle-right"></i></span>';
 //   } else {
 //     btn.innerHTML =
-//       'See more <span class="arrow" id="arrow"><i class="fa-light fa-angle-right"></i></span>'; 
+//       'See more <span class="arrow" id="arrow"><i class="fa-light fa-angle-right"></i></span>';
 //   }
 // }
 
@@ -288,8 +198,6 @@ function toggleContent(btn) {
   }
 }
 
-
-
 // Mobile Filter Modal
 const mobileFilterBtn = document.getElementById("mobileFilterBtn");
 const mobileFilterEl = document.getElementById("mobileFilterModal");
@@ -305,146 +213,153 @@ if (mobileFilterBtn && mobileFilterEl) {
 // Toggle filter sections icon rotation
 document.querySelectorAll(".filter-toggle").forEach((toggle) => {
   toggle.addEventListener("click", function () {
-    const icon = this.querySelector(".icon-toggle")
-    if (!icon) return
+    const icon = this.querySelector(".icon-toggle");
+    if (!icon) return;
 
-    const isExpanded = this.getAttribute("aria-expanded") === "true"
+    const isExpanded = this.getAttribute("aria-expanded") === "true";
 
-    icon.classList.toggle("fa-plus", !isExpanded)
-    icon.classList.toggle("fa-minus", isExpanded)
-  })
-})
+    icon.classList.toggle("fa-plus", !isExpanded);
+    icon.classList.toggle("fa-minus", isExpanded);
+  });
+});
 
-
-const sortDropdownToggle = document.getElementById("sortDropdownToggle")
-const sortDropdownMenu = document.getElementById("sortDropdownMenu")
-const sortSelectedText = document.getElementById("sortSelectedText")
+const sortDropdownToggle = document.getElementById("sortDropdownToggle");
+const sortDropdownMenu = document.getElementById("sortDropdownMenu");
+const sortSelectedText = document.getElementById("sortSelectedText");
 
 if (sortDropdownToggle && sortDropdownMenu) {
   // Toggle dropdown
   sortDropdownToggle.addEventListener("click", (e) => {
-    e.stopPropagation()
-    sortDropdownToggle.classList.toggle("active")
-    sortDropdownMenu.classList.toggle("show")
-  })
+    e.stopPropagation();
+    sortDropdownToggle.classList.toggle("active");
+    sortDropdownMenu.classList.toggle("show");
+  });
 
   // Handle option selection
   sortDropdownMenu.querySelectorAll(".sort-option").forEach((option) => {
     option.addEventListener("click", (e) => {
-      const value = e.target.getAttribute("data-value")
+      const value = e.target.getAttribute("data-value");
 
       // Update selected text
-      sortSelectedText.textContent = value
+      sortSelectedText.textContent = value;
 
       // Update active state
       sortDropdownMenu.querySelectorAll(".sort-option").forEach((opt) => {
-        opt.classList.remove("active")
-      })
-      e.target.classList.add("active")
+        opt.classList.remove("active");
+      });
+      e.target.classList.add("active");
 
       // Close dropdown
-      sortDropdownToggle.classList.remove("active")
-      sortDropdownMenu.classList.remove("show")
+      sortDropdownToggle.classList.remove("active");
+      sortDropdownMenu.classList.remove("show");
 
       // Sort activities
-      sortActivities(value)
-    })
-  })
+      sortActivities(value);
+    });
+  });
 
   // Close dropdown when clicking outside
   document.addEventListener("click", (e) => {
-    if (!sortDropdownToggle.contains(e.target) && !sortDropdownMenu.contains(e.target)) {
-      sortDropdownToggle.classList.remove("active")
-      sortDropdownMenu.classList.remove("show")
+    if (
+      !sortDropdownToggle.contains(e.target) &&
+      !sortDropdownMenu.contains(e.target)
+    ) {
+      sortDropdownToggle.classList.remove("active");
+      sortDropdownMenu.classList.remove("show");
     }
-  })
+  });
 }
 
 // Clear Filters
-const clearFiltersBtn = document.getElementById("clearFilters")
+const clearFiltersBtn = document.getElementById("clearFilters");
 if (clearFiltersBtn) {
   clearFiltersBtn.addEventListener("click", () => {
     // Clear all checkboxes
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]')
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach((checkbox) => {
-      checkbox.checked = false
-    })
+      checkbox.checked = false;
+    });
 
     // Apply filters (in this case, show all items)
-    applyFilters()
-  })
+    applyFilters();
+  });
 }
 
 function sortActivities(sortType) {
-  const grid = document.getElementById("activityGrid")
-  const cards = Array.from(grid.children)
+  const grid = document.getElementById("activityGrid");
+  const cards = Array.from(grid.children);
 
   cards.sort((a, b) => {
     // Get price from each card
-    const priceA = Number.parseFloat(a.querySelector(".price-amount").textContent.replace(/[$,]/g, ""))
-    const priceB = Number.parseFloat(b.querySelector(".price-amount").textContent.replace(/[$,]/g, ""))
+    const priceA = Number.parseFloat(
+      a.querySelector(".price-amount").textContent.replace(/[$,]/g, "")
+    );
+    const priceB = Number.parseFloat(
+      b.querySelector(".price-amount").textContent.replace(/[$,]/g, "")
+    );
 
     // Get rating from each card (count stars)
-    const starsA = a.querySelectorAll(".stars").length
-    const starsB = b.querySelectorAll(".stars").length
+    const starsA = a.querySelectorAll(".stars").length;
+    const starsB = b.querySelectorAll(".stars").length;
 
     switch (sortType) {
       case "Latest":
-        return 0 // Keep current order for latest
+        return 0; // Keep current order for latest
       case "Oldest":
-        return 0 // Reverse order for oldest
+        return 0; // Reverse order for oldest
       case "Most Luxury":
-        return priceB - priceA // Highest price first
+        return priceB - priceA; // Highest price first
       case "Regular":
-        return priceA - priceB // Lowest price first
+        return priceA - priceB; // Lowest price first
       case "Relevance":
       default:
-        return 0 // Default order
+        return 0; // Default order
     }
-  })
+  });
 
   // Re-append sorted cards
-  cards.forEach((card) => grid.appendChild(card))
+  cards.forEach((card) => grid.appendChild(card));
 }
 
 // Filter Functionality
 function applyFilters() {
-  const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked')
-  const activeFilters = Array.from(checkboxes).map((cb) => cb.parentElement.textContent.trim())
+  const checkboxes = document.querySelectorAll(
+    'input[type="checkbox"]:checked'
+  );
+  const activeFilters = Array.from(checkboxes).map((cb) =>
+    cb.parentElement.textContent.trim()
+  );
 
-  const cards = document.querySelectorAll(".activity-card")
+  const cards = document.querySelectorAll(".activity-card");
 
   if (activeFilters.length === 0) {
     // Show all cards if no filters selected
     cards.forEach((card) => {
-      card.parentElement.style.display = "block"
-    })
-    return
+      card.parentElement.style.display = "block";
+    });
+    return;
   }
 
   // This is a simplified filter - in production, you'd match against actual card data
   cards.forEach((card) => {
-    card.parentElement.style.display = "block"
-  })
+    card.parentElement.style.display = "block";
+  });
 
-  console.log("Active filters:", activeFilters)
+  console.log("Active filters:", activeFilters);
 }
 
 // Listen to filter changes
 document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
-  checkbox.addEventListener("change", applyFilters)
-})
+  checkbox.addEventListener("change", applyFilters);
+});
 
 // Smooth scroll for pagination
 document.querySelectorAll(".pagination .page-link").forEach((link) => {
   link.addEventListener("click", (e) => {
-    e.preventDefault()
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  })
-})
-
-
-
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
 
 // // Initialize tooltips if Bootstrap 5 is loaded
 // document.addEventListener("DOMContentLoaded", () => {
@@ -462,23 +377,23 @@ document.querySelectorAll(".pagination .page-link").forEach((link) => {
 
 // Add loading state when sorting/filtering
 function addLoadingState() {
-  const grid = document.getElementById("activityGrid")
-  grid.classList.add("loading")
+  const grid = document.getElementById("activityGrid");
+  grid.classList.add("loading");
   setTimeout(() => {
-    grid.classList.remove("loading")
-  }, 300)
+    grid.classList.remove("loading");
+  }, 300);
 }
 
 // Enhance sort with loading state
-const originalSort = sortActivities
+const originalSort = sortActivities;
 sortActivities = (sortType) => {
-  addLoadingState()
-  setTimeout(() => originalSort(sortType), 100)
-}
+  addLoadingState();
+  setTimeout(() => originalSort(sortType), 100);
+};
 
 // Enhance filter with loading state
-const originalFilter = applyFilters
+const originalFilter = applyFilters;
 applyFilters = () => {
-  addLoadingState()
-  setTimeout(() => originalFilter(), 100)
-}
+  addLoadingState();
+  setTimeout(() => originalFilter(), 100);
+};

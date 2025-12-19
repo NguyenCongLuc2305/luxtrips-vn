@@ -1,0 +1,424 @@
+<!-- Overlay -->
+<div class="booking-overlay" id="bookingOverlay"></div>
+
+<!-- Booking Popup -->
+<div class="booking-popup" id="bookingPopup">
+    <div class="popup-content">
+        <div class="text-right"><button class="close-popup" id="closePopup">&times;</button></div>
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="/assets/images/logo/Luxtrips.vn Logo - Booking Form.png" width="392" height="85"
+                alt="Luxtrips.vn Logo - Booking Form">
+        </div>
+
+        <!-- Title -->
+        <h2 class="popup-title">Customise Your Exclusive Travel Experiences<br>For The Best Quote</h2>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar-custom" id="progressBar"></div>
+        </div>
+
+        <!-- Step 1: Destination -->
+        <div id="bookingStep1" class="form-step active" data-step="1">
+            <div class="step-indicators">
+                <div class="step-indicator">
+                    <div class="step-number">1</div>
+                    <div class="step-title">We Personalise</div>
+                    <div class="step-desc">There's no formula, we simply listen to you and make it happen</div>
+                </div>
+                <div class="step-indicator">
+                    <div class="step-number">2</div>
+                    <div class="step-title">We Expertly Plan</div>
+                    <div class="step-desc">From your itinerary to the small details, we prepare it all on your behalf
+                    </div>
+                </div>
+                <div class="step-indicator">
+                    <div class="step-number">3</div>
+                    <div class="step-title">We Don't Settle</div>
+                    <div class="step-desc">Refining your itinerary until you're happy, even while you're traveling</div>
+                </div>
+            </div>
+            <div class="divider-1px-popup"></div>
+            <div class="step-1-booking row">
+                <div class="col-12 col-lg-8">
+                    <h4 class="form-label">Where would you like to travel?</h4>
+                    <div class="input-search-popup relative">
+                        <input type="text" class="form-control" id="destination"
+                            placeholder="Hanoi, Ho Chi Minh City, Da Nang, Sapa, Ha Giang...">
+                        <i class="fa-light fa-magnifying-glass"></i>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 contact-expert mt-4">
+                    <h6>PREFER TO SPEAK WITH A DESTINATION EXPERT</h6>
+                    <div class="contact-icons">
+                        <div class="contact-icon"><a href="#"><img src="/assets/images/icons/whatsapp - black.png"
+                                    width="50" height="50" alt="whatsapp"></a></div>
+                        <div class="contact-icon"><a href="#"><img src="/assets/images/icons/hotline-black.png"
+                                    width="50" height="50" alt="hotline"></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: Dates -->
+        <div class="form-step" data-step="2">
+            <h4 class="form-label">When would you like to travel?</h4>
+
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <div class="calendar-container">
+                        <div class="calendar-header">
+                            <button class="calendar-nav" onclick="changeMonth(-1)">«</button>
+                            <strong id="currentMonth">September 2025</strong>
+                            <button class="calendar-nav" onclick="changeMonth(1)">»</button>
+                        </div>
+                        <div class="calendar-grid">
+                            <div class="calendar-day-header">Su</div>
+                            <div class="calendar-day-header">Mo</div>
+                            <div class="calendar-day-header">Tu</div>
+                            <div class="calendar-day-header">We</div>
+                            <div class="calendar-day-header">Th</div>
+                            <div class="calendar-day-header">Fr</div>
+                            <div class="calendar-day-header">Sa</div>
+                            <div class="calendar-day disabled">30</div>
+                            <div class="calendar-day disabled">31</div>
+                            <div class="calendar-day" onclick="selectDate(this)">1</div>
+                            <div class="calendar-day" onclick="selectDate(this)">2</div>
+                            <div class="calendar-day" onclick="selectDate(this)">3</div>
+                            <div class="calendar-day" onclick="selectDate(this)">4</div>
+                            <div class="calendar-day" onclick="selectDate(this)">5</div>
+                            <div class="calendar-day" onclick="selectDate(this)">6</div>
+                            <div class="calendar-day" onclick="selectDate(this)">7</div>
+                            <div class="calendar-day" onclick="selectDate(this)">8</div>
+                            <div class="calendar-day" onclick="selectDate(this)">9</div>
+                            <div class="calendar-day" onclick="selectDate(this)">10</div>
+                            <div class="calendar-day" onclick="selectDate(this)">11</div>
+                            <div class="calendar-day" onclick="selectDate(this)">12</div>
+                            <div class="calendar-day" onclick="selectDate(this)">13</div>
+                            <div class="calendar-day" onclick="selectDate(this)">14</div>
+                            <div class="calendar-day" onclick="selectDate(this)">15</div>
+                            <div class="calendar-day" onclick="selectDate(this)">16</div>
+                            <div class="calendar-day" onclick="selectDate(this)">17</div>
+                            <div class="calendar-day" onclick="selectDate(this)">18</div>
+                            <div class="calendar-day" onclick="selectDate(this)">19</div>
+                            <div class="calendar-day" onclick="selectDate(this)">20</div>
+                            <div class="calendar-day" onclick="selectDate(this)">21</div>
+                            <div class="calendar-day" onclick="selectDate(this)">22</div>
+                            <div class="calendar-day" onclick="selectDate(this)">23</div>
+                            <div class="calendar-day" onclick="selectDate(this)">24</div>
+                            <div class="calendar-day selected" onclick="selectDate(this)">25</div>
+                            <div class="calendar-day" onclick="selectDate(this)">26</div>
+                        </div>
+                    </div>
+                    <div class="checkbox-custom">
+                        <input type="checkbox" id="flexibleDates">
+                        <label for="flexibleDates">My dates are flexible</label>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <h5 class="form-label" style="font-size: 20px;">What's your ideal trip length?</h5>
+                    <p>Refining your itinerary until you're happy, even while
+                        you're traveling</p>
+                    <div class="trip-length">
+                        <button class="counter-btn" onclick="updateCounter('tripDays', -1)">−</button>
+                        <span><span id="tripDays">10</span> days</span>
+                        <button class="counter-btn" onclick="updateCounter('tripDays', 1)">+</button>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 contact-expert mt-4">
+                    <h6>PREFER TO SPEAK WITH A DESTINATION EXPERT</h6>
+                    <div class="contact-icons">
+                        <div class="contact-icon"><a href="#"><img src="/assets/images/icons/whatsapp - black.png"
+                                    width="50" height="50" alt="whatsapp"></a></div>
+                        <div class="contact-icon"><a href="#"><img src="/assets/images/icons/hotline-black.png"
+                                    width="50" height="50" alt="hotline"></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Step 3: Travelers -->
+        <div class="form-step" data-step="3">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <h4 class="form-label">Who are you travelling with?</h4>
+
+                    <!-- custom select -->
+                    <input type="hidden" id="travelGroup" name="travelGroup" value="couple">
+                    <div class="custom-select py-4" data-target="travelGroup">
+                        <button type="button" class="select-btn">
+                            <span class="selected-text">Couple</span>
+                            <span class="arrow"><i class="fa-sharp fa-light fa-angle-down text-21"></i></span>
+                        </button>
+
+                        <ul class="select-menu">
+                            <li class="active" data-value="couple">Couple</li>
+                            <li data-value="family">Family</li>
+                            <li data-value="friends">Group of Friends</li>
+                            <li data-value="families">2+ Families</li>
+                            <li data-value="other">Other</li>
+                        </ul>
+                    </div>
+
+                    <h4 class="form-label">How many People are travelling?</h4>
+                    <div class="counter-group">
+                        <span>Adult</span>
+                        <div class="counter-controls">
+                            <button class="counter-btn" onclick="updateCounter('adults', -1)">−</button>
+                            <span class="counter-value" id="adults">2</span>
+                            <button class="counter-btn" onclick="updateCounter('adults', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="counter-group">
+                        <span>06 - 12</span>
+                        <div class="counter-controls">
+                            <button class="counter-btn" onclick="updateCounter('kids612', -1)">−</button>
+                            <span class="counter-value" id="kids612">0</span>
+                            <button class="counter-btn" onclick="updateCounter('kids612', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="counter-group">
+                        <span>02 - 06</span>
+                        <div class="counter-controls">
+                            <button class="counter-btn" onclick="updateCounter('kids26', -1)">−</button>
+                            <span class="counter-value" id="kids26">0</span>
+                            <button class="counter-btn" onclick="updateCounter('kids26', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="counter-group">
+                        <span>&lt; 02</span>
+                        <div class="counter-controls">
+                            <button class="counter-btn" onclick="updateCounter('infants', -1)">−</button>
+                            <span class="counter-value" id="infants">0</span>
+                            <button class="counter-btn" onclick="updateCounter('infants', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="counter-group" style="border-bottom: 2px solid var(--dark-color);">
+                        <strong>TOTAL</strong>
+                        <strong class="counter-value" id="totalPeople">2</strong>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4 contact-expert mt-4">
+                    <h6>PREFER TO SPEAK WITH A DESTINATION EXPERT</h6>
+                    <div class="contact-icons">
+                        <div class="contact-icon"><a href="#"><img src="/assets/images/icons/whatsapp - black.png"
+                                    width="50" height="50" alt="whatsapp"></a></div>
+                        <div class="contact-icon"><a href="#"><img src="/assets/images/icons/hotline-black.png"
+                                    width="50" height="50" alt="hotline"></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4: Budget -->
+        <div class="form-step" data-step="4">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <h4 class="form-label">What is Your Budget Per Person (USD)?</h4>
+
+                    <!-- input để JS & form submit dùng -->
+                    <input type="hidden" id="budget" name="budget" value="1000">
+                    <!-- custom select -->
+                    <div class="custom-select py-4" data-target="budget">
+                        <button type="button" class="select-btn">
+                            <span class="selected-text">$ 1,000</span>
+                            <span class="arrow">
+                                <i class="fa-sharp fa-light fa-angle-down text-21"></i>
+                            </span>
+                        </button>
+
+                        <ul class="select-menu">
+                            <li data-value="500">$ 500</li>
+                            <li class="active" data-value="1000">$ 1,000</li>
+                            <li data-value="2000">$ 2,000</li>
+                            <li data-value="5000">$ 5,000</li>
+                            <li data-value="10000">$ 10,000</li>
+                            <li data-value="20000">$ 20,000+</li>
+                        </ul>
+                    </div>
+
+
+                    <h4 class="form-label">What's Most Important to You?</h4>
+                    <div class="travel-group d-flex align-items-center justify-content-between mt-20">
+                        <div class="travel-option">
+                            <input type="radio" name="priority" value="budget" id="keepBudget">
+                            <label for="keepBudget">
+                                <div class="travel-option-title fw-500 text-16">Keeping to my budget</div>
+                            </label>
+                        </div>
+                        <div class="travel-option">
+                            <input type="radio" name="priority" value="flexible" id="flexible">
+                            <label for="flexible">
+                                <div class="travel-option-title fw-500 text-16">For the right trip, I'll increase my
+                                    budget</div>
+                            </label>
+                        </div>
+                        <div class="travel-option">
+                            <input type="radio" name="priority" value="perfect" id="perfect">
+                            <label for="perfect">
+                                <div class="travel-option-title fw-500 text-16">Taking the perfect trip</div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4 contact-expert mt-4">
+                    <h6>PREFER TO SPEAK WITH A DESTINATION EXPERT</h6>
+                    <div class="contact-icons">
+                        <div class="contact-icon"><a href="#"><img src="/assets/images/icons/whatsapp - black.png"
+                                    width="50" height="50" alt="whatsapp"></a></div>
+                        <div class="contact-icon"><a href="#"><img src="/assets/images/icons/hotline-black.png"
+                                    width="50" height="50" alt="hotline"></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 5: Travel Type -->
+        <div class="form-step" data-step="5">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <h4 class="form-label">Which of these are most appealing to you?</h4>
+
+                    <div class="travel-option">
+                        <input type="radio" name="travelType" value="leisure" id="leisure">
+                        <label for="leisure">
+                            <div class="travel-option-title">Leisure Travel</div>
+                            <div class="travel-option-desc">Focus on relaxation, entertainment, and energy recovery
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="travel-option">
+                        <input type="radio" name="travelType" value="business" id="business">
+                        <label for="business">
+                            <div class="travel-option-title">Business Travel</div>
+                            <div class="travel-option-desc">Combining work and travel</div>
+                        </label>
+                    </div>
+
+                    <div class="travel-option">
+                        <input type="radio" name="travelType" value="mice" id="mice">
+                        <label for="mice">
+                            <div class="travel-option-title">MICE Travel</div>
+                            <div class="travel-option-desc">Meetings, Incentives, Conferences, Exhibitions</div>
+                        </label>
+                    </div>
+
+                    <div class="travel-option">
+                        <input type="radio" name="travelType" value="cultural" id="cultural">
+                        <label for="cultural">
+                            <div class="travel-option-title">Cultural Travel</div>
+                            <div class="travel-option-desc">Discover heritage, arts, and local traditions</div>
+                        </label>
+                    </div>
+
+                    <div class="travel-option">
+                        <input type="radio" name="travelType" value="spiritual" id="spiritual">
+                        <label for="spiritual">
+                            <div class="travel-option-title">Spiritual Travel</div>
+                            <div class="travel-option-desc">Pilgrimage, meditation, spiritual practices</div>
+                        </label>
+                    </div>
+
+                    <div class="travel-option">
+                        <input type="radio" name="travelType" value="wellness" id="wellness">
+                        <label for="wellness">
+                            <div class="travel-option-title">Medical / Wellness Travel</div>
+                            <div class="travel-option-desc">Combining travel with medical treatment or wellness</div>
+                        </label>
+                    </div>
+
+                    <div class="travel-option">
+                        <input type="radio" name="travelType" value="adventure" id="adventure">
+                        <label for="adventure">
+                            <div class="travel-option-title">Adventure Travel</div>
+                            <div class="travel-option-desc">Physically demanding activities in nature</div>
+                        </label>
+                    </div>
+
+                    <div class="travel-option">
+                        <input type="radio" name="travelType" value="ecotourism" id="ecotourism">
+                        <label for="ecotourism">
+                            <div class="travel-option-title">Ecotourism</div>
+                            <div class="travel-option-desc">Nature experience and environmental conservation</div>
+                        </label>
+                    </div>
+
+                    <div class="travel-option">
+                        <input type="radio" name="travelType" value="culinary" id="culinary">
+                        <label for="culinary">
+                            <div class="travel-option-title">Culinary Travel</div>
+                            <div class="travel-option-desc">Discover local dishes and cooking</div>
+                        </label>
+                    </div>
+
+                    <div class="travel-option">
+                        <input type="radio" name="travelType" value="educational" id="educational">
+                        <label for="educational">
+                            <div class="travel-option-title">Educational Travel</div>
+                            <div class="travel-option-desc">Learning, research, or international exchange</div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4 contact-expert mt-4">
+                    <h6>PREFER TO SPEAK WITH A DESTINATION EXPERT</h6>
+                    <div class="contact-icons">
+                        <div class="contact-icon"><a href="#"><img src="/assets/images/icons/whatsapp - black.png"
+                                    width="50" height="50" alt="whatsapp"></a></div>
+                        <div class="contact-icon"><a href="#"><img src="/assets/images/icons/hotline-black.png"
+                                    width="50" height="50" alt="hotline"></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 6: Contact Info -->
+        <div class="form-step step-6" data-step="6">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <h4 class="form-label">Email Address</h4>
+                    <input type="email" class="form-control mb-3" id="email" placeholder="email@example.com">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 class="form-label">First Name</h4>
+                            <input type="text" class="form-control mb-3" id="firstName" placeholder="First Name">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="form-label">Last Name</h4>
+                            <input type="text" class="form-control mb-3" id="lastName" placeholder="Last Name">
+                        </div>
+                    </div>
+
+                    <h4 class="form-label">Phone Number</h4>
+                    <input type="tel" class="form-control mb-3" id="phone" placeholder="Phone Number">
+
+                    <h4 class="form-label">Any preferences you want to share as we prepare your custom itinerary?</h4>
+                    <textarea class="form-control mb-3" id="preferences" rows="4"
+                        placeholder='e.g. "must-see" or "must do" activities'></textarea>
+
+                    <p style="font-size: 14px; font-style: italic;">* By providing your phone number, you
+                        consent
+                        to Kensington sending your quote request by text message. You may unsubscribe by texting STOP.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="button-group col-12 col-lg-8">
+            <button class="btn-outline btn-previous" id="prevBtn" onclick="changeStep(-1)">Previous</button>
+            <button class="btn-gradient btn-next" id="nextBtn" onclick="changeStep(1)">Next</button>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-left mt-5" style="font-size: 14px;">
+            Copyright 2025 | Luxtrips.vn | All rights reserved
+        </div>
+    </div>
+</div>
