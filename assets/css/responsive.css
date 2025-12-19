@@ -614,6 +614,19 @@
     justify-content: space-between;
     flex-wrap: wrap;
   }
+
+  .mobile-bottom-nav:has(.nav-campaign-bottom){
+    padding: 5px 15px;
+    bottom: 15px;
+  }
+  .nav-campaign-bottom .ad-content, .nav-campaign-bottom .text-16{
+    font-size: 14px;
+  }
+  .campaign-button .btn-gradient{
+    white-space: wrap;
+    height: auto;
+    padding: 6px 15px;
+  }
 }
 
 @media (max-width: 1199px) {
@@ -700,7 +713,7 @@
 
 @media (min-width: 1200px) {
 
-  .mobile-bottom-nav,
+  .mobile-bottom-nav .bottom-menu,
   .company-info {
     display: none !important;
   }

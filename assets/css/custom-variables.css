@@ -97,13 +97,13 @@ ul li{
 .border-bottom{
     border-bottom: 1px solid var(--bs-body-color) !important;
 }
-.text-primary {
+.color-primary {
     color: var(--bs-primary) !important;
 }
-.text-secondary {
+.color-secondary {
     color: var(--bs-secondary) !important;
 }
-.text-body{
+.color-body{
     color: var(--bs-body-color);
 }
 .text-decoration-none{
@@ -211,7 +211,7 @@ ul li{
     padding-top: 30px;
     padding-bottom: 30px;
 }
-.pt-100{
+.pt-100px{
     padding-top: 100px;
 }
 .pt-10px{
@@ -247,4 +247,8 @@ ul li{
 
 .pre-line {
     white-space: pre-line;
+}
+
+.bottom-160px{
+    bottom: 160px;
 }

@@ -82,6 +82,9 @@ section {
   transition: all 0.3s;
   text-decoration: none;
   height: 50px;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .btn-gradient:hover {
@@ -99,6 +102,7 @@ section {
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .btn-white:hover {
@@ -409,6 +413,10 @@ section {
   position: relative;
 }
 
+.megamenu .mega-panel .list-unstyled li:last-child {
+  margin-bottom: 0;
+}
+
 .megamenu .mega-panel li::before {
   content: '';
   position: absolute;
@@ -451,7 +459,8 @@ section {
   z-index: 99;
   min-width: max-content;
   width: 100%;
-  padding: 0.5rem 0;
+  padding: 7px 0 0;
+  min-height: 200px;
   margin: 0;
   font-size: 14px;
   color: var(--bs-body-color);
@@ -722,6 +731,7 @@ section {
   border-radius: 50px;
   font-weight: 600;
   transition: all 0.3s;
+  white-space: nowrap;
 }
 
 .btn-learn-more:hover {
@@ -904,27 +914,6 @@ section {
 
 
 /* ==================== 8. FINAL CTA ==================== */
-
-.btn-cta-large {
-  display: inline-block;
-  padding: 18px 50px;
-  background: #c9a966;
-  color: #000;
-  font-size: 1.3rem;
-  font-weight: 700;
-  border-radius: 50px;
-  margin-bottom: 30px;
-  transition: all 0.3s;
-}
-
-.btn-cta-large:hover {
-  background: #fff;
-  transform: scale(1.05);
-}
-
-.cta-phone {
-  font-size: 1.4rem;
-}
 
 
 
@@ -1161,6 +1150,7 @@ section {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
+  white-space: nowrap;
 }
 
 .btn-color-primary:hover {
@@ -1752,6 +1742,7 @@ section {
   position: absolute;
   right: 15px;
   bottom: 40px;
+  white-space: nowrap;
 }
 
 .btn-white-small {
@@ -1766,6 +1757,7 @@ section {
   transition: all 0.3s ease;
   text-decoration: none;
   pointer-events: auto;
+  white-space: nowrap;
 }
 
 .btn-white-small:hover {
@@ -1824,7 +1816,8 @@ section {
 #product-detail-1 .per-person {
   font-size: 14px;
 }
-#product-detail-1 .section-4__product-detail-1 .swiper .swiper-slide{
+
+#product-detail-1 .section-4__product-detail-1 .swiper .swiper-slide {
   min-width: 370px;
 }
 
@@ -1892,6 +1885,7 @@ section {
   cursor: pointer;
   transition: all 0.3s;
   text-decoration: none;
+  white-space: nowrap;
   /* height: 50px; */
 }
 
@@ -1924,7 +1918,8 @@ section {
 }
 
 
-.section-3__product-detail-1 .nav-tabs .nav-link.active, .section-3__product-detail-1 .nav-tabs .nav-link:hover {
+.section-3__product-detail-1 .nav-tabs .nav-link.active,
+.section-3__product-detail-1 .nav-tabs .nav-link:hover {
   border-bottom: 3px solid var(--bs-body-color);
 }
 
@@ -2041,4 +2036,27 @@ section {
 .tag-item:hover {
   background: var(--bs-primary);
   color: white;
+}
+
+.mobile-bottom-nav:has(.nav-campaign-bottom) {
+  background-color: transparent;
+  border: 0;
+  bottom: 30px;
+  transform: translateY(150%);
+}
+
+.nav-campaign-bottom {
+  background-color: white;
+  max-width: 65rem;
+  margin: 0 auto;
+  z-index: 10;
+  padding: 15px;
+  transition: 1s ease-in-out;
+  border-radius: var(--bs-border-radius);
+  border: 1px solid var(--bs-border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
 }
