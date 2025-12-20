@@ -472,24 +472,26 @@
     min-width: 240px;
   } */
 
-  #product-detail-1 .section-4__product-detail-1 .swiper .swiper-slide{
+  #product-detail-1 .section-4__product-detail-1 .swiper .swiper-slide {
     min-width: 240px;
   }
-  #product-detail-1 .section-5__product-detail-1 .swiper .swiper-slide{
+
+  #product-detail-1 .section-5__product-detail-1 .swiper .swiper-slide {
     min-width: 150px;
   }
-  
+
 }
 
 @media (max-width: 992px) {
-  
-  .d-lg-block{
+
+  .d-lg-block {
     display: none;
   }
 
-  .section-1-banner{
+  .section-1-banner {
     padding-top: 0;
   }
+
   #product-detail-1 .section-1-banner {
     padding: 0;
   }
@@ -590,57 +592,86 @@
     text-align: center;
   }
 
-  .section-4-card{
+  .section-4-card {
     min-height: auto;
   }
-  .section-6-title{
-    min-height: 96px;
-  }
 
-  .section-2__product-detail{
+  /* .section-6-title {
+    min-height: 96px;
+  } */
+
+  .section-2__product-detail {
     padding-top: 0;
   }
-  .product-detail__content--ss2{
+
+  .product-detail__content--ss2 {
     display: block;
   }
-  .flex-lg-wrap{
+
+  .flex-lg-wrap {
     flex-wrap: wrap;
   }
-  .section-3__product-detail-1 .pl-50px{
+
+  .section-3__product-detail-1 .pl-50px {
     padding-left: 0;
   }
-  .section-2__product-detail .text-end{
+
+  .section-2__product-detail .text-end {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
   }
 
-  .mobile-bottom-nav:has(.nav-campaign-bottom){
+  .mobile-bottom-nav:has(.nav-campaign-bottom) {
     padding: 5px 15px;
     bottom: 15px;
   }
-  .nav-campaign-bottom .ad-content, .nav-campaign-bottom .text-16{
+
+  .nav-campaign-bottom .ad-content,
+  .nav-campaign-bottom .text-16 {
     font-size: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    text-overflow: ellipsis;
   }
-  .campaign-button .btn-gradient{
+
+  .campaign-button .btn-gradient {
     white-space: wrap;
     height: auto;
     padding: 6px 15px;
   }
-  .bookingStep1__swiper .swiper-slide{
+
+  .bookingStep1__swiper .swiper-slide {
     min-width: 270px;
   }
-  .popup-title{
+
+  .popup-title {
     font-size: 26px;
   }
-  .form-label{
+
+  .form-label {
     font-size: 24px;
   }
-  .step-indicators, .travel-group{
+
+  .step-indicators,
+  .travel-group,
+  .section-4-product__category-1--list {
     overflow-x: scroll;
   }
-  .step-indicator{
+
+  .step-indicator {
     min-width: 270px;
+  }
+
+  .section-4-product__category-1 .row>* {
+    margin-top: 0;
+  }
+
+  .section-4-product__category-1 .destination-list {
+    min-width: 155px;
   }
 }
 

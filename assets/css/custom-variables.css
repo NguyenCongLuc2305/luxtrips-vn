@@ -193,6 +193,15 @@ ul li{
 .pb-20px {
     padding-bottom: 20px;
 }
+.pb-22px{
+    padding-bottom: 22px;
+}
+.pb-30px {
+    padding-bottom: 30px;
+}
+.pb-10px{
+    padding-bottom: 10px;
+}
 
 .pb-100px{
     padding-bottom: 100px;
@@ -211,6 +220,18 @@ ul li{
     padding-top: 30px;
     padding-bottom: 30px;
 }
+.pt-0{
+    padding-top: 0;
+}
+.pt-20px{
+    padding-top: 20px;
+}
+.pt-44px{
+    padding-top: 44px;
+}
+.pt-50px{
+    padding-top: 50px;
+}
 .pt-100px{
     padding-top: 100px;
 }
@@ -223,6 +244,9 @@ ul li{
 
 .pl-50px{
     padding-left: 50px;
+}
+.pb-67px{
+    padding-bottom: 67px;
 }
 
 /* margin */
@@ -244,9 +268,23 @@ ul li{
 .mb-10px{
     margin-bottom: 10px;
 }
+.mb-34px{
+    margin-bottom: 34px;
+}
+
+.mb-38px{
+    margin-bottom: 38px;
+}
+
+.mb-30px{
+    margin-bottom: 30px;
+}
 
 .mt-20{
     margin-top: 20px;
+}
+.mb-20px{
+    margin-bottom: 20px;
 }
 
 .pre-line {

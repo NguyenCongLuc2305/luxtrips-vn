@@ -187,7 +187,6 @@ const section3SubProduct1Swiper = new Swiper("#section-3__sub-product-1--swiper 
 // swiper này dùng chung cho TOÀN BỘ website
 document.querySelectorAll("[data-swiper]").forEach((wrapper) => {
   const swiperEl = wrapper.querySelector(".swiper");
-
   if (!swiperEl) return;
 
   new Swiper(swiperEl, {
@@ -201,6 +200,13 @@ document.querySelectorAll("[data-swiper]").forEach((wrapper) => {
       prevEl: wrapper.dataset.prev,
     },
 
+    pagination: wrapper.dataset.pagination
+      ? {
+          el: wrapper.dataset.pagination,
+          clickable: true,
+        }
+      : false,
+
     breakpoints: {
       0: {
         slidesPerView: Number(wrapper.dataset.slidesMobile) || 1,
@@ -211,3 +217,4 @@ document.querySelectorAll("[data-swiper]").forEach((wrapper) => {
     },
   });
 });
+

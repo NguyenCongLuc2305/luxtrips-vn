@@ -26,6 +26,17 @@ fetch("/assets/partials/popup-booking.html")
     document.body.appendChild(script);
   });
 
+
+// load slide-img-navigation-pagination
+fetch("/assets/components/slide-img-navigation-pagination.html")
+  .then((res) => res.text())
+  .then((html) => {
+    document.getElementById("slide-img-navigation-pagination").innerHTML = html;
+    const script = document.createElement("script");
+    script.src = "/assets/js/custom-swiper.js";
+    document.body.appendChild(script);
+  });
+
 // mobileBottomNav
 document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", function () {
@@ -291,11 +302,11 @@ function sortActivities(sortType) {
 
   cards.sort((a, b) => {
     // Get price from each card
-    const priceA = Number.parseFloat(
-      a.querySelector(".price-amount").textContent.replace(/[$,]/g, "")
+    const priceA = parseFloat(
+      a.querySelector(".price-label").textContent.replace(/[^\d.]/g, "")
     );
-    const priceB = Number.parseFloat(
-      b.querySelector(".price-amount").textContent.replace(/[$,]/g, "")
+    const priceB = parseFloat(
+      b.querySelector(".price-label").textContent.replace(/[^\d.]/g, "")
     );
 
     // Get rating from each card (count stars)

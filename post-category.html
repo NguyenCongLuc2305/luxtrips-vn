@@ -58,185 +58,340 @@
 
 
 <body>
-    <div class="site" id="product-category-2">
+    <div class="site" id="post-category-page">
         <!-- load header  -->
         <div id="header"></div>
 
         <!-- body -->
         <main class="site-content">
             <!--------------------- 1. section-1 BANNER --------------------->
-            <section class="section-1-banner  pt-0">
+            <section class="section-1-banner section-1__post-category p-0">
                 <div class="section-1-section">
-                    <div class="section-1-swiper">
-                        <!-- pagination -->
-                        <div class="swiper-pagination swiper-pagination-section-1"></div>
-                        <!-- Swiper container -->
-                        <div class="swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="/assets/images/uploads/3. PRODUCT CATEGORY 2-113.png" alt="slide 1">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1600"
-                                        alt="slide 2">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1600"
-                                        alt="slide 3">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <img src="assets/images/uploads/3. PRODUCT CATEGORY 2-113.png" alt="post category banner"
+                        class="img-fluid w-100 fit-cover">
                 </div>
             </section>
 
             <!--------------------- section-2 --------------------->
-            <section class="section-2-product pt-10px">
+            <div class="container pt-50px">
+                <div class="breadcrumb mb-0">
+                    <span>Home</span>
+                    <span class="px-2">/</span>
+                    <a class="breadcrumb-link color-body text-decoration-none" href="#">Exclusive Traveling Stories &
+                        Experiences</a>
+                </div>
+            </div>
+            <section class="section-2__sub-product-1 pt-30px pb-30px">
                 <div class="container">
-                    <div class="breadcrumb mb-30px">
-                        <span>Home</span>
-                        <span class="px-2">/</span>
-                        <a class="breadcrumb-link color-body" href="#">Destinations</a>
-                    </div>
-                    <div class="section-2-product__content">
-                        <h2 class="section-title">Trip Types & Travel Styles</h2>
-                        <p class="desc pre-line">Finding the travel style that is right for you is an essential part of
-                            designing the perfect
-                            tailor-made tour. To ignite your imagination and highlight exciting experiences you may not
-                            have considered, we've created a variety of travel styles that will make planning more fun.
+                    <div class="section-2__sub-product-1--content toggle-wrapper">
+                        <h1 class="section-title mb-30px">Exclusive Traveling Stories & Experiences</h1>
+                        <div class="description" id="description">
+                            Here, you’ll discover more than just destinations — you’ll find the essence of bespoke
+                            experiences: from waking up to sunrise over a private bay in Ha Long, savoring a chef’s
+                            table dinner in a hidden Hoi An villa, to exploring remote mountain villages by private
+                            helicopter. Each story is a ...
 
-                            Browse below at the range of possibilities and then contact our experts - we'll marry your
-                            style with the perfect destination, a tailored mix of activities and experiences and a pace
-                            that is just right for you.
-                        </p>
-                        <a href="#" class="btn-gradient inline-block mt-5">Request a Quote</a>
+                            <div class="extra-content" id="extraContent">
+                                <p>on a motorbike tour through the bustling streets, exploring hidden alleyways and
+                                    sampling authentic street food. Visit the iconic Notre-Dame Cathedral Basilica of
+                                    Saigon and the Central Post Office, architectural marvels from the French colonial
+                                    era.</p>
+                                <p>Don't miss the War Remnants Museum for a sobering look at Vietnam's history, and
+                                    explore the vibrant Ben Thanh Market for souvenirs and local delicacies. Experience
+                                    the city's modern side at the Bitexco Financial Tower's Saigon Skydeck for panoramic
+                                    views.</p>
+                            </div>
+                        </div>
+                        <button class="see-more-btn btn-primary-color float-right p-0" onclick="toggleContent(this)">
+                            See more
+                            <span class="arrow">
+                                <i class="fa-light fa-angle-right"></i>
+                            </span>
+                        </button>
                     </div>
                 </div>
             </section>
 
-            <!--------------------- 3. SECTION 3 --------------------->
-            <section class="section-3-product-2 pt-0">
+            <!-- section 3 production 1 -->
+            <section class="section-3__post-category">
                 <div class="container">
-                    <div class="row g-40px">
-                        <div class="col-md-6">
-                            <a href="#" class="card-item">
-                                <img src="/assets/images/uploads/3. PRODUCT CATEGORY 2-114.png" alt="Adventure">
-                                <div class="card-overlay">
-                                    <div class="section-title text-white">Bespoke Wellness</div>
-                                    <div class="card-description">Designed for you, offering insider access and seamless
-                                        assistance with bookings, reservations, tickets & more</div>
+                    <div class="custom-sort">
+                        <div class="d-flex justify-content-end align-items-center mb-4">
+                            <span class="text-12 show-pc mr-10px">sort by</span>
+                            <div class="custom-sort-dropdown">
+                                <button class="sort-dropdown-toggle" id="sortDropdownToggle">
+                                    <span id="sortSelectedText">Relevance</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="sort-dropdown-menu" id="sortDropdownMenu">
+                                    <div class="sort-option active" data-value="Relevance">Relevance</div>
+                                    <div class="sort-option" data-value="Latest">Latest</div>
+                                    <div class="sort-option" data-value="Oldest">Oldest</div>
+                                    <div class="sort-option" data-value="Most Luxury">Most Luxury</div>
+                                    <div class="sort-option" data-value="Regular">Regular</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3" id="activityGrid">
+                        <!-- Activity Card 1 -->
+                        <div class="col-6 col-md-6 col-xl-4">
+                            <a href="#" class="text-decoration-none text-reset">
+                                <div class="section-6-item">
+                                    <img src="assets/images/uploads/story-sapa.png"
+                                        class="section-6-img-top w-100 img-fluid fit-cover"
+                                        alt="Sapa, a place of enchanting beauty and cultural diversity">
+                                    <div class="section-6-body mt-3">
+                                        <h3 class="h6 section-6-title fw-500">Sapa, a place of enchanting
+                                            beauty
+                                            and cultural diversity
+                                        </h3>
+                                    </div>
                                 </div>
                             </a>
                         </div>
-                        <div class="col-md-6">
-                            <a href="#" class="card-item">
-                                <img src="/assets/images/uploads/3. PRODUCT CATEGORY 2-116.png" alt="Culture">
-                                <div class="card-overlay">
-                                    <div class="section-title text-white">Cultural Welness</div>
-                                    <div class="card-description">Your ultimate choice for a more refined and personal
-                                        resort experience that goes beyond the beach.</div>
+
+                        <!-- Activity Card 2 -->
+                        <div class="col-6 col-md-6 col-xl-4">
+                            <a href="#" class="text-decoration-none text-reset">
+                                <div class="section-6-item">
+                                    <img src="assets/images/uploads/story-hagiang.png"
+                                        class="section-6-img-top w-100 img-fluid fit-cover" alt="Embark on an epic adventure from Sapa to Ha Giang with a thrilling helicopter ride over
+                                picturesque landscape">
+                                    <div class="section-6-body mt-3">
+                                        <h3 class="h6 section-6-title fw-500">Embark on an epic adventure
+                                            from
+                                            Sapa to
+                                            Ha Giang with a thrilling helicopter ride over
+                                            picturesque landscape
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Activity Card 3 -->
+                        <div class="col-6 col-md-6 col-xl-4">
+                            <a href="/products/da-nang" class="text-decoration-none text-reset">
+                                <div class="section-6-item">
+                                    <img src="assets/images/uploads/story-mountain-to-sea.png"
+                                        class="section-6-img-top w-100 img-fluid fit-cover"
+                                        alt="From Mountains to Seascape – Ha Long Bay">
+                                    <div class="section-6-body mt-3">
+                                        <h3 class="h6 section-6-title fw-500">Behind the Scenes: How Ultra-Luxury Travel
+                                            Experiences are Crafted in Vietnam
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Activity Card 4 -->
+                        <div class="col-6 col-md-6 col-xl-4">
+                            <a href="/products/da-nang" class="text-decoration-none text-reset">
+                                <div class="section-6-item">
+                                    <img src="assets/images/uploads/story-mountain-to-sea.png"
+                                        class="section-6-img-top w-100 img-fluid fit-cover"
+                                        alt="From Mountains to Seascape – Ha Long Bay">
+                                    <div class="section-6-body mt-3">
+                                        <h3 class="h6 section-6-title fw-500">Design Stories: The Vietnamese Aesthetic
+                                            Behind the Country’s Top Hotels
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Activity Card 5 -->
+                        <div class="col-6 col-md-6 col-xl-4">
+                            <a href="/products/da-nang" class="text-decoration-none text-reset">
+                                <div class="section-6-item">
+                                    <img src="assets/images/uploads/story-mountain-to-sea.png"
+                                        class="section-6-img-top w-100 img-fluid fit-cover"
+                                        alt="From Mountains to Seascape – Ha Long Bay">
+                                    <div class="section-6-body mt-3">
+                                        <h3 class="h6 section-6-title fw-500">Luxury with Purpose: Sustainable and
+                                            Exclusive Travel for the Conscious Explorer
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Activity Card 6 -->
+                        <div class="col-6 col-md-6 col-xl-4">
+                            <a href="/products/da-nang" class="text-decoration-none text-reset">
+                                <div class="section-6-item">
+                                    <img src="assets/images/uploads/story-mountain-to-sea.png"
+                                        class="section-6-img-top w-100 img-fluid fit-cover"
+                                        alt="From Mountains to Seascape – Ha Long Bay">
+                                    <div class="section-6-body mt-3">
+                                        <h3 class="h6 section-6-title fw-500">Vietnam for Two: The Ultimate Romantic
+                                            Escapes for Sophisticated Couples
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Activity Card 7 -->
+                        <div class="col-6 col-md-6 col-xl-4">
+                            <a href="/products/da-nang" class="text-decoration-none text-reset">
+                                <div class="section-6-item">
+                                    <img src="assets/images/uploads/story-mountain-to-sea.png"
+                                        class="section-6-img-top w-100 img-fluid fit-cover"
+                                        alt="From Mountains to Seascape – Ha Long Bay">
+                                    <div class="section-6-body mt-3">
+                                        <h3 class="h6 section-6-title fw-500">Vietnam’s Hidden Luxury Gems Only the
+                                            Insiders Know About
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Activity Card 8 -->
+                        <div class="col-6 col-md-6 col-xl-4">
+                            <a href="/products/da-nang" class="text-decoration-none text-reset">
+                                <div class="section-6-item">
+                                    <img src="assets/images/uploads/story-mountain-to-sea.png"
+                                        class="section-6-img-top w-100 img-fluid fit-cover"
+                                        alt="From Mountains to Seascape – Ha Long Bay">
+                                    <div class="section-6-body mt-3">
+                                        <h3 class="h6 section-6-title fw-500">Awaken Your Senses: A Luxury Coffee
+                                            Meditation Experience in Da Lat
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Activity Card 9 -->
+                        <div class="col-6 col-md-6 col-xl-4">
+                            <a href="/products/da-nang" class="text-decoration-none text-reset">
+                                <div class="section-6-item">
+                                    <img src="assets/images/uploads/story-mountain-to-sea.png"
+                                        class="section-6-img-top w-100 img-fluid fit-cover"
+                                        alt="From Mountains to Seascape – Ha Long Bay">
+                                    <div class="section-6-body mt-3">
+                                        <h3 class="h6 section-6-title fw-500">Eco-Luxury Meets Architecture: Top Green
+                                            Resorts with World-Class Design
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Activity Card 10 -->
+                        <div class="col-6 col-md-6 col-xl-4">
+                            <a href="/products/da-nang" class="text-decoration-none text-reset">
+                                <div class="section-6-item">
+                                    <img src="assets/images/uploads/story-mountain-to-sea.png"
+                                        class="section-6-img-top w-100 img-fluid fit-cover"
+                                        alt="From Mountains to Seascape – Ha Long Bay">
+                                    <div class="section-6-body mt-3">
+                                        <h3 class="h6 section-6-title fw-500">Jet, Set, Go: Private Jet Experiences to
+                                            Vietnam’s Elite Resorts
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Activity Card 11 -->
+                        <div class="col-6 col-md-6 col-xl-4">
+                            <a href="/products/da-nang" class="text-decoration-none text-reset">
+                                <div class="section-6-item">
+                                    <img src="assets/images/uploads/story-mountain-to-sea.png"
+                                        class="section-6-img-top w-100 img-fluid fit-cover"
+                                        alt="From Mountains to Seascape – Ha Long Bay">
+                                    <div class="section-6-body mt-3">
+                                        <h3 class="h6 section-6-title fw-500">Luxury for Families: Designing Exclusive
+                                            Vietnam Trips for All Ages
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Activity Card 12 -->
+                        <div class="col-6 col-md-6 col-xl-4">
+                            <a href="/products/da-nang" class="text-decoration-none text-reset">
+                                <div class="section-6-item">
+                                    <img src="assets/images/uploads/story-mountain-to-sea.png"
+                                        class="section-6-img-top w-100 img-fluid fit-cover"
+                                        alt="From Mountains to Seascape – Ha Long Bay">
+                                    <div class="section-6-body mt-3">
+                                        <h3 class="h6 section-6-title fw-500">The Story Behind Vietnam’s Most Luxurious
+                                            Hotel Suites
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Activity Card 13 -->
+                        <div class="col-6 col-md-6 col-xl-4">
+                            <a href="/products/da-nang" class="text-decoration-none text-reset">
+                                <div class="section-6-item">
+                                    <img src="assets/images/uploads/story-mountain-to-sea.png"
+                                        class="section-6-img-top w-100 img-fluid fit-cover"
+                                        alt="From Mountains to Seascape – Ha Long Bay">
+                                    <div class="section-6-body mt-3">
+                                        <h3 class="h6 section-6-title fw-500">Living Like Royalty: Experiencing
+                                            Vietnam’s Imperial Heritage in Hue
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Activity Card 14 -->
+                        <div class="col-6 col-md-6 col-xl-4">
+                            <a href="/products/da-nang" class="text-decoration-none text-reset">
+                                <div class="section-6-item">
+                                    <img src="assets/images/uploads/story-mountain-to-sea.png"
+                                        class="section-6-img-top w-100 img-fluid fit-cover"
+                                        alt="From Mountains to Seascape – Ha Long Bay">
+                                    <div class="section-6-body mt-3">
+                                        <h3 class="h6 section-6-title fw-500">Personal Historian: Touring Vietnam’s
+                                            Historic Sites with a Cultural Expert
+                                        </h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Activity Card 15 -->
+                        <div class="col-6 col-md-6 col-xl-4">
+                            <a href="/products/da-nang" class="text-decoration-none text-reset">
+                                <div class="section-6-item">
+                                    <img src="assets/images/uploads/story-mountain-to-sea.png"
+                                        class="section-6-img-top w-100 img-fluid fit-cover"
+                                        alt="From Mountains to Seascape – Ha Long Bay">
+                                    <div class="section-6-body mt-3">
+                                        <h3 class="h6 section-6-title fw-500">The Story Behind Vietnam’s Most Luxurious
+                                            Hotel Suites
+                                        </h3>
+                                    </div>
                                 </div>
                             </a>
                         </div>
                     </div>
 
-                    <div class="row g-40px">
-                        <div class="col-md-6">
-                            <a href="#" class="card-item">
-                                <img src="/assets/images/uploads/3. PRODUCT CATEGORY 2-130.png" alt="Philanthropy">
-                                <div class="card-overlay">
-                                    <div class="section-title text-white">Spiritual Wellness</div>
-                                    <div class="card-description">Personalized ship-and-land journeys unlike any other,
-                                        in unparalleled comfort and style.</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="#" class="card-item">
-                                <img src="/assets/images/uploads/3. PRODUCT CATEGORY 2-117.png" alt="For Business">
-                                <div class="card-overlay">
-                                    <div class="section-title text-white">Workational Wellness</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row g-40px">
-                        <div class="col-md-3 col-6">
-                            <a href="#" class="card-item">
-                                <img src="/assets/images/uploads/3. PRODUCT CATEGORY 2-118.png" alt="For Treatments">
-                                <div class="card-overlay">
-                                    <div class="section-title text-white text-20 mb-0">Educational
-                                        Wellness</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6">
-                            <a href="#" class="card-item">
-                                <img src="/assets/images/uploads/3. PRODUCT CATEGORY 2-119.png" alt="Activities">
-                                <div class="card-overlay">
-                                    <div class="section-title text-white text-20 mb-0">
-                                        Family</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6">
-                            <a href="#" class="card-item">
-                                <img src="/assets/images/uploads/3. PRODUCT CATEGORY 2-120.png" alt="Relaxing Trips">
-                                <div class="card-overlay">
-                                    <div class="section-title text-white text-20 mb-0">
-                                        Couple</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6">
-                            <a href="#" class="card-item">
-                                <img src="/assets/images/uploads/3. PRODUCT CATEGORY 2-121.png" alt="Weddings">
-                                <div class="card-overlay">
-                                    <div class="section-title text-white text-20 mb-0">
-                                        Group</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="row g-40px">
-                        <div class="col-md-3 col-6">
-                            <a href="#" class="card-item">
-                                <img src="/assets/images/uploads/3. PRODUCT CATEGORY 2-122.png" alt="Honeymoons">
-                                <div class="card-overlay">
-                                    <div class="section-title text-white text-20 mb-0">
-                                        Northern Vietnam</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6">
-                            <a href="#" class="card-item">
-                                <img src="/assets/images/uploads/3. PRODUCT CATEGORY 2-123.png" alt="Families">
-                                <div class="card-overlay">
-                                    <div class="section-title text-white text-20 mb-0">
-                                        Southern Vietnam</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6">
-                            <a href="#" class="card-item">
-                                <img src="/assets/images/uploads/3. PRODUCT CATEGORY 2-124.png" alt="Cruising">
-                                <div class="card-overlay">
-                                    <div class="section-title text-white text-20 mb-0">
-                                        Center Vietnam</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6">
-                            <a href="#" class="card-item">
-                                <img src="/assets/images/uploads/3. PRODUCT CATEGORY 2-125.png" alt="Groups">
-                                <div class="card-overlay">
-                                    <div class="section-title text-white text-20 mb-0">Local & Authentic
-                                        Cuisine</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation" class="mt-5">
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item"><a class="page-link" style="padding: 3px 8px;" href="#"><i
+                                        class="fa fa-chevron-left text-10" aria-hidden="true"></i></a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item"><a class="page-link" href="#">6</a></li>
+                            <li class="page-item"><a class="page-link" href="#">...</a></li>
+                            <li class="page-item"><a class="page-link" style="padding: 3px 8px;" href="#"><i
+                                        class="fa fa-chevron-right text-10" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </nav>
                 </div>
             </section>
 
@@ -269,7 +424,7 @@
                     <div class="breadcrumb mb-30px">
                         <span>Home</span>
                         <span class="px-2">/</span>
-                        <a class="breadcrumb-link color-body" href="#">Destinations</a>
+                        <a class="breadcrumb-link color-body" href="#">Exclusive Traveling Stories & Experiences</a>
                     </div>
                     <div class="border-top border-secondary"></div>
                 </div>
