@@ -627,6 +627,21 @@
     height: auto;
     padding: 6px 15px;
   }
+  .bookingStep1__swiper .swiper-slide{
+    min-width: 270px;
+  }
+  .popup-title{
+    font-size: 26px;
+  }
+  .form-label{
+    font-size: 24px;
+  }
+  .step-indicators, .travel-group{
+    overflow-x: scroll;
+  }
+  .step-indicator{
+    min-width: 270px;
+  }
 }
 
 @media (max-width: 1199px) {

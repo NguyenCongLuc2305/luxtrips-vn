@@ -2211,7 +2211,7 @@ section {
   font-size: 30px;
 }
 .step-6 .form-label{
-  color: 20px;
+  font-size: 20px;
   font-weight: 500;
 }
 
@@ -2240,6 +2240,7 @@ section {
   cursor: pointer;
   transition: all 0.3s;
   display: flex;
+  min-width: 210px;
 }
 
 .travel-option:hover {
@@ -2313,7 +2314,6 @@ section {
 }
 .step-indicators {
   display: flex;
-  justify-content: center;
   gap: 20px;
 }
 
