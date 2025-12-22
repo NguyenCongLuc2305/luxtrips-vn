@@ -598,15 +598,15 @@ section {
 }
 
 .slide-1 {
-  background-image: url("/assets/images/uploads/hero-bg-1.png");
+  background-image: url("../images/uploads/hero-bg-1.png");
 }
 
 #product-category-3 .slide-1 {
-  background-image: url("/assets/images/uploads/4.\ PRODUCT\ CATEGORY\ 3-139.png");
+  background-image: url("../images/uploads/4.\ PRODUCT\ CATEGORY\ 3-139.png");
 }
 
 .section-1__sub-product-1 .slide-1 {
-  background-image: url("/assets/images/uploads/6. PRODUCT SUB - CATEGORY 1-147.png");
+  background-image: url("../images/uploads/6. PRODUCT SUB - CATEGORY 1-147.png");
 }
 
 .slide-2 {
@@ -1305,6 +1305,11 @@ section {
 #mobileFilterModal {
   z-index: 10500;
 }
+
+#mobileFilterModal .filter-sidebar{
+  padding: 0;
+  border: 0;
+} 
 
 .breadcrumb {
   display: flex;

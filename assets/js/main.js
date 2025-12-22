@@ -1,39 +1,39 @@
 //load footer
-fetch("/assets/partials/footer.html")
+fetch("assets/partials/footer.html")
   .then((res) => res.text())
   .then((html) => (document.getElementById("footer").innerHTML = html));
 
 // load header
-fetch("/assets/partials/header.html")
+fetch("assets/partials/header.html")
   .then((res) => res.text())
   .then((html) => {
     document.getElementById("header").innerHTML = html;
 
     const script = document.createElement("script");
-    script.src = "/assets/js/header.js";
+    script.src = "assets/js/header.js";
     document.body.appendChild(script);
   });
 
 
 // load popup booking
-fetch("/assets/partials/popup-booking.html")
+fetch("assets/partials/popup-booking.html")
   .then((res) => res.text())
   .then((html) => {
     document.getElementById("popup-booking").innerHTML = html;
 
     const script = document.createElement("script");
-    script.src = "/assets/js/popup-booking.js";
+    script.src = "assets/js/popup-booking.js";
     document.body.appendChild(script);
   });
 
 
 // load slide-img-navigation-pagination
-fetch("/assets/components/slide-img-navigation-pagination.html")
+fetch("assets/components/slide-img-navigation-pagination.html")
   .then((res) => res.text())
   .then((html) => {
     document.getElementById("slide-img-navigation-pagination").innerHTML = html;
     const script = document.createElement("script");
-    script.src = "/assets/js/custom-swiper.js";
+    script.src = "assets/js/custom-swiper.js";
     document.body.appendChild(script);
   });
 
