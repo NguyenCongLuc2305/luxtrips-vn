@@ -26,38 +26,54 @@ function updateProgressBar() {
 }
 
 // js custom select
+
 document.querySelectorAll(".custom-select").forEach((select) => {
   const btn = select.querySelector(".select-btn");
   const menu = select.querySelector(".select-menu");
-  const text = select.querySelector(".selected-text");
 
+  if (!btn || !menu) return;
+
+  const imgInBtn = btn.querySelector("img");
   const inputId = select.dataset.target;
-  const hiddenInput = document.getElementById(inputId);
+  const hiddenInput = inputId ? document.getElementById(inputId) : null;
 
-  btn.addEventListener("click", function (e) {
+  // Toggle dropdown
+  btn.addEventListener("click", (e) => {
     e.stopPropagation();
     menu.classList.toggle("open");
   });
 
+  // Click item
   menu.querySelectorAll("li").forEach((item) => {
-    item.addEventListener("click", function () {
-      text.textContent = this.textContent;
-      hiddenInput.value = this.dataset.value;
+    item.addEventListener("click", () => {
+      const img = item.querySelector("img");
 
-      menu.classList.remove("open");
+      // đổi icon
+      if (img && imgInBtn) {
+        imgInBtn.src = img.src;
+      }
 
+      // set value
+      if (hiddenInput) {
+        hiddenInput.value = item.dataset.value || "";
+      }
+
+      // active state
       menu
         .querySelectorAll("li")
         .forEach((li) => li.classList.remove("active"));
-      this.classList.add("active");
+      item.classList.add("active");
+
+      menu.classList.remove("open");
     });
   });
 });
 
-document.addEventListener("click", function () {
-  document.querySelectorAll(".select-menu").forEach((menu) => {
-    menu.classList.remove("open");
-  });
+// click ngoài → đóng
+document.addEventListener("click", () => {
+  document
+    .querySelectorAll(".custom-select .select-menu.open")
+    .forEach((menu) => menu.classList.remove("open"));
 });
 
 // Validate Current Step
@@ -106,15 +122,26 @@ function changeStep(direction) {
 
   if (currentStep < 1) currentStep = 1;
   if (currentStep > totalSteps) {
-    // Submit form
-    alert("Form submitted successfully!");
-    location.reload();
+    showThankYouAndReload();
     return;
   }
 
   steps[currentStep - 1].classList.add("active");
   updateProgressBar();
   updateButtons();
+}
+
+function showThankYouAndReload() {
+  // Show modal
+  const popup = document.getElementById("bookingPopup");
+  if (popup) {
+    popup.classList.add("thankYouForm");
+  }
+
+  // Auto reload after 3 seconds
+  setTimeout(() => {
+    location.reload();
+  }, 3000);
 }
 
 // Update Button States

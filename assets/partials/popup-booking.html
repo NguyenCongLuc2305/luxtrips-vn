@@ -12,7 +12,8 @@
         </div>
 
         <!-- Title -->
-        <h2 class="popup-title">Customise Your Exclusive Travel Experiences<br>For The Best Quote</h2>
+        <h2 class="popup-title popup-title-default">Customise Your Exclusive Travel Experiences<br>For The Best Quote
+        </h2>
 
         <!-- Progress Bar -->
         <div class="progress-container">
@@ -395,8 +396,29 @@
                         </div>
                     </div>
 
-                    <h4 class="form-label">Phone Number</h4>
-                    <input type="tel" class="form-control mb-3" id="phone" placeholder="Phone Number">
+                    <div class="phone-field mb-3">
+                        <h4 class="form-label">Phone Number</h4>
+
+                        <div class="phone-input">
+                            <!-- custom select -->
+                            <div class="custom-select py-4" data-target="1">
+                                <button type="button" class="select-btn">
+                                    <img src="assets/images/icons/uk.png" width="26px" alt="">
+                                    <span class="arrow">
+                                        <i class="fa-jelly-fill fa-regular fa-angle-down"></i>
+                                    </span>
+                                </button>
+
+                                <ul class="select-menu">
+                                    <li class="active" data-value="1"><img src="assets/images/icons/uk.png" width="26px" alt=""></li>
+                                    <li data-value="84"><img src="assets/images/icons/vietnam-flag-png-large.png"
+                                        width="26px"    alt=""></li>
+                                </ul>
+                            </div>
+
+                            <input type="tel" class="form-control" style="padding-left: 70px;" id="phone" placeholder="Phone Number">
+                        </div>
+                    </div>
 
                     <h4 class="form-label">Any preferences you want to share as we prepare your custom itinerary?</h4>
                     <textarea class="form-control mb-3" id="preferences" rows="4"
@@ -410,6 +432,12 @@
             </div>
         </div>
 
+        <!-- Thank You Modal -->
+        <div id="thankYouModal" class="display-none">
+            <h2 class="popup-title">THANKS FOR SUBMITTING!</h2>
+            <p class="text-center">Your request has been sent!</p>
+        </div>
+
         <!-- Navigation Buttons -->
         <div class="button-group col-12 col-lg-8">
             <button class="btn-outline btn-previous" id="prevBtn" onclick="changeStep(-1)">Previous</button>
@@ -417,7 +445,7 @@
         </div>
 
         <!-- Copyright -->
-        <div class="text-left mt-5" style="font-size: 14px;">
+        <div class="text-left booking-footer col-12 col-lg-8 mt-5" style="font-size: 14px;">
             Copyright 2025 | Luxtrips.vn | All rights reserved
         </div>
     </div>

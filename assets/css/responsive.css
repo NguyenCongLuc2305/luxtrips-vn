@@ -673,6 +673,10 @@
   .section-4-product__category-1 .destination-list {
     min-width: 155px;
   }
+
+  .thankYouForm .booking-footer {
+    text-align: center;
+  }
 }
 
 @media (max-width: 1199px) {
@@ -709,6 +713,8 @@
 
   .site-content {
     padding-top: 74px;
+    /* chieu cao header */
+    overflow-x: hidden;
   }
 
   .section-1-banner .swiper-slide,

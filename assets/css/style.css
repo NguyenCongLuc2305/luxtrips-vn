@@ -29,12 +29,21 @@
 
 section {
   padding: 50px 0;
+  scroll-margin-top: 90px;
+}
+
+.display-none {
+  display: none;
+}
+
+.site {
+  /* overflow-x: hidden; */
 }
 
 .site-content {
   padding-top: 118px;
   /* chieu cao header */
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .section-title {
@@ -1306,10 +1315,10 @@ section {
   z-index: 10500;
 }
 
-#mobileFilterModal .filter-sidebar{
+#mobileFilterModal .filter-sidebar {
   padding: 0;
   border: 0;
-} 
+}
 
 .breadcrumb {
   display: flex;
@@ -1341,10 +1350,10 @@ section {
 
 /* Filter Sidebar */
 .filter-sidebar {
-  padding: 20px;
+  padding: 20px 20px 0px 20px;
   position: sticky;
-  top: 80px;
-  max-height: calc(100vh - 100px);
+  top: 118px;
+  /* max-height: calc(100vh - 100px); */
   overflow-y: auto;
   border: 1px solid var(--bs-accordion-border-color);
   border-radius: var(--bs-border-radius);
@@ -1459,7 +1468,6 @@ section {
 .activity-image {
   position: relative;
   width: 100%;
-  height: 270px;
   overflow: hidden;
 }
 
@@ -1637,6 +1645,8 @@ section {
 /* Mobile Filter Button */
 #mobileFilterBtn {
   min-width: 100%;
+  overflow-x: auto;
+  padding-bottom: 10px;
 }
 
 /* Clear Filters Button */
@@ -2580,4 +2590,68 @@ section {
 
 .section-1__post-category img {
   height: 460px;
+}
+
+.thankYouForm #thankYouModal {
+  display: block !important;
+  flex: 1;
+}
+
+.thankYouForm .button-group,
+.thankYouForm .popup-title-default,
+.thankYouForm .progress-container {
+  display: none !important;
+}
+
+.thankYouForm .popup-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.thankYouForm .booking-footer {
+  padding-top: 30px;
+  border-top: 1px solid var(--bs-secondary);
+}
+
+.phone-input {
+  display: flex;
+  align-items: center;
+}
+
+/* select country */
+.country-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  border: none;
+  outline: none;
+  background: transparent;
+
+  padding: 10px 12px;
+  font-size: 14px;
+  cursor: pointer;
+
+  border-right: 1px solid #eee;
+  min-width: 70px;
+}
+
+.phone-input .custom-select{
+  width: 60px;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+}
+
+.phone-input .custom-select .select-btn{
+  border: 0;
+  background: transparent;
+}
+.phone-input .select-menu{
+  margin-top: 0;
+}
+
+.city-title{
+  margin-bottom: 1rem;
 }

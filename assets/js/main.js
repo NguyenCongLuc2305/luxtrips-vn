@@ -28,14 +28,39 @@ fetch("assets/partials/popup-booking.html")
 
 
 // load slide-img-navigation-pagination
-fetch("assets/components/slide-img-navigation-pagination.html")
-  .then((res) => res.text())
-  .then((html) => {
-    document.getElementById("slide-img-navigation-pagination").innerHTML = html;
-    const script = document.createElement("script");
-    script.src = "assets/js/custom-swiper.js";
-    document.body.appendChild(script);
-  });
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("slide-img-navigation-pagination");
+  if (!container) return;
+
+  fetch("assets/components/slide-img-navigation-pagination.html")
+    .then(res => res.text())
+    .then(html => {
+      container.innerHTML = html;
+
+      const script = document.createElement("script");
+      script.src = "assets/js/custom-swiper.js";
+      document.body.appendChild(script);
+    });
+});
+
+
+//// scroll tab 
+
+document.querySelectorAll('[data-scroll]').forEach(btn => {
+    btn.addEventListener('click', function () {
+        const target = document.querySelector(this.dataset.scroll);
+        if (!target) return;
+
+        // scroll mượt
+        target.scrollIntoView({ behavior: 'smooth' });
+
+        // active class
+        document.querySelectorAll('.scroll-nav .nav-link')
+            .forEach(el => el.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+
 
 // mobileBottomNav
 document.addEventListener("DOMContentLoaded", () => {
