@@ -459,6 +459,10 @@
   justify-content: center;
 }
 
+.section-1-banner {
+  overflow: hidden;
+}
+
 /* Hide on desktop */
 @media (min-width: 768px) {}
 

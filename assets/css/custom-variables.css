@@ -294,3 +294,6 @@ ul li{
 .bottom-160px{
     bottom: 160px;
 }
+.max-height-none{
+    max-height: none;
+}

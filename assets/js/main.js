@@ -14,7 +14,6 @@ fetch("assets/partials/header.html")
     document.body.appendChild(script);
   });
 
-
 // load popup booking
 fetch("assets/partials/popup-booking.html")
   .then((res) => res.text())
@@ -26,15 +25,14 @@ fetch("assets/partials/popup-booking.html")
     document.body.appendChild(script);
   });
 
-
 // load slide-img-navigation-pagination
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("slide-img-navigation-pagination");
   if (!container) return;
 
   fetch("assets/components/slide-img-navigation-pagination.html")
-    .then(res => res.text())
-    .then(html => {
+    .then((res) => res.text())
+    .then((html) => {
       container.innerHTML = html;
 
       const script = document.createElement("script");
@@ -43,24 +41,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// load photo-gallery
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("photoModal");
+  if (!container) return;
 
-//// scroll tab 
+  fetch("assets/components/popup-photo-gallery.html")
+    .then((res) => res.text())
+    .then((html) => {
+      container.innerHTML = html;
 
-document.querySelectorAll('[data-scroll]').forEach(btn => {
-    btn.addEventListener('click', function () {
-        const target = document.querySelector(this.dataset.scroll);
-        if (!target) return;
-
-        // scroll mượt
-        target.scrollIntoView({ behavior: 'smooth' });
-
-        // active class
-        document.querySelectorAll('.scroll-nav .nav-link')
-            .forEach(el => el.classList.remove('active'));
-        this.classList.add('active');
+      const script = document.createElement("script");
+      script.src = "assets/js/photo-gallery.js";
+      document.body.appendChild(script);
     });
 });
 
+//// scroll tab
+
+document.querySelectorAll("[data-scroll]").forEach((btn) => {
+  btn.addEventListener("click", function () {
+    const target = document.querySelector(this.dataset.scroll);
+    if (!target) return;
+
+    // scroll mượt
+    target.scrollIntoView({ behavior: "smooth" });
+
+    // active class
+    document
+      .querySelectorAll(".scroll-nav .nav-link")
+      .forEach((el) => el.classList.remove("active"));
+    this.classList.add("active");
+  });
+});
 
 // mobileBottomNav
 document.addEventListener("DOMContentLoaded", () => {
@@ -130,7 +143,6 @@ window.addEventListener("scroll", function () {
   }
 });
 
-
 // Tự động lấy hot keywords từ slide đầu tiên
 const hotKeywords = Array.from(
   document.querySelectorAll("#hotSearches .search-tag")
@@ -177,38 +189,6 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// function toggleContent() {
-//   const extraContent = document.getElementById("extraContent");
-//   const btn = document.getElementById("seeMoreBtn");
-//   const arrow = document.getElementById("arrow");
-
-//   extraContent.classList.toggle("show");
-//   arrow.classList.toggle("up");
-
-//   if (extraContent.classList.contains("show")) {
-//     btn.innerHTML =
-//       'See less <span class="arrow up" id="arrow"><i class="fa-light fa-angle-right"></i></span>';
-//   } else {
-//     btn.innerHTML =
-//       'See more <span class="arrow" id="arrow"><i class="fa-light fa-angle-right"></i></span>';
-//   }
-// }
-
-// function toggleContent(btn) {
-//   const wrapper = btn.closest(".toggle-wrapper");
-//   const extraContent = wrapper.querySelector(".extra-content");
-//   const arrow = btn.querySelector(".arrow");
-
-//   extraContent.classList.toggle("show");
-//   arrow.classList.toggle("up");
-
-//   if (extraContent.classList.contains("show")) {
-//     btn.childNodes[0].nodeValue = "See less ";
-//   } else {
-//     btn.childNodes[0].nodeValue = "See more ";
-//   }
-// }
-
 function toggleContent(btn) {
   const wrapper = btn.closest(".toggle-wrapper");
   const extraContent = wrapper.querySelector(".extra-content");
@@ -222,11 +202,13 @@ function toggleContent(btn) {
     requestAnimationFrame(() => {
       extraContent.style.height = "0px";
     });
+    wrapper.classList.remove("show");
     extraContent.classList.remove("show");
     arrow.classList.remove("up");
     btn.childNodes[0].nodeValue = "See more ";
   } else {
     // Mở
+    wrapper.classList.add("show");
     extraContent.classList.add("show");
     extraContent.style.height = extraContent.scrollHeight + "px";
     arrow.classList.add("up");
@@ -396,20 +378,6 @@ document.querySelectorAll(".pagination .page-link").forEach((link) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
-
-// // Initialize tooltips if Bootstrap 5 is loaded
-// document.addEventListener("DOMContentLoaded", () => {
-//   // Check if running on mobile
-//   const isMobile = window.innerWidth < 992
-
-//   // Auto-expand first filter section on desktop
-//   if (!isMobile) {
-//     const firstFilter = document.querySelector("#experiencesFilter")
-//     if (firstFilter && !firstFilter.classList.contains("show")) {
-//       new bootstrap.Collapse(firstFilter, { toggle: true })
-//     }
-//   }
-// })
 
 // Add loading state when sorting/filtering
 function addLoadingState() {
