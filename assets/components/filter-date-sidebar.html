@@ -1,0 +1,76 @@
+<div class="date-sidebar">
+    <!-- Collapsible Header -->
+    <button class="date-header filter-toggle" data-bs-toggle="collapse" data-bs-target="#dateContent" id="dateToggle">
+        <span class="fw-600 text-16 m-0">Date</span>
+        <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
+    </button>
+    <div class="date-content collapse" id="dateContent">
+        <!-- Selected Date Display -->
+        <div class="selected-dates" id="dateDisplay">
+            <span class="date-pill" id="startDate">Sun, Sep 20</span>
+            <span class="date-arrow"><i class="fa-sharp fa-solid fa-arrow-right"></i></span>
+            <span class="date-pill" id="endDate">Fri, Sep 25</span>
+        </div>
+
+
+        <!-- Calendar -->
+        <div class="dual-calendar">
+            <!-- Left Calendar -->
+            <div class="calendar-month">
+                <div class="month-header">
+                    <button class="nav-btn" id="prevMonth"><i class="fa-sharp fa-solid text-13 color-body fa-angles-left"></i></button>
+                    <h3 class="month-title" id="month1Title"></h3>
+                    <div class="nav-spacer"></div>
+                </div>
+
+                <div class="calendar-grid">
+                    <div class="weekday">Su</div>
+                    <div class="weekday">Mo</div>
+                    <div class="weekday">Tu</div>
+                    <div class="weekday">We</div>
+                    <div class="weekday">Th</div>
+                    <div class="weekday">Fr</div>
+                    <div class="weekday">Sa</div>
+                    <div class="calendar-days" id="calendar1"></div>
+                </div>
+            </div>
+
+            <!-- Right Calendar -->
+            <div class="calendar-month">
+                <div class="month-header">
+                    <div class="nav-spacer"></div>
+                    <h3 class="month-title" id="month2Title"></h3>
+                    <button class="nav-btn" id="nextMonth"><i class="fa-sharp fa-solid text-13 color-body fa-angles-right"></i></button>
+                </div>
+
+                <div class="calendar-grid">
+                    <div class="weekday">Su</div>
+                    <div class="weekday">Mo</div>
+                    <div class="weekday">Tu</div>
+                    <div class="weekday">We</div>
+                    <div class="weekday">Th</div>
+                    <div class="weekday">Fr</div>
+                    <div class="weekday">Sa</div>
+                    <div class="calendar-days" id="calendar2"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Select -->
+        <div class="quick-select">
+            <button class="quick-btn active" data-mode="exact">Exact dates</button>
+            <button class="quick-btn" data-days="1">± 1 day</button>
+            <button class="quick-btn" data-days="2">± 2 days</button>
+            <button class="quick-btn" data-days="3">± 3 days</button>
+            <button class="quick-btn" data-days="7">± 7 days</button>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button class="btn-clear" id="clearBtn">Clear</button>
+            <button class="btn-done" id="doneBtn">Done</button>
+        </div>
+    </div>
+
+
+</div>

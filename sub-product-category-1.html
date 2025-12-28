@@ -51,6 +51,7 @@
     <!-- Style -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/filter-date-sidebar.css">
 
     <!-- Custom variable -->
     <link rel="stylesheet" href="assets/css/custom-variables.css">
@@ -67,7 +68,9 @@
             <!--------------------- 1. section-1 BANNER --------------------->
             <section class="section-1-banner section-1__sub-product-1 p-0">
                 <div class="section-1-section">
-                    <div class="section-1-swiper">
+                    <div class="section-1-swiper" data-swiper data-loop="true" data-speed="1000" data-space="30"
+                        data-effect="slide" data-next=".swiper-button-next" data-prev=".swiper-button-prev"
+                        data-pagination=".swiper-pagination-section-1">
                         <!-- Navigation đặt trước hoặc sau .swiper đều được -->
                         <div class="container section-1-navigation">
                             <div class="swiper-button-prev"></div>
@@ -141,12 +144,15 @@
                                     views.</p>
                             </div>
                         </div>
-                        <button class="see-more-btn btn-primary-color float-right p-0" onclick="toggleContent(this)">
-                            See more
-                            <span class="arrow">
-                                <i class="fa-light fa-angle-right"></i>
-                            </span>
-                        </button>
+                        <div class="text-end">
+                            <button class="see-more-btn btn-primary-color float-right p-0"
+                                onclick="toggleContent(this)">
+                                See more
+                                <span class="arrow">
+                                    <i class="fa-light fa-angle-right"></i>
+                                </span>
+                            </button>
+                        </div>
                     </div>
                     <div class="info-section fw-500 text-16">
                         <div class="info-item ">
@@ -165,7 +171,9 @@
             <!-- section 3 production 1 -->
             <section class="section-3__sub-product-1 pb-22px pt-0">
                 <div class="container">
-                    <div id="section-3__sub-product-1--swiper" class="relative">
+                    <div id="section-3__sub-product-1--swiper" class="relative" data-swiper data-loop="true"
+                        data-speed="1000" data-slides-mobile="3" data-slides-desktop="7" data-effect="slide"
+                        data-next=".sub-product-1--next" data-prev=".sub-product-1--prev">
                         <div class="swiper-button-prev-border sub-product-1--prev"></div>
                         <div class="swiper-button-next-border sub-product-1--next"></div>
                         <div class="swiper">
@@ -236,7 +244,9 @@
                         <h2 class="section-title mb-4">Recommended for you</h2>
                         <p class="text-left">Explore & Experience Latest Trends of 2025 Personalised Travel & Trips</p>
                     </div>
-                    <div id="section-4-swiper" class="relative">
+                    <div id="section-4-swiper" class="relative" data-swiper data-loop="true" data-speed="1000"
+                        data-slides-mobile="2" data-slides-desktop="4" data-space="30" data-effect="slide"
+                        data-next=".swiper4-next" data-prev=".swiper4-prev">
                         <div class="swiper-button-prev-border swiper4-prev"></div>
                         <div class="swiper-button-next-border swiper4-next"></div>
                         <div class="swiper">
@@ -434,332 +444,337 @@
                         <div class="row">
                             <!-- Desktop Sidebar Filter -->
                             <aside class="col-lg-3 d-none d-lg-block">
-                                <div class="filter-sidebar">
-                                    <h5 class="fw-600 text-16 m-0">Filter</h5>
+                                <div class="filter-sidebar-container">
+                                    <!-- date side bar -->
+                                    <div id="filter-date-sidebar"></div>
 
-                                    <!-- Experiences -->
-                                    <div class="filter-section">
-                                        <button class="filter-toggle" data-bs-toggle="collapse"
-                                            data-bs-target="#experiencesFilter">
-                                            <i class="fa-light fa-circle text-13 mr-7px"></i> Experiences
-                                            <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
-                                        </button>
-                                        <div class="collapse" id="experiencesFilter">
-                                            <div class="filter-options">
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Spiritual Wellness
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Educational Weekends
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Cultural Wellness
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Bespoke Wellness
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Recreational Wellness
+                                    <div class="filter-sidebar">
+                                        <h5 class="fw-600 text-16 m-0">Filter</h5>
+
+                                        <!-- Experiences -->
+                                        <div class="filter-section">
+                                            <button class="filter-toggle" data-bs-toggle="collapse"
+                                                data-bs-target="#experiencesFilter">
+                                                <i class="fa-light fa-circle text-13 mr-7px"></i> Experiences
+                                                <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
+                                            </button>
+                                            <div class="collapse" id="experiencesFilter">
+                                                <div class="filter-options">
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Spiritual Wellness
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Educational Weekends
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Cultural Wellness
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Bespoke Wellness
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Recreational Wellness
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <!-- Group Types -->
-                                    <div class="filter-section">
-                                        <button class="filter-toggle" data-bs-toggle="collapse"
-                                            data-bs-target="#groupTypesFilter">
-                                            <i class="fa-light fa-circle text-13 mr-7px"></i> Group Types
-                                            <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
-                                        </button>
-                                        <div class="collapse" id="groupTypesFilter">
-                                            <div class="filter-options">
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label> Solo
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Couple
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Family
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Friends
+                                        <!-- Group Types -->
+                                        <div class="filter-section">
+                                            <button class="filter-toggle" data-bs-toggle="collapse"
+                                                data-bs-target="#groupTypesFilter">
+                                                <i class="fa-light fa-circle text-13 mr-7px"></i> Group Types
+                                                <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
+                                            </button>
+                                            <div class="collapse" id="groupTypesFilter">
+                                                <div class="filter-options">
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label> Solo
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Couple
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Family
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Friends
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <!-- Accommodations -->
-                                    <div class="filter-section">
-                                        <button class="filter-toggle" data-bs-toggle="collapse"
-                                            data-bs-target="#accommodationsFilter">
-                                            <i class="fa-light fa-circle text-13 mr-7px"></i> Accommodations
-                                            <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
-                                        </button>
-                                        <div class="collapse" id="accommodationsFilter">
-                                            <div class="filter-options">
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Hotel
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Resort
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Retreat
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label> SP
-                                                    Hotel
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Ecolodge
+                                        <!-- Accommodations -->
+                                        <div class="filter-section">
+                                            <button class="filter-toggle" data-bs-toggle="collapse"
+                                                data-bs-target="#accommodationsFilter">
+                                                <i class="fa-light fa-circle text-13 mr-7px"></i> Accommodations
+                                                <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
+                                            </button>
+                                            <div class="collapse" id="accommodationsFilter">
+                                                <div class="filter-options">
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Hotel
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Resort
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Retreat
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label> SP
+                                                        Hotel
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Ecolodge
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <!-- Locations -->
-                                    <div class="filter-section">
-                                        <button class="filter-toggle" data-bs-toggle="collapse"
-                                            data-bs-target="#locationsFilter">
-                                            <i class="fa-light fa-circle text-13 mr-7px"></i> Locations
-                                            <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
-                                        </button>
-                                        <div class="collapse" id="locationsFilter">
-                                            <div class="filter-options">
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label> Bay
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Beach
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label> City
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Mountain
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    River
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label> Town
+                                        <!-- Locations -->
+                                        <div class="filter-section">
+                                            <button class="filter-toggle" data-bs-toggle="collapse"
+                                                data-bs-target="#locationsFilter">
+                                                <i class="fa-light fa-circle text-13 mr-7px"></i> Locations
+                                                <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
+                                            </button>
+                                            <div class="collapse" id="locationsFilter">
+                                                <div class="filter-options">
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label> Bay
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Beach
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label> City
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Mountain
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        River
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label> Town
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <!-- Design Styles -->
-                                    <div class="filter-section">
-                                        <button class="filter-toggle" data-bs-toggle="collapse"
-                                            data-bs-target="#designStylesFilter">
-                                            <i class="fa-light fa-circle text-13 mr-7px"></i> Design Styles
-                                            <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
-                                        </button>
-                                        <div class="collapse" id="designStylesFilter">
-                                            <div class="filter-options">
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Contemporary
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Indochine
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Local Heritage
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    French Colonial
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Oriental
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Artistic
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label> Cozy
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Rustic
+                                        <!-- Design Styles -->
+                                        <div class="filter-section">
+                                            <button class="filter-toggle" data-bs-toggle="collapse"
+                                                data-bs-target="#designStylesFilter">
+                                                <i class="fa-light fa-circle text-13 mr-7px"></i> Design Styles
+                                                <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
+                                            </button>
+                                            <div class="collapse" id="designStylesFilter">
+                                                <div class="filter-options">
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Contemporary
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Indochine
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Local Heritage
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        French Colonial
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Oriental
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Artistic
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label> Cozy
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Rustic
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <!-- Views -->
-                                    <div class="filter-section">
-                                        <button class="filter-toggle" data-bs-toggle="collapse"
-                                            data-bs-target="#viewsFilter">
-                                            <i class="fa-light fa-circle text-13 mr-7px"></i> Views
-                                            <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
-                                        </button>
-                                        <div class="collapse" id="viewsFilter">
-                                            <div class="filter-options">
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Ocean
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    River
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label> Lake
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Mountain
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Nature
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Garden
+                                        <!-- Views -->
+                                        <div class="filter-section">
+                                            <button class="filter-toggle" data-bs-toggle="collapse"
+                                                data-bs-target="#viewsFilter">
+                                                <i class="fa-light fa-circle text-13 mr-7px"></i> Views
+                                                <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
+                                            </button>
+                                            <div class="collapse" id="viewsFilter">
+                                                <div class="filter-options">
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Ocean
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        River
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label> Lake
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Mountain
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Nature
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Garden
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <!-- Transports -->
-                                    <div class="filter-section">
-                                        <button class="filter-toggle" data-bs-toggle="collapse"
-                                            data-bs-target="#transportsFilter">
-                                            <i class="fa-light fa-circle text-13 mr-7px"></i> Transports
-                                            <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
-                                        </button>
-                                        <div class="collapse" id="transportsFilter">
-                                            <div class="filter-options">
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label> Car
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label> Bus
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label> Boat
+                                        <!-- Transports -->
+                                        <div class="filter-section">
+                                            <button class="filter-toggle" data-bs-toggle="collapse"
+                                                data-bs-target="#transportsFilter">
+                                                <i class="fa-light fa-circle text-13 mr-7px"></i> Transports
+                                                <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
+                                            </button>
+                                            <div class="collapse" id="transportsFilter">
+                                                <div class="filter-options">
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label> Car
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label> Bus
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label> Boat
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <!-- Restaurants -->
-                                    <div class="filter-section">
-                                        <button class="filter-toggle" data-bs-toggle="collapse"
-                                            data-bs-target="#restaurantsFilter">
-                                            <i class="fa-light fa-circle text-13 mr-7px"></i> Restaurants
-                                            <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
-                                        </button>
-                                        <div class="collapse" id="restaurantsFilter">
-                                            <div class="filter-options">
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label> Fine
-                                                    Dining
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Casual
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Street Food
+                                        <!-- Restaurants -->
+                                        <div class="filter-section">
+                                            <button class="filter-toggle" data-bs-toggle="collapse"
+                                                data-bs-target="#restaurantsFilter">
+                                                <i class="fa-light fa-circle text-13 mr-7px"></i> Restaurants
+                                                <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
+                                            </button>
+                                            <div class="collapse" id="restaurantsFilter">
+                                                <div class="filter-options">
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label> Fine
+                                                        Dining
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Casual
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Street Food
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <!-- Guide -->
-                                    <div class="filter-section">
-                                        <button class="filter-toggle">
-                                            <i class="fa-light fa-circle text-13 mr-7px"></i> Guide
-                                        </button>
-                                    </div>
+                                        <!-- Guide -->
+                                        <div class="filter-section">
+                                            <button class="filter-toggle">
+                                                <i class="fa-light fa-circle text-13 mr-7px"></i> Guide
+                                            </button>
+                                        </div>
 
-                                    <!-- Visa & VIP Fast Track -->
-                                    <div class="filter-section">
-                                        <button class="filter-toggle">
-                                            <i class="fa-light fa-circle text-13 mr-7px"></i> Visa & VIP Fast Track
-                                        </button>
-                                    </div>
+                                        <!-- Visa & VIP Fast Track -->
+                                        <div class="filter-section">
+                                            <button class="filter-toggle">
+                                                <i class="fa-light fa-circle text-13 mr-7px"></i> Visa & VIP Fast Track
+                                            </button>
+                                        </div>
 
-                                    <!-- Price Ranges -->
-                                    <div class="filter-section">
-                                        <button class="filter-toggle" data-bs-toggle="collapse"
-                                            data-bs-target="#priceFilter">
-                                            <i class="fa-light fa-circle text-13 mr-7px"></i> Price Ranges
-                                            <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
-                                        </button>
-                                        <div class="collapse" id="priceFilter">
-                                            <div class="filter-options">
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label>
-                                                    Under $50
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label> $50
-                                                    - $100
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label> $100
-                                                    - $200
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label> Over
-                                                    $200
+                                        <!-- Price Ranges -->
+                                        <div class="filter-section">
+                                            <button class="filter-toggle" data-bs-toggle="collapse"
+                                                data-bs-target="#priceFilter">
+                                                <i class="fa-light fa-circle text-13 mr-7px"></i> Price Ranges
+                                                <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
+                                            </button>
+                                            <div class="collapse" id="priceFilter">
+                                                <div class="filter-options">
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label>
+                                                        Under $50
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label> $50
+                                                        - $100
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label> $100
+                                                        - $200
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label> Over
+                                                        $200
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <!-- Ratings -->
-                                    <div class="filter-section">
-                                        <button class="filter-toggle" data-bs-toggle="collapse"
-                                            data-bs-target="#ratingsFilter">
-                                            <i class="fa-light fa-circle text-13 mr-7px"></i> Ratings
-                                            <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
-                                        </button>
-                                        <div class="collapse" id="ratingsFilter">
-                                            <div class="filter-options">
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label> 5
-                                                    stars
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label> 4+
-                                                    stars
-                                                </div>
-                                                <div class="relative round mb-15px"><input type="checkbox">
-                                                    <label></label> 3+
-                                                    stars
+                                        <!-- Ratings -->
+                                        <div class="filter-section">
+                                            <button class="filter-toggle" data-bs-toggle="collapse"
+                                                data-bs-target="#ratingsFilter">
+                                                <i class="fa-light fa-circle text-13 mr-7px"></i> Ratings
+                                                <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
+                                            </button>
+                                            <div class="collapse" id="ratingsFilter">
+                                                <div class="filter-options">
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label> 5
+                                                        stars
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label> 4+
+                                                        stars
+                                                    </div>
+                                                    <div class="relative round mb-15px"><input type="checkbox">
+                                                        <label></label> 3+
+                                                        stars
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
+                                    </div>
                                 </div>
                             </aside>
 
@@ -1716,74 +1731,7 @@
             </section>
 
             <!--------------------- 3. WHAT YOU'LL RECEIVE ----->
-            <section class="section-3">
-                <div class="container">
-                    <h2 class="section-title">What you'll receive</h2>
-
-                    <!-- SWIPER -->
-                    <div class="swiper section-3-swiper">
-                        <div class="swiper-wrapper">
-
-                            <div class="swiper-slide">
-                                <div class="section-3-item swiper-item text-center h-100">
-                                    <img src="assets/images/uploads/icon-personalised.png"
-                                        alt="Luxury Personalised Design" class="">
-                                    <h3 class="h5 ">Luxury Personalised Design</h3>
-                                    <p class="">We’ll plan your trip around your specific interests, tastes and
-                                        preferences, providing helpful tips and honest advice based on first-hand
-                                        knowledge of the destination.</p>
-                                    <a href="#" class="btn-gradient">Learn more</a>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="section-3-item swiper-item text-center h-100">
-                                    <img src="assets/images/uploads/icon-experts.png" alt="20+ Year Experienced"
-                                        class="">
-                                    <h3 class="h5 ">20+ Year Experienced Savvy Experts</h3>
-                                    <p class="">Our expert guides and brilliant travel concierges are hand-picked to
-                                        provide a genuine experience, bringing your destination to life with care and
-                                        passion.
-                                    </p>
-                                    <a href="#" class="btn-gradient">Contact</a>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="section-3-item swiper-item text-center h-100">
-                                    <img src="assets/images/uploads/icon-responsible.png" alt="Responsible Travel"
-                                        class="">
-                                    <h3 class="h5 ">Responsible Travel</h3>
-                                    <p class="">Our luxury trips are designed with responsible travel principles that
-                                        prioritise travel experiences that are both good for you and good for the
-                                        planet.
-                                    </p>
-                                    <a href="#" class="btn-gradient">See more</a>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="section-3-item swiper-item text-center h-100">
-                                    <img src="assets/images/uploads/icon-ai.png" alt="AI" class="">
-                                    <h3 class="h5 ">AI (Artificial Intelligence) Gurl Supreme</h3>
-                                    <p class="">Compare & Choose Suitable Travel Experiences for your own by using our
-                                        own AI (Artificial Intelligence)</p>
-                                    <a href="#" class="btn-gradient">Experience Now</a>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Pagination -->
-                        <div class="swiper-pagination mt-4"></div>
-                    </div>
-
-                    <div class="text-right mt-5">
-                        <a class="text-decoration-none" href="#">Find out more about what Luxtrips.vn can do for you
-                            <img class="ml-13" src="assets/images/icons/arrow-next.svg" alt=""></a>
-                    </div>
-                </div>
-            </section>
+            <div id="section-benefits"></div>
 
             <!-- section 6 Excellent -->
             <section class="section-6-product-2">

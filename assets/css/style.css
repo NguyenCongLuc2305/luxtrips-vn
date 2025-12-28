@@ -698,14 +698,16 @@ section {
   margin-bottom: 12px;
 }
 
-.search-tags {
+.search-tags,
+.lux-search-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
   margin-bottom: 20px;
 }
 
-.search-tag {
+.search-tag,
+.lux-search-tag {
   background: #f5f5f5;
   border: none;
   padding: 8px 16px;
@@ -715,7 +717,8 @@ section {
   transition: all 0.3s;
 }
 
-.search-tag:hover {
+.search-tag:hover,
+.lux-search-tag:hover {
   background: #e0e0e0;
 }
 
@@ -732,6 +735,90 @@ section {
   background-color: #fff;
   opacity: 1;
 }
+
+
+.lux-search-popup {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 9999;
+  display: none;
+  flex-direction: column;
+}
+
+.lux-search-popup.is-active {
+  display: flex;
+}
+
+/* HEADER */
+.lux-search-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.lux-search-input {
+  flex: 1;
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  outline: none;
+  font-size: 14px;
+  padding-left: 10px;
+  height: 40px;
+}
+
+.lux-search-submit {
+  border: 0;
+  background: var(--gradient-black-to-gray);
+  padding: 6px 10px;
+  border-radius: var(--bs-border-radius);
+  cursor: pointer;
+}
+
+.lux-search-close {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* CONTENT */
+.lux-search-content {
+  padding: 12px;
+  overflow-y: auto;
+}
+
+.lux-search-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.lux-search-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn-search-mobile {
+  position: absolute;
+  right: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--gradient-black-to-gray);
+  border: none;
+  border-radius: var(--bs-border-radius);
+  padding: 0px 4px;
+}
+
+.limit-5-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 
 
 /* ==================== 2. HIGHLIGHT - RED RIVER RAMBLE ==================== */
@@ -1222,6 +1309,10 @@ section {
 
 
 /* ============= sub product category 1 ============== */
+.section-5__sub-product-1 .row>* {
+  padding-right: 10px;
+  padding-left: 10px;
+}
 
 .section-1__sub-product-1 .section-1__content {
   max-width: 260px;
@@ -1255,8 +1346,10 @@ section {
 
 .section-2__sub-product-1 .info-section {
   display: flex;
-  gap: 100px;
+  gap: 10px;
   margin: 40px 0 0;
+  justify-content: space-between;
+  max-width: 500px;
 }
 
 .section-3__sub-product-1--content {
@@ -1266,6 +1359,10 @@ section {
   min-height: 130px;
   text-align: center;
   justify-content: space-between;
+}
+
+.section-3__sub-product-1--content img {
+  min-height: 58px;
 }
 
 
@@ -1349,12 +1446,17 @@ section {
 
 
 /* Filter Sidebar */
-.filter-sidebar {
-  padding: 20px 20px 0px 20px;
+.filter-sidebar-container {
   position: sticky;
   top: 118px;
-  /* max-height: calc(100vh - 100px); */
   overflow-y: auto;
+}
+.filter-sidebar {
+  padding: 20px 20px 0px 20px;
+  /* position: sticky;
+  top: 118px; */
+  /* max-height: calc(100vh - 100px); */
+  /* overflow-y: auto; */
   border: 1px solid var(--bs-accordion-border-color);
   border-radius: var(--bs-border-radius);
 }
@@ -1522,6 +1624,11 @@ section {
   font-size: 14px;
   color: #6F6F6E;
   margin-bottom: 12px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
 }
 
 .activity-location i {
@@ -2684,7 +2791,7 @@ section {
 }
 
 .toggle-wrapper {
-  max-height: 190px;
+  max-height: 200px;
   overflow: hidden;
   position: relative;
   padding-bottom: 60px;

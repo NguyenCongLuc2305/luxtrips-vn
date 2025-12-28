@@ -161,46 +161,62 @@
         <i class="fa-regular fa-bars"></i>
     </button>
 
-    <a href="./" class="navbar-brand ml-13">
+    <a href="./" class="navbar-brand mx-8px">
         <img src="assets/images/logo/logo-header.png" width="118" height="20" alt="logo-header">
     </a>
 
-    <div class="mobile-search search-container-mobile">
-        <input type="text" class="form-control border-0 p-8px text-12 search-input-mobile"
-            placeholder="Search personalised travel experiences">
+    <div class="lux-search-mobile">
+        <!-- input trigger -->
+        <div class="lux-search-trigger-mobile d-flex align-items-center relative">
+            <input type="text" class="form-control border-0 p-8px text-12 search-input-mobile mr-8px" readonly
+                placeholder="Search personalised travel experiences">
+            <button class="btn-search-mobile">
+                <i class="fa-light fa-magnifying-glass text-white"></i>
+            </button>
+        </div>
 
-        <div class="search-popup-mobile">
-            <div>
-                <div class="search-section-title">Hot Searches</div>
-                <div class="search-tags" id="hotSearches">
-                    <button class="search-tag">Hanoi Exclusive Day Trips</button>
-                    <button class="search-tag">Halong Bay Seaplane Trips</button>
-                    <button class="search-tag">Jetski</button>
-                    <button class="search-tag">Ninh Binh Private Trips</button>
-                    <button class="search-tag">Private Honeymoon Designs</button>
-                    <button class="search-tag">Luxury Trains</button>
-                </div>
+        <!-- popup -->
+        <div class="lux-search-popup">
+            <!-- HEADER -->
+            <div class="lux-search-header">
+                <input type="text" class="lux-search-input" placeholder="Helicopter Sightseeing">
+                <button class="lux-search-submit"><i class="fa-light fa-magnifying-glass text-white"></i></button>
+                <button class="lux-search-close"><i class="fa-solid fa-xmark text-20"></i></button>
             </div>
 
-            <div>
-                <div class="search-section-title">Recent Searches</div>
-                <div class="search-tags" id="recentSearches">
-                    <button class="search-tag">Hanoi</button>
-                    <button class="search-tag">Ho Chi Minh City</button>
-                    <button class="search-tag">Ha Giang Exclusive Trips</button>
-                    <button class="search-tag">Helicopter</button>
-                    <button class="search-tag">JW Marriott Phu Quoc</button>
-                    <button class="search-tag">Cruise Trips</button>
-                    <button class="search-tag">Six Senses Ninh Van Bay</button>
+            <!-- CONTENT -->
+            <div class="lux-search-content">
+                <div class="lux-search-section">
+                    <div class="lux-search-title">Hot Searches</div>
+                    <div class="lux-search-tags">
+                        <button class="lux-search-tag">Hanoi Exclusive Day Trips</button>
+                        <button class="lux-search-tag">Halong Bay Seaplane Trips</button>
+                        <button class="lux-search-tag">Jetski</button>
+                        <button class="lux-search-tag">Ninh Binh Private Trips</button>
+                        <button class="lux-search-tag">Private Honeymoon Designs</button>
+                        <button class="lux-search-tag">Luxury Trains</button>
+                    </div>
+                </div>
+
+                <div class="lux-search-section">
+                    <div class="lux-search-title">Recent Searches</div>
+                    <div class="lux-search-tags">
+                        <button class="lux-search-tag">Hanoi</button>
+                        <button class="lux-search-tag">Ho Chi Minh City</button>
+                        <button class="lux-search-tag">Ha Giang Exclusive Trips</button>
+                        <button class="lux-search-tag">Helicopter</button>
+                        <button class="lux-search-tag">JW Marriott Phu Quoc</button>
+                        <button class="lux-search-tag">Cruise Trips</button>
+                        <button class="lux-search-tag">Six Senses Ninh Van Bay</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <i class="fa-light fw-500 fa-magnifying-glass search-icon text-17"></i>
     </div>
 
     <div class="mobile-icons">
         <!-- LANGUAGE -->
-        <div class="dropdown header-language me-3 cursor-pointer">
+        <div class="dropdown header-language mr-8px cursor-pointer">
             <div class="dropdown-toggle d-flex align-items-center text-white" data-bs-toggle="dropdown">
                 <img src="assets/images/icons/uk.png" width="26">
             </div>

@@ -80,33 +80,29 @@ document.addEventListener("click", (e) => {
 });
 
 
-// Lấy tất cả search inputs và popups
-const searchInputsMobile = document.querySelectorAll(".search-input-mobile");
-const searchPopupsMobile = document.querySelectorAll(".search-popup-mobile");
+document.querySelectorAll(".lux-search-mobile").forEach(box => {
+    const trigger = box.querySelector(".lux-search-trigger-mobile");
+    const popup = box.querySelector(".lux-search-popup");
+    const input = box.querySelector(".lux-search-input");
+    const close = box.querySelector(".lux-search-close");
 
-// Xử lý từng search container
-searchInputsMobile.forEach((input, i) => {
-  const popup = searchPopupsMobile[i];
-
-  // Mở popup khi focus
-  input.addEventListener("focus", () => {
-    popup.classList.add("active-popup-mobile");
-  });
-
-  // Xử lý click tag trong popup này
-  popup.querySelectorAll(".search-tag").forEach((tag) => {
-    tag.addEventListener("click", () => {
-      input.value = tag.textContent;
-      popup.classList.remove("active-popup-mobile");
+    // mở popup
+    trigger.addEventListener("click", () => {
+        popup.classList.add("is-active");
+        input.focus();
     });
-  });
-});
 
-// Đóng tất cả popups khi click bên ngoài
-document.addEventListener("click", (e) => {
-  if (!e.target.closest(".search-container-mobile")) {
-    searchPopupsMobile.forEach((popup) => {
-      popup.classList.remove("active-popup-mobile");
+    // đóng popup
+    close.addEventListener("click", () => {
+        popup.classList.remove("is-active");
     });
-  }
+
+    // click tag
+    box.querySelectorAll(".lux-search-tag").forEach(tag => {
+        tag.addEventListener("click", () => {
+            input.value = tag.textContent;
+            trigger.value = tag.textContent;
+            // popup.classList.remove("is-active");
+        });
+    });
 });

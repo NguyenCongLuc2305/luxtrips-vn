@@ -66,6 +66,7 @@
   color: white;
   font-size: 24px;
   cursor: pointer;
+  padding: 0;
 }
 
 /* MOBILE MENU SIDEBAR */
@@ -459,8 +460,12 @@
   justify-content: center;
 }
 
-.section-1-banner {
+#home-page .section-1-banner {
   overflow: hidden;
+}
+
+#home-page .section-1-banner {
+  overflow: visible;
 }
 
 /* Hide on desktop */
@@ -482,6 +487,10 @@
 
   #product-detail-1 .section-5__product-detail-1 .swiper .swiper-slide {
     min-width: 150px;
+  }
+
+  .swiper-backface-hidden .swiper-slide {
+    margin-right: 15px !important;
   }
 
 }
@@ -523,11 +532,6 @@
     position: static;
     display: flex;
     align-items: center;
-  }
-
-  .search-input-mobile {
-    width: 78%;
-    margin-right: 5px;
   }
 
   .search-icon {
@@ -680,6 +684,22 @@
 
   .thankYouForm .booking-footer {
     text-align: center;
+  }
+
+  .section-3 .swiper-slide {
+    min-width: 250px;
+  }
+
+  .section-3-prev {
+    left: -10px;
+  }
+
+  .section-3-next {
+    right: -10px;
+  }
+
+  .section-3__sub-product-1--content img {
+    max-width: 80px;
   }
 }
 

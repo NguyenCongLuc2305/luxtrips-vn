@@ -57,6 +57,38 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// load section-benefits
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("section-benefits");
+  if (!container) return;
+
+  fetch("assets/components/swiper-section-benefits.html")
+    .then((res) => res.text())
+    .then((html) => {
+      container.innerHTML = html;
+
+      const script = document.createElement("script");
+      script.src = "assets/js/custom-swiper.js";
+      document.body.appendChild(script);
+    });
+});
+
+// load filter date sidebar
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("filter-date-sidebar");
+  if (!container) return;
+
+  fetch("assets/components/filter-date-sidebar.html")
+    .then((res) => res.text())
+    .then((html) => {
+      container.innerHTML = html;
+
+      const script = document.createElement("script");
+      script.src = "assets/js/filter-date-sidebar.js";
+      document.body.appendChild(script);
+    });
+});
+    
 //// scroll tab
 
 document.querySelectorAll("[data-scroll]").forEach((btn) => {

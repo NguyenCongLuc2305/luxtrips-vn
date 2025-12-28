@@ -67,8 +67,14 @@ a:hover{
 .text-right {
     text-align: right;
 }
+.ml-8{
+    margin-left: 8px;
+}
 .ml-13 {
     margin-left: 13px;
+}
+.mr-8px{
+    margin-right: 8px;
 }
 .fit-cover {
     object-fit: cover;
@@ -296,4 +302,8 @@ ul li{
 }
 .max-height-none{
     max-height: none;
+}
+.mx-8px{
+    margin-left: 8px;
+    margin-right: 8px;
 }

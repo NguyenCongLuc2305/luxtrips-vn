@@ -1,695 +1,748 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date Picker Sidebar - Expedia Style</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
-  background-color: #f5f5f5;
-  color: #1a1a1a;
-}
-
-/* Sidebar Container */
-.date-sidebar {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  margin: 20px;
-}
-
-/* Collapsible Header */
-.date-header {
-  width: 100%;
-  background: white;
-  border: none;
-  padding: 16px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  color: #1a1a1a;
-  border-bottom: 1px solid #e5e5e5;
-  transition: background-color 0.2s;
-}
-
-.date-header:hover {
-  background-color: #fafafa;
-}
-
-.toggle-icon {
-  font-size: 24px;
-  font-weight: 300;
-  color: #666;
-}
-
-/* Date Content */
-.date-content {
-  padding: 20px;
-  display: block;
-}
-
-.date-content.collapsed {
-  display: none;
-}
-
-/* Selected Date Display */
-.selected-dates {
-  background: #f7f9fc;
-  padding: 12px 16px;
-  border-radius: 6px;
-  margin-bottom: 16px;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 500;
-  color: #1a1a1a;
-}
-
-/* Tabs */
-.date-tabs {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.tab-btn {
-  flex: 1;
-  background: none;
-  border: none;
-  padding: 12px 16px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #666;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: all 0.2s;
-}
-
-.tab-btn:hover {
-  color: #1a1a1a;
-}
-
-.tab-btn.active {
-  color: #0057ff;
-  border-bottom-color: #0057ff;
-}
-
-/* Tab Content */
-.tab-content {
-  display: none;
-}
-
-.tab-content.active {
-  display: block;
-}
-
-/* Dual Calendar Layout */
-.dual-calendar {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  margin-bottom: 20px;
-}
-
-@media (min-width: 768px) {
-  .dual-calendar {
-    flex-direction: row;
-    gap: 16px;
-  }
-}
-
-.calendar-month {
-  flex: 1;
-  min-width: 0;
-}
-
-/* Month Header */
-.month-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.month-title {
-  font-size: 16px;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin: 0;
-}
-
-.nav-btn {
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: #666;
-  cursor: pointer;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  transition: all 0.2s;
-}
-
-.nav-btn:hover {
-  background-color: #f0f0f0;
-  color: #1a1a1a;
-}
-
-/* Calendar Grid */
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 2px;
-}
-
-.weekday {
-  text-align: center;
-  font-size: 12px;
-  font-weight: 600;
-  color: #666;
-  padding: 8px 4px;
-}
-
-.calendar-days {
-  display: contents;
-}
-
-.day {
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: all 0.2s;
-  position: relative;
-}
-
-.day:hover:not(.disabled):not(.selected):not(.in-range) {
-  background-color: #f0f0f0;
-}
-
-.day.disabled {
-  color: #ccc;
-  cursor: not-allowed;
-}
-
-.day.other-month {
-  color: #999;
-}
-
-.day.selected {
-  background-color: #0057ff;
-  color: white;
-  font-weight: 600;
-}
-
-.day.in-range {
-  background-color: #e6f0ff;
-  color: #0057ff;
-  border-radius: 0;
-}
-
-.day.range-start {
-  border-radius: 50% 0 0 50%;
-}
-
-.day.range-end {
-  border-radius: 0 50% 50% 0;
-}
-
-.day.range-start.range-end {
-  border-radius: 50%;
-}
-
-/* Quick Select Buttons */
-.quick-select {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
-}
-
-.quick-btn {
-  padding: 8px 16px;
-  background: white;
-  border: 1px solid #e5e5e5;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: 500;
-  color: #1a1a1a;
-  cursor: pointer;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
-
-.quick-btn:hover {
-  border-color: #0057ff;
-  color: #0057ff;
-}
-
-.quick-btn.active {
-  background-color: #0057ff;
-  border-color: #0057ff;
-  color: white;
-}
-
-/* Action Buttons */
-.action-buttons {
-  display: flex;
-  gap: 12px;
-  padding-top: 16px;
-  border-top: 1px solid #e5e5e5;
-}
-
-.btn-clear,
-.btn-done {
-  flex: 1;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.btn-clear {
-  background: white;
-  border: 1px solid #e5e5e5;
-  color: #1a1a1a;
-}
-
-.btn-clear:hover {
-  background-color: #f0f0f0;
-}
-
-.btn-done {
-  background: #1a1a1a;
-  border: 1px solid #1a1a1a;
-  color: white;
-}
-
-.btn-done:hover {
-  background: #333;
-}
-
-/* Main Content Placeholder */
-.main-content {
-  padding: 40px;
-  background: white;
-  margin: 20px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-/* Flexible Content */
-.flexible-content {
-  padding: 40px 20px;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 767px) {
-  .date-sidebar {
-    margin: 10px;
-  }
-
-  .date-content {
-    padding: 16px;
-  }
-
-  .dual-calendar {
-    gap: 20px;
-  }
-
-  .main-content {
-    margin: 10px;
-    padding: 20px;
-  }
-}
-
-    </style>
-</head>
-<body>
-    <!-- Restructured to match Expedia design with tabs and dual-calendar layout -->
-    <div class="date-sidebar">
-        <!-- Collapsible Header --> 
-        <button class="date-header" id="dateToggle">
-            <span>Date</span>
-            <span class="toggle-icon" id="toggleIcon">−</span>
-        </button>
-
-        <!-- Date Content -->
-        <div class="date-content" id="dateContent">
-            <!-- Selected Date Display -->
-            <div class="selected-dates" id="dateDisplay">
-                Wed, Dec 31 → Thu, Jan 1
-            </div>
-
-            <!-- Tab Navigation -->
-            <div class="date-tabs">
-                <button class="tab-btn active" data-tab="calendar">Calendar</button>
-                <button class="tab-btn" data-tab="flexible">Flexible dates</button>
-            </div>
-
-            <!-- Calendar Tab Content -->
-            <div class="tab-content active" id="calendarTab">
-                <!-- Dual Calendar Container -->
-                <div class="dual-calendar">
-                    <!-- First Month Calendar -->
-                    <div class="calendar-month">
-                        <div class="month-header">
-                            <button class="nav-btn" id="prevMonth">‹</button>
-                            <h3 class="month-title" id="month1Title">December 2025</h3>
-                            <span></span>
-                        </div>
-                        <div class="calendar-grid">
-                            <div class="weekday">Su</div>
-                            <div class="weekday">Mo</div>
-                            <div class="weekday">Tu</div>
-                            <div class="weekday">We</div>
-                            <div class="weekday">Th</div>
-                            <div class="weekday">Fr</div>
-                            <div class="weekday">Sa</div>
-                            <div class="calendar-days" id="calendar1"></div>
-                        </div>
-                    </div>
-
-                    <!-- Second Month Calendar -->
-                    <div class="calendar-month">
-                        <div class="month-header">
-                            <span></span>
-                            <h3 class="month-title" id="month2Title">January 2026</h3>
-                            <button class="nav-btn" id="nextMonth">›</button>
-                        </div>
-                        <div class="calendar-grid">
-                            <div class="weekday">Su</div>
-                            <div class="weekday">Mo</div>
-                            <div class="weekday">Tu</div>
-                            <div class="weekday">We</div>
-                            <div class="weekday">Th</div>
-                            <div class="weekday">Fr</div>
-                            <div class="weekday">Sa</div>
-                            <div class="calendar-days" id="calendar2"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quick Select Buttons -->
-                <div class="quick-select">
-                    <button class="quick-btn active" data-mode="exact">Exact dates</button>
-                    <button class="quick-btn" data-days="1">± 1 day</button>
-                    <button class="quick-btn" data-days="2">± 2 days</button>
-                    <button class="quick-btn" data-days="3">± 3 days</button>
-                    <button class="quick-btn" data-days="7">± 7 days</button>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="action-buttons">
-                    <button class="btn-clear" id="clearBtn">Clear</button>
-                    <button class="btn-done" id="doneBtn">Done</button>
-                </div>
-            </div>
-
-            <!-- Flexible Tab Content -->
-            <div class="tab-content" id="flexibleTab">
-                <div class="flexible-content">
-                    <p>Select flexible date options here.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Content Area -->
-    <div class="main-content">
-        <h1>Expedia-Style Date Picker</h1>
-        <p>This date picker component features a modern, clean design inspired by Expedia's interface.</p>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // State
-let currentMonth1 = new Date(2025, 11, 1) // December 2025
-let currentMonth2 = new Date(2026, 0, 1) // January 2026
-let selectedStart = new Date(2025, 11, 31) // Dec 31, 2025
-let selectedEnd = new Date(2026, 0, 1) // Jan 1, 2026
-let flexibleDays = 0
-
-// DOM Elements
-const dateToggle = document.getElementById("dateToggle")
-const toggleIcon = document.getElementById("toggleIcon")
-const dateContent = document.getElementById("dateContent")
-const dateDisplay = document.getElementById("dateDisplay")
-const month1Title = document.getElementById("month1Title")
-const month2Title = document.getElementById("month2Title")
-const calendar1 = document.getElementById("calendar1")
-const calendar2 = document.getElementById("calendar2")
-const prevMonthBtn = document.getElementById("prevMonth")
-const nextMonthBtn = document.getElementById("nextMonth")
-const tabBtns = document.querySelectorAll(".tab-btn")
-const quickBtns = document.querySelectorAll(".quick-btn")
-const clearBtn = document.getElementById("clearBtn")
-const doneBtn = document.getElementById("doneBtn")
-
-// Initialize
-document.addEventListener("DOMContentLoaded", () => {
-  renderCalendars()
-  updateDateDisplay()
-  setupEventListeners()
-})
-
-// Setup Event Listeners
-function setupEventListeners() {
-  // Toggle sidebar
-  dateToggle.addEventListener("click", () => {
-    dateContent.classList.toggle("collapsed")
-    toggleIcon.textContent = dateContent.classList.contains("collapsed") ? "+" : "−"
-  })
-
-  // Month navigation
-  prevMonthBtn.addEventListener("click", () => {
-    currentMonth1 = new Date(currentMonth1.getFullYear(), currentMonth1.getMonth() - 1, 1)
-    currentMonth2 = new Date(currentMonth2.getFullYear(), currentMonth2.getMonth() - 1, 1)
-    renderCalendars()
-  })
-
-  nextMonthBtn.addEventListener("click", () => {
-    currentMonth1 = new Date(currentMonth1.getFullYear(), currentMonth1.getMonth() + 1, 1)
-    currentMonth2 = new Date(currentMonth2.getFullYear(), currentMonth2.getMonth() + 1, 1)
-    renderCalendars()
-  })
-
-  // Tab switching
-  tabBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const tab = btn.dataset.tab
-      tabBtns.forEach((b) => b.classList.remove("active"))
-      btn.classList.add("active")
-
-      document.getElementById("calendarTab").classList.toggle("active", tab === "calendar")
-      document.getElementById("flexibleTab").classList.toggle("active", tab === "flexible")
-    })
-  })
-
-  // Quick select buttons
-  quickBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      quickBtns.forEach((b) => b.classList.remove("active"))
-      btn.classList.add("active")
-
-      if (btn.dataset.mode === "exact") {
-        flexibleDays = 0
-      } else {
-        flexibleDays = Number.parseInt(btn.dataset.days)
-      }
-      updateDateDisplay()
-    })
-  })
-
-  // Action buttons
-  clearBtn.addEventListener("click", () => {
-    selectedStart = null
-    selectedEnd = null
-    flexibleDays = 0
-    quickBtns.forEach((b) => b.classList.remove("active"))
-    quickBtns[0].classList.add("active")
-    renderCalendars()
-    updateDateDisplay()
-  })
-
-  doneBtn.addEventListener("click", () => {
-    console.log("[v0] Selected dates:", {
-      start: selectedStart,
-      end: selectedEnd,
-      flexibleDays: flexibleDays,
-    })
-    alert(`Selected: ${formatDate(selectedStart)} to ${formatDate(selectedEnd)}`)
-  })
-}
-
-// Render both calendars
-function renderCalendars() {
-  renderCalendar(calendar1, currentMonth1)
-  renderCalendar(calendar2, currentMonth2)
-
-  month1Title.textContent = formatMonthYear(currentMonth1)
-  month2Title.textContent = formatMonthYear(currentMonth2)
-}
-
-// Render a single calendar
-function renderCalendar(container, month) {
-  container.innerHTML = ""
-
-  const year = month.getFullYear()
-  const monthIndex = month.getMonth()
-
-  const firstDay = new Date(year, monthIndex, 1)
-  const lastDay = new Date(year, monthIndex + 1, 0)
-  const prevLastDay = new Date(year, monthIndex, 0)
-
-  const firstDayOfWeek = firstDay.getDay()
-  const lastDateOfMonth = lastDay.getDate()
-  const prevLastDate = prevLastDay.getDate()
-
-  // Previous month days
-  for (let i = firstDayOfWeek - 1; i >= 0; i--) {
-    const day = createDayElement(prevLastDate - i, new Date(year, monthIndex - 1, prevLastDate - i), true, true)
-    container.appendChild(day)
-  }
-
-  // Current month days
-  for (let i = 1; i <= lastDateOfMonth; i++) {
-    const date = new Date(year, monthIndex, i)
-    const day = createDayElement(i, date, false, false)
-    container.appendChild(day)
-  }
-
-  // Next month days
-  const remainingDays = 42 - (firstDayOfWeek + lastDateOfMonth)
-  for (let i = 1; i <= remainingDays; i++) {
-    const day = createDayElement(i, new Date(year, monthIndex + 1, i), true, false)
-    container.appendChild(day)
-  }
-}
-
-// Create day element
-function createDayElement(dayNum, date, otherMonth, disabled) {
-  const day = document.createElement("div")
-  day.className = "day"
-  day.textContent = dayNum
-
-  if (otherMonth) day.classList.add("other-month")
-  if (disabled) day.classList.add("disabled")
-
-  // Check if selected
-  if (selectedStart && isSameDay(date, selectedStart)) {
-    day.classList.add("selected", "range-start")
-  }
-  if (selectedEnd && isSameDay(date, selectedEnd)) {
-    day.classList.add("selected", "range-end")
-  }
-
-  // Check if in range
-  if (selectedStart && selectedEnd && date > selectedStart && date < selectedEnd) {
-    day.classList.add("in-range")
-  }
-
-  // Click handler
-  if (!disabled) {
-    day.addEventListener("click", () => selectDate(date))
-  }
-
-  return day
-}
-
-// Select date
-function selectDate(date) {
-  if (!selectedStart || (selectedStart && selectedEnd)) {
-    // Start new selection
-    selectedStart = date
-    selectedEnd = null
-  } else {
-    // Complete selection
-    if (date < selectedStart) {
-      selectedEnd = selectedStart
-      selectedStart = date
-    } else {
-      selectedEnd = date
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Picker Sidebar - Expedia Style</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-  }
 
-  renderCalendars()
-  updateDateDisplay()
-}
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+      background-color: #f5f5f5;
+      color: #1a1a1a;
+    }
 
-// Update date display
-function updateDateDisplay() {
-  if (!selectedStart) {
-    dateDisplay.textContent = "Select dates"
-    return
-  }
+    /* Sidebar Container */
+    .date-sidebar {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      margin: 20px;
+    }
 
-  let displayText = formatDate(selectedStart)
-  if (selectedEnd) {
-    displayText += " → " + formatDate(selectedEnd)
-  }
+    /* Collapsible Header */
+    .date-header {
+      width: 100%;
+      background: white;
+      border: none;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a1a;
+      border-bottom: 1px solid #e5e5e5;
+      transition: background-color 0.2s;
+    }
 
-  if (flexibleDays > 0) {
-    displayText += ` (± ${flexibleDays} day${flexibleDays > 1 ? "s" : ""})`
-  }
+    .date-header:hover {
+      background-color: #fafafa;
+    }
 
-  dateDisplay.textContent = displayText
-}
+    .toggle-icon {
+      font-size: 24px;
+      font-weight: 300;
+      color: #666;
+    }
 
-// Utility functions
-function formatDate(date) {
-  if (!date) return ""
-  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-  return `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}`
-}
+    /* Date Content */
+    .date-content {
+      padding: 20px;
+      display: block;
+    }
 
-function formatMonthYear(date) {
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ]
-  return `${months[date.getMonth()]} ${date.getFullYear()}`
-}
+    .date-content.collapsed {
+      display: none;
+    }
 
-function isSameDay(date1, date2) {
-  return (
-    date1.getDate() === date2.getDate() &&
-    date1.getMonth() === date2.getMonth() &&
-    date1.getFullYear() === date2.getFullYear()
-  )
-}
+    /* Selected Date Display */
+    .selected-dates {
+      background: #f7f9fc;
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      color: #1a1a1a;
+    }
 
-    </script>
+    /* Tabs */
+    .date-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .tab-btn {
+      flex: 1;
+      background: none;
+      border: none;
+      padding: 12px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #666;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .tab-btn:hover {
+      color: #1a1a1a;
+    }
+
+    .tab-btn.active {
+      color: #0057ff;
+      border-bottom-color: #0057ff;
+    }
+
+    /* Tab Content */
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Single Calendar Layout */
+    /* Updated dual-calendar to single-calendar and adjusted widths */
+    .single-calendar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .calendar-month {
+      width: 100%;
+      max-width: 350px;
+    }
+
+    /* Dual Calendar Layout */
+    .dual-calendar {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 992px) {
+      .dual-calendar {
+        flex-direction: row;
+        gap: 40px;
+      }
+    }
+
+    .calendar-month {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    /* Month Header */
+    .month-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .month-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 0;
+    }
+
+    .nav-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #666;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .nav-btn:hover {
+      background-color: #f0f0f0;
+      color: #1a1a1a;
+    }
+
+    .nav-spacer {
+      width: 32px;
+    }
+
+    /* Calendar Grid */
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+    }
+
+    .weekday {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: #666;
+      padding: 8px 4px;
+    }
+
+    .calendar-days {
+      display: contents;
+    }
+
+    /* Updated day styles to handle empty/disabled states */
+    .day {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: all 0.2s;
+      position: relative;
+      user-select: none;
+    }
+
+    .day.empty {
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .day:hover:not(.disabled):not(.selected):not(.in-range):not(.empty) {
+      background-color: #f0f0f0;
+    }
+
+    .day.disabled {
+      color: #e0e0e0;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .day.other-month {
+      color: #999;
+    }
+
+    .day.selected {
+      background-color: #0057ff;
+      color: white;
+      font-weight: 600;
+    }
+
+    .day.in-range {
+      background-color: #e6f0ff;
+      color: #0057ff;
+      border-radius: 0;
+    }
+
+    .day.range-start {
+      border-radius: 50% 0 0 50%;
+    }
+
+    .day.range-end {
+      border-radius: 0 50% 50% 0;
+    }
+
+    .day.range-start.range-end {
+      border-radius: 50%;
+    }
+
+    /* Add styling for today's date */
+    .day.today {
+      font-weight: 700;
+      color: #0057ff;
+      position: relative;
+    }
+
+    .day.today::after {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 4px;
+      background-color: #0057ff;
+      border-radius: 50%;
+    }
+
+    .day.today.selected {
+      color: white;
+    }
+
+    .day.today.selected::after {
+      background-color: white;
+    }
+
+    /* Quick Select Buttons */
+    .quick-select {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .quick-btn {
+      padding: 8px 16px;
+      background: white;
+      border: 1px solid #e5e5e5;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #1a1a1a;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .quick-btn:hover {
+      border-color: #0057ff;
+      color: #0057ff;
+    }
+
+    .quick-btn.active {
+      background-color: #0057ff;
+      border-color: #0057ff;
+      color: white;
+    }
+
+    /* Action Buttons */
+    .action-buttons {
+      display: flex;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .btn-clear,
+    .btn-done {
+      flex: 1;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-clear {
+      background: white;
+      border: 1px solid #e5e5e5;
+      color: #1a1a1a;
+    }
+
+    .btn-clear:hover {
+      background-color: #f0f0f0;
+    }
+
+    .btn-done {
+      background: #1a1a1a;
+      border: 1px solid #1a1a1a;
+      color: white;
+    }
+
+    .btn-done:hover {
+      background: #333;
+    }
+
+    /* Main Content Placeholder */
+    .main-content {
+      padding: 40px;
+      background: white;
+      margin: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Flexible Content */
+    .flexible-content {
+      padding: 40px 20px;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 767px) {
+      .date-sidebar {
+        margin: 10px;
+      }
+
+      .date-content {
+        padding: 16px;
+      }
+
+      .dual-calendar {
+        gap: 20px;
+      }
+
+      .main-content {
+        margin: 10px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Restructured to match Expedia design with tabs and dual-calendar layout -->
+  <div class="date-sidebar">
+    <!-- Collapsible Header -->
+    <button class="date-header" id="dateToggle">
+      <span>Date</span>
+      <span class="toggle-icon" id="toggleIcon">−</span>
+    </button>
+
+    <!-- Date Content -->
+    <div class="date-content" id="dateContent">
+      <!-- Selected Date Display -->
+      <div class="selected-dates" id="dateDisplay">
+        Wed, Dec 31 → Thu, Jan 1
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="date-tabs">
+        <button class="tab-btn active" data-tab="calendar">Calendar</button>
+        <button class="tab-btn" data-tab="flexible">Flexible dates</button>
+      </div>
+
+      <!-- Calendar Tab Content -->
+      <div class="tab-content active" id="calendarTab">
+        <!-- Dual Calendar Container -->
+        <div class="dual-calendar">
+          <!-- Left Calendar -->
+          <div class="calendar-month">
+            <div class="month-header">
+              <button class="nav-btn" id="prevMonth">‹</button>
+              <h3 class="month-title" id="month1Title">December 2025</h3>
+              <div class="nav-spacer"></div>
+            </div>
+            <div class="calendar-grid">
+              <div class="weekday">Su</div>
+              <div class="weekday">Mo</div>
+              <div class="weekday">Tu</div>
+              <div class="weekday">We</div>
+              <div class="weekday">Th</div>
+              <div class="weekday">Fr</div>
+              <div class="weekday">Sa</div>
+              <div class="calendar-days" id="calendar1"></div>
+            </div>
+          </div>
+
+          <!-- Right Calendar -->
+          <div class="calendar-month">
+            <div class="month-header">
+              <div class="nav-spacer"></div>
+              <h3 class="month-title" id="month2Title">January 2026</h3>
+              <button class="nav-btn" id="nextMonth">›</button>
+            </div>
+            <div class="calendar-grid">
+              <div class="weekday">Su</div>
+              <div class="weekday">Mo</div>
+              <div class="weekday">Tu</div>
+              <div class="weekday">We</div>
+              <div class="weekday">Th</div>
+              <div class="weekday">Fr</div>
+              <div class="weekday">Sa</div>
+              <div class="calendar-days" id="calendar2"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Select Buttons -->
+        <div class="quick-select">
+          <button class="quick-btn active" data-mode="exact">Exact dates</button>
+          <button class="quick-btn" data-days="1">± 1 day</button>
+          <button class="quick-btn" data-days="2">± 2 days</button>
+          <button class="quick-btn" data-days="3">± 3 days</button>
+          <button class="quick-btn" data-days="7">± 7 days</button>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+          <button class="btn-clear" id="clearBtn">Clear</button>
+          <button class="btn-done" id="doneBtn">Done</button>
+        </div>
+      </div>
+
+      <!-- Flexible Tab Content -->
+      <div class="tab-content" id="flexibleTab">
+        <div class="flexible-content">
+          <p>Select flexible date options here.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // State
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+
+    let currentMonth1 = new Date(today.getFullYear(), today.getMonth(), 1)
+    let selectedStart = null
+    let selectedEnd = null
+    let flexibleDays = 0
+
+    // DOM Elements
+    const dateToggle = document.getElementById("dateToggle")
+    const toggleIcon = document.getElementById("toggleIcon")
+    const dateContent = document.getElementById("dateContent")
+    const dateDisplay = document.getElementById("dateDisplay")
+    const month1Title = document.getElementById("month1Title")
+    const month2Title = document.getElementById("month2Title")
+    const calendar1 = document.getElementById("calendar1")
+    const calendar2 = document.getElementById("calendar2")
+    const prevMonthBtn = document.getElementById("prevMonth")
+    const nextMonthBtn = document.getElementById("nextMonth")
+    const tabBtns = document.querySelectorAll(".tab-btn")
+    const quickBtns = document.querySelectorAll(".quick-btn")
+    const clearBtn = document.getElementById("clearBtn")
+    const doneBtn = document.getElementById("doneBtn")
+
+    // Initialize
+    document.addEventListener("DOMContentLoaded", () => {
+      renderCalendars()
+      updateDateDisplay()
+      setupEventListeners()
+    })
+
+    // Setup Event Listeners
+    function setupEventListeners() {
+      // Toggle sidebar
+      dateToggle.addEventListener("click", () => {
+        dateContent.classList.toggle("collapsed")
+        toggleIcon.textContent = dateContent.classList.contains("collapsed") ? "+" : "−"
+      })
+
+      // Month navigation
+      prevMonthBtn.addEventListener("click", () => {
+        currentMonth1 = new Date(currentMonth1.getFullYear(), currentMonth1.getMonth() - 1, 1)
+        renderCalendars()
+      })
+
+      nextMonthBtn.addEventListener("click", () => {
+        currentMonth1 = new Date(currentMonth1.getFullYear(), currentMonth1.getMonth() + 1, 1)
+        renderCalendars()
+      })
+
+      // Tab switching
+      tabBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const tab = btn.dataset.tab
+          tabBtns.forEach((b) => b.classList.remove("active"))
+          btn.classList.add("active")
+
+          document.getElementById("calendarTab").classList.toggle("active", tab === "calendar")
+          document.getElementById("flexibleTab").classList.toggle("active", tab === "flexible")
+        })
+      })
+
+      // Quick select buttons
+      quickBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          quickBtns.forEach((b) => b.classList.remove("active"))
+          btn.classList.add("active")
+
+          if (btn.dataset.mode === "exact") {
+            flexibleDays = 0
+          } else {
+            flexibleDays = Number.parseInt(btn.dataset.days)
+          }
+          updateDateDisplay()
+        })
+      })
+
+      // Action buttons
+      clearBtn.addEventListener("click", () => {
+        selectedStart = null
+        selectedEnd = null
+        flexibleDays = 0
+        quickBtns.forEach((b) => b.classList.remove("active"))
+        quickBtns[0].classList.add("active")
+        renderCalendars()
+        updateDateDisplay()
+      })
+
+      doneBtn.addEventListener("click", () => {
+        console.log("[v0] Selected dates:", {
+          start: selectedStart,
+          end: selectedEnd,
+          flexibleDays: flexibleDays,
+        })
+        alert(`Selected: ${formatDate(selectedStart)} to ${formatDate(selectedEnd)}`)
+      })
+    }
+
+    // Render both calendars
+    function renderCalendars() {
+      const nextMonth = new Date(currentMonth1.getFullYear(), currentMonth1.getMonth() + 1, 1)
+
+      renderCalendar(calendar1, currentMonth1)
+      renderCalendar(calendar2, nextMonth)
+
+      month1Title.textContent = formatMonthYear(currentMonth1)
+      month2Title.textContent = formatMonthYear(nextMonth)
+    }
+
+    // Render a single calendar
+    function renderCalendar(container, month) {
+      container.innerHTML = ""
+
+      const year = month.getFullYear()
+      const monthIndex = month.getMonth()
+
+      const firstDay = new Date(year, monthIndex, 1)
+      const lastDay = new Date(year, monthIndex + 1, 0)
+
+      const firstDayOfWeek = firstDay.getDay()
+      const lastDateOfMonth = lastDay.getDate()
+
+      for (let i = 0; i < firstDayOfWeek; i++) {
+        const day = document.createElement("div")
+        day.className = "day empty"
+        container.appendChild(day)
+      }
+
+      // Current month days
+      for (let i = 1; i <= lastDateOfMonth; i++) {
+        const date = new Date(year, monthIndex, i)
+        const isDisabled = date < today
+        const day = createDayElement(i, date, false, isDisabled)
+        container.appendChild(day)
+      }
+
+      const totalDaysSoFar = firstDayOfWeek + lastDateOfMonth
+      const remainingCells = 42 - totalDaysSoFar // 6 rows of 7 days
+      for (let i = 0; i < remainingCells; i++) {
+        const day = document.createElement("div")
+        day.className = "day empty"
+        container.appendChild(day)
+      }
+    }
+
+    // Create day element
+    function createDayElement(dayNum, date, otherMonth, disabled) {
+      const day = document.createElement("div")
+      day.className = "day"
+      day.textContent = dayNum
+
+      if (disabled) day.classList.add("disabled")
+
+      if (isSameDay(date, today)) {
+        day.classList.add("today")
+      }
+
+      // Check if selected
+      if (selectedStart && isSameDay(date, selectedStart)) {
+        day.classList.add("selected", "range-start")
+      }
+      if (selectedEnd && isSameDay(date, selectedEnd)) {
+        day.classList.add("selected", "range-end")
+      }
+
+      // Check if in range
+      if (selectedStart && selectedEnd && date > selectedStart && date < selectedEnd) {
+        day.classList.add("in-range")
+      }
+
+      // Click handler
+      if (!disabled) {
+        day.addEventListener("click", () => selectDate(date))
+      }
+
+      return day
+    }
+
+    // Select date
+    function selectDate(date) {
+      if (!selectedStart || (selectedStart && selectedEnd)) {
+        // Start new selection
+        selectedStart = date
+        selectedEnd = null
+      } else {
+        // Complete selection
+        if (date < selectedStart) {
+          selectedEnd = selectedStart
+          selectedStart = date
+        } else {
+          selectedEnd = date
+        }
+      }
+
+      renderCalendars()
+      updateDateDisplay()
+    }
+
+    // Update date display
+    function updateDateDisplay() {
+      if (!selectedStart) {
+        dateDisplay.textContent = "Select dates"
+        return
+      }
+
+      let displayText = formatDate(selectedStart)
+      if (selectedEnd) {
+        displayText += " → " + formatDate(selectedEnd)
+      }
+
+      if (flexibleDays > 0) {
+        displayText += ` (± ${flexibleDays} day${flexibleDays > 1 ? "s" : ""})`
+      }
+
+      dateDisplay.textContent = displayText
+    }
+
+    // Utility functions
+    function formatDate(date) {
+      if (!date) return ""
+      const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+      const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+      return `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}`
+    }
+
+    function formatMonthYear(date) {
+      const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ]
+      return `${months[date.getMonth()]} ${date.getFullYear()}`
+    }
+
+    function isSameDay(date1, date2) {
+      return (
+        date1.getDate() === date2.getDate() &&
+        date1.getMonth() === date2.getMonth() &&
+        date1.getFullYear() === date2.getFullYear()
+      )
+    }
+
+  </script>
 </body>
+
 </html>
