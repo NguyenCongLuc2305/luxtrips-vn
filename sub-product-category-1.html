@@ -368,57 +368,64 @@
                     <div class="section-5__sub-product-1--header mb-4">
                         <h2 class="section-title mb-4">All things to do in Ho Chi Minh City</h2>
 
-                        <div class="filter-mobile d-flex gap-2 align-items-center justify-content-start d-lg-none mb-4"
-                            id="mobileFilterBtn">
-                            <button class="sort-dropdown-toggle min-width-none">
-                                <i class="fa-regular fa-sliders-simple text-21"></i>
-                            </button>
-                            <button class="sort-dropdown-toggle">
-                                <span>Experiences</span>
+                        <div class="filter-mobile d-flex gap-2 align-items-center justify-content-start d-lg-none mb-4">
+                            <button class="sort-dropdown-toggle" id="mobileFilterDateBtn">
+                                <span>Date</span>
                                 <i class="fas fa-chevron-down"></i>
                             </button>
-                            <button class="sort-dropdown-toggle">
-                                <span>Group Types</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <button class="sort-dropdown-toggle">
-                                <span>Accommodations</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <button class="sort-dropdown-toggle">
-                                <span>Locations</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <button class="sort-dropdown-toggle">
-                                <span>Design Styles</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <button class="sort-dropdown-toggle">
-                                <span>Views</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <button class="sort-dropdown-toggle">
-                                <span>Transports</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <button class="sort-dropdown-toggle">
-                                <span>Restaurants</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <button class="sort-dropdown-toggle">
-                                <span>Guide</span>
-                            </button>
-                            <button class="sort-dropdown-toggle">
-                                <span>Visa & VIP Fast Track</span>
-                            </button>
-                            <button class="sort-dropdown-toggle">
-                                <span>Price Ranges</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <button class="sort-dropdown-toggle">
-                                <span>Ratings</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
+                            <div class="d-flex gap-2 align-items-center justify-content-start" id="mobileFilterBtn">
+                                <button class="sort-dropdown-toggle">
+                                    <span>Filter</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <button class="sort-dropdown-toggle">
+                                    <span>Experiences</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <button class="sort-dropdown-toggle">
+                                    <span>Group Types</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <button class="sort-dropdown-toggle">
+                                    <span>Accommodations</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <button class="sort-dropdown-toggle">
+                                    <span>Locations</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <button class="sort-dropdown-toggle">
+                                    <span>Design Styles</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <button class="sort-dropdown-toggle">
+                                    <span>Views</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <button class="sort-dropdown-toggle">
+                                    <span>Transports</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <button class="sort-dropdown-toggle">
+                                    <span>Restaurants</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <button class="sort-dropdown-toggle">
+                                    <span>Guide</span>
+                                </button>
+                                <button class="sort-dropdown-toggle">
+                                    <span>Visa & VIP Fast Track</span>
+                                </button>
+                                <button class="sort-dropdown-toggle">
+                                    <span>Price Ranges</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <button class="sort-dropdown-toggle">
+                                    <span>Ratings</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+
                         </div>
 
                         <!-- Replace standard select with custom dropdown -->
@@ -445,8 +452,91 @@
                             <!-- Desktop Sidebar Filter -->
                             <aside class="col-lg-3 d-none d-lg-block">
                                 <div class="filter-sidebar-container">
-                                    <!-- date side bar -->
-                                    <div id="filter-date-sidebar"></div>
+                                    <!-- DESKTOP DATE SIDEBAR -->
+                                    <div class="date-sidebar">
+                                        <button class="date-header filter-toggle" data-bs-toggle="collapse"
+                                            data-bs-target="#dateContentDesktop">
+                                            <span class="fw-600 text-16 m-0">Date</span>
+                                            <i class="icon-toggle fa-sharp fa-solid fa-plus ms-auto"></i>
+                                        </button>
+
+                                        <div class="date-content collapse" id="dateContentDesktop">
+                                            <!-- Selected Date Display -->
+                                            <div class="selected-dates">
+                                                <span class="date-pill" id="startDateDesktop">Start date</span>
+                                                <span class="date-arrow"><i
+                                                        class="fa-sharp fa-solid fa-arrow-right"></i></span>
+                                                <span class="date-pill" id="endDateDesktop">End date</span>
+                                            </div>
+
+                                            <!-- Calendar -->
+                                            <div class="dual-calendar">
+                                                <!-- Left Calendar -->
+                                                <div class="calendar-month">
+                                                    <div class="month-header">
+                                                        <button class="nav-btn" id="prevMonthDesktop">
+                                                            <i
+                                                                class="fa-sharp fa-solid text-13 color-body fa-angles-left"></i>
+                                                        </button>
+                                                        <h3 class="month-title" id="month1TitleDesktop"></h3>
+                                                        <div class="nav-spacer"></div>
+                                                    </div>
+                                                    <div class="calendar-grid">
+                                                        <div class="weekday">Su</div>
+                                                        <div class="weekday">Mo</div>
+                                                        <div class="weekday">Tu</div>
+                                                        <div class="weekday">We</div>
+                                                        <div class="weekday">Th</div>
+                                                        <div class="weekday">Fr</div>
+                                                        <div class="weekday">Sa</div>
+                                                        <div class="calendar-days" id="calendar1Desktop"></div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Right Calendar -->
+                                                <div class="calendar-month">
+                                                    <div class="month-header">
+                                                        <div class="nav-spacer"></div>
+                                                        <h3 class="month-title" id="month2TitleDesktop"></h3>
+                                                        <button class="nav-btn" id="nextMonthDesktop">
+                                                            <i
+                                                                class="fa-sharp fa-solid text-13 color-body fa-angles-right"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="calendar-grid">
+                                                        <div class="weekday">Su</div>
+                                                        <div class="weekday">Mo</div>
+                                                        <div class="weekday">Tu</div>
+                                                        <div class="weekday">We</div>
+                                                        <div class="weekday">Th</div>
+                                                        <div class="weekday">Fr</div>
+                                                        <div class="weekday">Sa</div>
+                                                        <div class="calendar-days" id="calendar2Desktop"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Quick Select -->
+                                            <div class="quick-select">
+                                                <button class="quick-btn active desktop-quick-btn"
+                                                    data-mode="exact">Exact dates</button>
+                                                <button class="quick-btn desktop-quick-btn" data-days="1">± 1
+                                                    day</button>
+                                                <button class="quick-btn desktop-quick-btn" data-days="2">± 2
+                                                    days</button>
+                                                <button class="quick-btn desktop-quick-btn" data-days="3">± 3
+                                                    days</button>
+                                                <button class="quick-btn desktop-quick-btn" data-days="7">± 7
+                                                    days</button>
+                                            </div>
+
+                                            <!-- Action Buttons -->
+                                            <div class="action-buttons">
+                                                <button class="btn-clear" id="clearBtnDesktop">Clear</button>
+                                                <button class="btn-done" id="doneBtnDesktop">Done</button>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <div class="filter-sidebar">
                                         <h5 class="fw-600 text-16 m-0">Filter</h5>
@@ -1122,6 +1212,94 @@
                         </div>
                     </div>
 
+                    <!-- MOBILE DATE MODAL -->
+                    <div class="modal fade" id="mobileFilterDateModal" tabindex="-1">
+                        <div class="modal-dialog modal-fullscreen">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    <div class="text-center w-100">
+                                        <h5 class="modal-title">Dates</h5>
+                                    </div>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="date-sidebar">
+                                        <!-- Selected Date Display -->
+                                        <div class="selected-dates">
+                                            <span class="date-pill" id="startDateMobile">Start date</span>
+                                            <span class="date-arrow"><i
+                                                    class="fa-sharp fa-solid fa-arrow-right"></i></span>
+                                            <span class="date-pill" id="endDateMobile">End date</span>
+                                        </div>
+
+                                        <!-- Calendar -->
+                                        <div class="dual-calendar">
+                                            <!-- Left Calendar -->
+                                            <div class="calendar-month">
+                                                <div class="month-header">
+                                                    <button class="nav-btn" id="prevMonthMobile">
+                                                        <i class="fa-sharp fa-solid  text-13 color-body fa-angles-left"></i>
+                                                    </button>
+                                                    <h3 class="month-title" id="month1TitleMobile"></h3>
+                                                    <div class="nav-spacer"></div>
+                                                </div>
+                                                <div class="calendar-grid">
+                                                    <div class="weekday">Su</div>
+                                                    <div class="weekday">Mo</div>
+                                                    <div class="weekday">Tu</div>
+                                                    <div class="weekday">We</div>
+                                                    <div class="weekday">Th</div>
+                                                    <div class="weekday">Fr</div>
+                                                    <div class="weekday">Sa</div>
+                                                    <div class="calendar-days" id="calendar1Mobile"></div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Right Calendar -->
+                                            <div class="calendar-month">
+                                                <div class="month-header">
+                                                    <div class="nav-spacer"></div>
+                                                    <h3 class="month-title" id="month2TitleMobile"></h3>
+                                                    <button class="nav-btn" id="nextMonthMobile">
+                                                        <i class="fa-sharp fa-solid  text-13 color-body fa-angles-right"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="calendar-grid">
+                                                    <div class="weekday">Su</div>
+                                                    <div class="weekday">Mo</div>
+                                                    <div class="weekday">Tu</div>
+                                                    <div class="weekday">We</div>
+                                                    <div class="weekday">Th</div>
+                                                    <div class="weekday">Fr</div>
+                                                    <div class="weekday">Sa</div>
+                                                    <div class="calendar-days" id="calendar2Mobile"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Quick Select -->
+                                        <div class="quick-select">
+                                            <button class="quick-btn active mobile-quick-btn" data-mode="exact">Exact
+                                                dates</button>
+                                            <button class="quick-btn mobile-quick-btn" data-days="1">± 1 day</button>
+                                            <button class="quick-btn mobile-quick-btn" data-days="2">± 2 days</button>
+                                            <button class="quick-btn mobile-quick-btn" data-days="3">± 3 days</button>
+                                            <button class="quick-btn mobile-quick-btn" data-days="7">± 7 days</button>
+                                        </div>
+
+                                        <!-- Action Buttons -->
+                                        <div class="action-buttons">
+                                            <button class="btn-clear" id="clearBtnMobile">Clear</button>
+                                            <button class="btn-done" id="doneBtnMobile"
+                                                data-bs-dismiss="modal">Done</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Mobile Filter Modal -->
                     <div class="modal fade" id="mobileFilterModal" tabindex="-1">
                         <div class="modal-dialog modal-fullscreen">
@@ -1130,7 +1308,7 @@
                                     <button type="button" class="btn-close text-18 fw-bold"
                                         data-bs-dismiss="modal"></button>
                                     <div class="text-center w-100">
-                                        <h5 class="modal-title">Filter</h5>
+                                        <h5 class="modal-title text-16 fw-600">Filter</h5>
                                     </div>
                                 </div>
 
@@ -1479,7 +1657,9 @@
             <section class="section-6">
                 <div class="container">
                     <h2 class="section-title">Explore Stories & Experience Journeys with Luxtrips.vn</h2>
-                    <div class="section-6-swiper relative">
+                    <div class="section-6-swiper relative" data-swiper data-loop="true" data-space="30"
+                        data-slides-mobile="1" data-slides-desktop="3" data-prev=".swiper6-prev"
+                        data-next=".swiper6-next">
                         <div class="swiper-button-prev-border swiper6-prev"></div>
                         <div class="swiper-button-next-border swiper6-next"></div>
                         <div class="swiper swiper6">
@@ -1909,6 +2089,9 @@
     <script src="assets/js/lib/swiper-bundle.min.js"></script>
 
     <script src="assets/js/custom-swiper.js"></script>
+
+    <!-- filter date  -->
+    <script src="assets/js/filter-date-sidebar.js"></script>
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 

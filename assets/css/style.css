@@ -1451,6 +1451,14 @@ section {
   top: 118px;
   overflow-y: auto;
 }
+.filter-sidebar-container .date-content{
+  border-top: 1px solid var(--bs-border-color);
+}
+.filter-mobile{
+  min-width: 100%;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
 .filter-sidebar {
   padding: 20px 20px 0px 20px;
   /* position: sticky;
@@ -1750,12 +1758,6 @@ section {
 }
 
 /* Mobile Filter Button */
-#mobileFilterBtn {
-  min-width: 100%;
-  overflow-x: auto;
-  padding-bottom: 10px;
-}
-
 /* Clear Filters Button */
 /* #clearFilters {
   font-size: 16px;
@@ -1817,6 +1819,9 @@ section {
   min-width: 117px;
 }
 
+.section-5__sub-product-1 .sort-dropdown-toggle{
+  min-width: auto;
+}
 
 .sort-dropdown-toggle:hover {
   border-color: var(--bs-secondary);
@@ -3057,4 +3062,7 @@ section {
 .modal-nav-next::before {
   transform: rotate(-135deg);
   margin-right: 2px;
+}
+.btn-close{
+  opacity: 1;
 }

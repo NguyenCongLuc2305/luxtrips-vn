@@ -47,7 +47,9 @@ a {
     color: var(--bs-body-color);
     transition: all .3s ease;
 }
-
+.modal{
+  --bs-modal-zindex: 10550;
+}
 
 a:hover{
     color: var(--bs-primary);

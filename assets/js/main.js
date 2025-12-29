@@ -15,15 +15,21 @@ fetch("assets/partials/header.html")
   });
 
 // load popup booking
-fetch("assets/partials/popup-booking.html")
-  .then((res) => res.text())
-  .then((html) => {
-    document.getElementById("popup-booking").innerHTML = html;
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("popup-booking");
+  if (!container) return;
 
-    const script = document.createElement("script");
-    script.src = "assets/js/popup-booking.js";
-    document.body.appendChild(script);
-  });
+  fetch("assets/components/popup-booking.html")
+    .then((res) => res.text())
+    .then((html) => {
+      container.innerHTML = html;
+
+      const script = document.createElement("script");
+      script.src = "assets/js/popup-booking.js";
+      document.body.appendChild(script);
+    });
+});
+
 
 // load slide-img-navigation-pagination
 document.addEventListener("DOMContentLoaded", () => {
@@ -74,20 +80,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // load filter date sidebar
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("filter-date-sidebar");
-  if (!container) return;
+// document.addEventListener("DOMContentLoaded", () => {
+//   const container = document.getElementById("filter-date-sidebar");
+//   if (!container) return;
 
-  fetch("assets/components/filter-date-sidebar.html")
-    .then((res) => res.text())
-    .then((html) => {
-      container.innerHTML = html;
+//   fetch("assets/components/filter-date-sidebar.html")
+//     .then((res) => res.text())
+//     .then((html) => {
+//       container.innerHTML = html;
 
-      const script = document.createElement("script");
-      script.src = "assets/js/filter-date-sidebar.js";
-      document.body.appendChild(script);
-    });
-});
+//       const script = document.createElement("script");
+//       script.src = "assets/js/filter-date-sidebar.js";
+//       document.body.appendChild(script);
+//     });
+// });
     
 //// scroll tab
 
@@ -246,6 +252,18 @@ function toggleContent(btn) {
     arrow.classList.add("up");
     btn.childNodes[0].nodeValue = "See less ";
   }
+}
+
+// Mobile Filter date Modal
+const mobileFilterDateBtn = document.getElementById("mobileFilterDateBtn");
+const mobileFilterDateEl = document.getElementById("mobileFilterDateModal");
+
+if (mobileFilterDateBtn && mobileFilterDateEl) {
+  const mobileFilterDateModal = new bootstrap.Modal(mobileFilterDateEl);
+
+  mobileFilterDateBtn.addEventListener("click", () => {
+    mobileFilterDateModal.show();
+  });
 }
 
 // Mobile Filter Modal

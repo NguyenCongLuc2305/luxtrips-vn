@@ -10,7 +10,7 @@
      width: 100%;
      background: white;
      border: none;
-     padding: 16px 20px;
+     padding: 11px 20px;
      display: flex;
      justify-content: space-between;
      align-items: center;
@@ -18,7 +18,7 @@
      font-size: 16px;
      font-weight: 600;
      color: #1a1a1a;
-     border-bottom: 1px solid var(--bs-border-color);
+     /* border-bottom: 1px solid var(--bs-border-color); */
      transition: background-color 0.2s;
  }
 
@@ -56,9 +56,9 @@
 
  .date-pill {
      background: #ededed;
-     padding: 10px 14px;
-     border-radius: 8px;
-     font-size: 14px;
+     padding: 5px 14px;
+     border-radius: var(--bs-border-radius);
+     font-size: 16px;
      font-weight: 600;
      color: #1a1a1a;
      white-space: nowrap;
@@ -249,15 +249,17 @@
      display: flex;
      flex-wrap: wrap;
      gap: 8px;
-     margin-bottom: 20px;
+     padding-top: 20px;
+     padding-bottom: 20px;
+     border-top: 1px solid var(--bs-border-color);
  }
 
  .quick-btn {
-     padding: 8px 16px;
+     padding: 4px 16px;
      background: white;
-     border: 1px solid var(--bs-border-color);
+     border: 1px solid #e5e5e5;
      border-radius: var(--bs-border-radius);
-     font-size: 13px;
+     font-size: 12px;
      font-weight: 500;
      color: #1a1a1a;
      cursor: pointer;
@@ -282,14 +284,16 @@
      gap: 12px;
      padding-top: 16px;
      border-top: 1px solid #e5e5e5;
+     justify-content: space-around;
  }
 
  .btn-clear,
  .btn-done {
-     flex: 1;
-     padding: 12px 24px;
+     /* flex: 1; */
+     line-height: normal;
+     padding: 0px 13px;
      border-radius: 6px;
-     font-size: 14px;
+     font-size: 16px;
      font-weight: 600;
      cursor: pointer;
      transition: all 0.2s;
@@ -326,6 +330,19 @@
      padding: 40px 20px;
  }
 
+ #mobileFilterDateModal .date-sidebar{
+    border: 0;
+ }
+ #mobileFilterDateModal .modal-dialog{
+    height: auto;
+ }
+ #mobileFilterDateModal  .quick-select{
+    flex-wrap: nowrap;
+    overflow-y: auto;
+ }
+  #mobileFilterDateModal .action-buttons{
+    justify-content: end;
+ }
  /* Responsive Adjustments */
  @media (max-width: 767px) {
      .date-sidebar {
