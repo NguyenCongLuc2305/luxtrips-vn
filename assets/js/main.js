@@ -15,20 +15,14 @@ fetch("assets/partials/header.html")
   });
 
 // load popup booking
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("popup-booking");
-  if (!container) return;
-
-  fetch("assets/components/popup-booking.html")
-    .then((res) => res.text())
-    .then((html) => {
-      container.innerHTML = html;
-
-      const script = document.createElement("script");
-      script.src = "assets/js/popup-booking.js";
-      document.body.appendChild(script);
-    });
-});
+fetch("assets/partials/popup-booking.html")
+  .then((res) => res.text())
+  .then((html) => {
+    document.getElementById("popup-booking").innerHTML = html;
+    const script = document.createElement("script");
+    script.src = "assets/js/popup-booking.js";
+    document.body.appendChild(script);
+  });
 
 
 // load slide-img-navigation-pagination
@@ -79,21 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// load filter date sidebar
-// document.addEventListener("DOMContentLoaded", () => {
-//   const container = document.getElementById("filter-date-sidebar");
-//   if (!container) return;
-
-//   fetch("assets/components/filter-date-sidebar.html")
-//     .then((res) => res.text())
-//     .then((html) => {
-//       container.innerHTML = html;
-
-//       const script = document.createElement("script");
-//       script.src = "assets/js/filter-date-sidebar.js";
-//       document.body.appendChild(script);
-//     });
-// });
     
 //// scroll tab
 

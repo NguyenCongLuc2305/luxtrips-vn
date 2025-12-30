@@ -335,6 +335,7 @@
  }
  #mobileFilterDateModal .modal-dialog{
     height: auto;
+    max-width: 400px;
  }
  #mobileFilterDateModal  .quick-select{
     flex-wrap: nowrap;
