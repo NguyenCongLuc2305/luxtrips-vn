@@ -48,8 +48,11 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="assets/css/lib/swiper-bundle.min.css" />
 
+    <!-- phone input css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
     <!-- Style -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/filter-product.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 
     <!-- Custom variable -->
@@ -58,13 +61,1610 @@
 
 
 <body>
-    <div class="site" id="product-category-1-page">
+    <div class="site" id="product-category-4-page">
         <!-- load header  -->
         <div id="header"></div>
 
         <!-- body -->
         <main class="site-content">
-            
+            <div class="container pt-50px">
+                <div class="breadcrumb mb-0">
+                    <span>Home</span>
+                    <span class="px-2">/</span>
+                    <a class="breadcrumb-link color-body text-decoration-none"
+                        href="/product-category-4.html">Accommodations</a>
+                </div>
+            </div>
+            <section class="section-1__product-category-4-page pt-30px pb-0">
+                <!-- PC SEARCH BAR -->
+                <div class="d-none d-md-block">
+                    <div class="container">
+                        <div class="d-flex gap-3 align-items-center justify-content-between">
+                            <!-- Where to -->
+                            <div class="filter-location w-lg-33">
+                                <div class="position-relative">
+                                    <div id="destToggleDesktop" class="search-field d-flex align-items-center gap-2">
+                                        <img src="assets/images/icons/destination.png" alt="icon" width="20"
+                                            height="20">
+                                        <div class="flex-grow-1">
+                                            <p class="field-label">Where to?</p>
+                                            <p id="destValueDesktop" class="field-value">Ho Chi Minh, Vietnam</p>
+                                        </div>
+                                    </div>
+                                    <!-- Desktop Destination Dropdown -->
+                                    <div id="destDropdownDesktop" class="custom-dropdown mt-1">
+                                        <div>
+                                            <div class="dropdown-item-custom dest-option" data-value="Ho Chi Minh">
+                                                <img src="assets/images/icons/destination.png" alt="icon" width="30"
+                                                    height="30">
+                                                <span>Ho Chi Minh</span>
+                                            </div>
+                                            <div class="dropdown-item-custom dest-option"
+                                                data-value="JW Marriott Saigon">
+                                                <img src="assets/images/icons/accommodation - mobile.png" alt="icon"
+                                                    width="30" height="30">
+                                                <span>JW Marriott Saigon</span>
+                                            </div>
+                                            <div class="dropdown-item-custom dest-option"
+                                                data-value="Fusion Original Saigon">
+                                                <img src="assets/images/icons/accommodation - mobile.png" alt="icon"
+                                                    width="30" height="30">
+                                                <span>Fusion Original Saigon</span>
+                                            </div>
+                                            <div class="dropdown-item-custom dest-option"
+                                                data-value="An Lam Retreats Saigon River">
+                                                <img src="assets/images/icons/accommodation - mobile.png" alt="icon"
+                                                    width="30" height="30">
+                                                <span>An Lam Retreats Saigon River</span>
+                                            </div>
+                                            <div class="dropdown-item-custom dest-option" data-value="Park Hyatt">
+                                                <img src="assets/images/icons/accommodation - mobile.png" alt="icon"
+                                                    width="30" height="30">
+                                                <span>Park Hyatt</span>
+                                            </div>
+                                            <div class="dropdown-item-custom dest-option" data-value="The Reverie">
+                                                <img src="assets/images/icons/accommodation - mobile.png" alt="icon"
+                                                    width="30" height="30">
+                                                <span>The Reverie</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Dates -->
+                            <div class="filter-date w-lg-33">
+                                <div class="position-relative">
+                                    <div id="dateToggleDesktop" class="search-field d-flex align-items-center gap-2">
+                                        <img src="assets/images/icons/Booking form - Mobile (2).png" width="25"
+                                            height="25" alt="icon">
+                                        <div class="flex-grow-1">
+                                            <p class="field-label">Dates</p>
+                                            <p id="dateValueDesktop" class="field-value">Aug 12 - Aug 14</p>
+                                        </div>
+                                    </div>
+                                    <!-- Desktop Calendar Dropdown -->
+                                    <div id="dateDropdownDesktop" class="custom-dropdown mt-1"
+                                        style="width: 650px; left: 50%; transform: translateX(-50%);">
+                                        <div class="">
+                                            <div
+                                                class="d-flex justify-content-center bg-color-gray height-50px align-items-center mb-3 px-4">
+                                                <h5 class="fw-600 text-18 mb-0">Calendar</h5>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between align-items-center px-5">
+                                                <span id="startDateDesktop" class="fw-bold">Start date</span>
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                                <span id="endDateDesktop" class="fw-bold">End date</span>
+                                            </div>
+
+                                            <div class="p-3">
+                                                <div class="row g-4">
+                                                    <!-- Calendar 1 -->
+                                                    <div class="col-6">
+                                                        <div class="border-1px min-height-315px p-10px border-radius">
+                                                            <div
+                                                                class="d-flex justify-content-between align-items-center mb-3 px-2">
+                                                                <button id="prevMonthDesktop"
+                                                                    class="btn btn-sm btn-light p-1"><i
+                                                                        class="fa-sharp fa-solid text-13 color-body fa-angles-left"></i></button>
+                                                                <h6 id="month1TitleDesktop" class="fw-bold mb-0"></h6>
+                                                                <div style="width: 32px;"></div>
+                                                            </div>
+                                                            <div class="calendar-grid mb-2">
+                                                                <div class="calendar-header">Su</div>
+                                                                <div class="calendar-header">Mo</div>
+                                                                <div class="calendar-header">Tu</div>
+                                                                <div class="calendar-header">We</div>
+                                                                <div class="calendar-header">Th</div>
+                                                                <div class="calendar-header">Fr</div>
+                                                                <div class="calendar-header">Sa</div>
+                                                            </div>
+                                                            <div id="calendar1Desktop" class="calendar-grid"></div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Calendar 2 -->
+                                                    <div class="col-6">
+                                                        <div class="border-1px min-height-315px p-10px border-radius">
+                                                            <div
+                                                                class="d-flex justify-content-between align-items-center mb-3 px-2">
+                                                                <div style="width: 32px;"></div>
+                                                                <h6 id="month2TitleDesktop" class="fw-bold mb-0"></h6>
+                                                                <button id="nextMonthDesktop"
+                                                                    class="btn btn-sm btn-light p-1"><i
+                                                                        class="fa-sharp fa-solid text-13 color-body fa-angles-right"></i></button>
+                                                            </div>
+                                                            <div class="calendar-grid mb-2">
+                                                                <div class="calendar-header">Su</div>
+                                                                <div class="calendar-header">Mo</div>
+                                                                <div class="calendar-header">Tu</div>
+                                                                <div class="calendar-header">We</div>
+                                                                <div class="calendar-header">Th</div>
+                                                                <div class="calendar-header">Fr</div>
+                                                                <div class="calendar-header">Sa</div>
+                                                            </div>
+                                                            <div id="calendar2Desktop" class="calendar-grid"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex flex-wrap gap-2 p-3 border-top">
+                                                <button class="quick-btn desktop-quick-btn active"
+                                                    data-mode="exact">Exact dates</button>
+                                                <button class="quick-btn desktop-quick-btn" data-days="1">± 1
+                                                    day</button>
+                                                <button class="quick-btn desktop-quick-btn" data-days="2">± 2
+                                                    days</button>
+                                                <button class="quick-btn desktop-quick-btn" data-days="3">± 3
+                                                    days</button>
+                                                <button class="quick-btn desktop-quick-btn" data-days="7">± 7
+                                                    days</button>
+                                            </div>
+
+                                            <div class="d-flex justify-content-end gap-2 p-3 border-top">
+                                                <button id="clearBtnDesktop" class="btn-clear">Clear</button>
+                                                <button id="doneBtnDesktop" class="btn-done">Done</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Travelers -->
+                            <div class="filter-travelers w-lg-33">
+                                <div class="position-relative">
+                                    <div id="travToggleDesktop" class="search-field d-flex align-items-center gap-2">
+                                        <img src="assets/images/icons/sign in - mobile.png" alt="icon" width="20"
+                                            height="20">
+                                        <div class="flex-grow-1">
+                                            <p class="field-label">Travelers</p>
+                                            <p id="travValueDesktop" class="field-value">4 travelers, 1 room</p>
+                                        </div>
+                                    </div>
+                                    <!-- Desktop Travelers Dropdown -->
+                                    <div id="travDropdownDesktop" class="custom-dropdown mt-1" style="right: 0;">
+                                        <div class="p-3">
+                                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                                <span class="fw-bold">Rooms</span>
+                                                <div class="filter-counter-group d-flex align-items-center">
+                                                    <button
+                                                        class="counter-btn fw-bold text-18 counter-btn-left decrement"
+                                                        data-target="roomsDesktop">-</button>
+                                                    <span id="roomsDesktop" class="fw-bold"
+                                                        style="width: 20px; text-align: center;">1</span>
+                                                    <button
+                                                        class="counter-btn fw-bold text-18 counter-btn-right increment"
+                                                        data-target="roomsDesktop">+</button>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="fw-bold">Adults</span>
+                                                <div class="filter-counter-group d-flex align-items-center">
+                                                    <button
+                                                        class="counter-btn fw-bold text-18 counter-btn-left decrement"
+                                                        data-target="adultsDesktop">-</button>
+                                                    <span id="adultsDesktop" class="fw-bold"
+                                                        style="width: 20px; text-align: center;">2</span>
+                                                    <button
+                                                        class="counter-btn fw-bold text-18 counter-btn-right increment"
+                                                        data-target="adultsDesktop">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="filter-button-search">
+                                <button class="btn-gradient w-100">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MOBILE SEARCH FORM -->
+                <div class="d-md-none p-3">
+                    <div class="d-flex flex-column gap-3">
+                        <div id="destToggleMobile" class="search-field d-flex align-items-center gap-3">
+                            <img src="assets/images/icons/destination.png" alt="icon" width="20" height="20">
+                            <div class="flex-grow-1">
+                                <p class="field-label">Where to?</p>
+                                <p id="destValueMobile" class="field-value">Ho Chi Minh, Vietnam</p>
+                            </div>
+                        </div>
+
+                        <div id="dateToggleMobile" class="search-field d-flex align-items-center gap-3">
+                            <img src="assets/images/icons/Booking form - Mobile (2).png" width="25" height="25"
+                                alt="icon">
+                            <div class="flex-grow-1">
+                                <p class="field-label">Dates</p>
+                                <p id="dateValueMobile" class="field-value">Sep 20 - Sep 25</p>
+                            </div>
+                        </div>
+
+                        <div id="travToggleMobile" class="search-field d-flex align-items-center gap-3">
+                            <img src="assets/images/icons/sign in - mobile.png" alt="icon" width="20" height="20">
+                            <div class="flex-grow-1">
+                                <p class="field-label">Travelers</p>
+                                <p id="travValueMobile" class="field-value">4 travelers, 1 room</p>
+                            </div>
+                        </div>
+
+                        <button class="btn-gradient w-100">Search</button>
+                    </div>
+                </div>
+
+                <!-- MOBILE MODALS -->
+                <div id="mobileOverlay" class="modal-overlay"></div>
+
+                <!-- Dest Modal -->
+                <div id="destModalMobile" class="mobile-modal">
+                    <div
+                        class="d-flex align-items-center bg-color-gray justify-content-center p-3 border-bottom position-relative">
+                        <h5 class="fw-bold mb-0">Destination</h5>
+                        <button class="btn btn-link position-absolute end-0 close-modal text-dark"><i
+                                class="fa-solid fa-xmark fs-4"></i></button>
+                    </div>
+                    <div class="p-3 border-bottom">
+                        <p class="field-label mb-1">Where to?</p>
+                        <div class="d-flex align-items-center gap-2">
+                            <input type="text" class="form-control border-0 p-0 fw-bold">
+                            <button class="btn btn-clear-filter-location"><i
+                                    class="fa-solid fa-circle-xmark"></i></button>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 overflow-auto p-3">
+                        <div class="d-flex flex-column gap-3">
+                            <div class="d-flex align-items-center gap-3 dest-option" data-value="Ho Chi Minh"
+                                style="cursor: pointer;">
+                                <div class="bg-light rounded-3 d-flex align-items-center justify-content-center"
+                                    style="width: 48px; height: 48px;">
+                                    <img src="assets/images/icons/destination.png" alt="icon" width="30" height="30">
+                                </div>
+                                <span class="fw-bold">Ho Chi Minh</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 dest-option" data-value="JW Marriott Saigon"
+                                style="cursor: pointer;">
+                                <div class="bg-light rounded-3 d-flex align-items-center justify-content-center"
+                                    style="width: 48px; height: 48px;">
+                                    <img src="assets/images/icons/accommodation - mobile.png" alt="icon" width="30"
+                                        height="30">
+                                </div>
+                                <span class="fw-bold">JW Marriott Saigon</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 dest-option" data-value="Fusion Original Saigon"
+                                style="cursor: pointer;">
+                                <div class="bg-light rounded-3 d-flex align-items-center justify-content-center"
+                                    style="width: 48px; height: 48px;">
+                                    <img src="assets/images/icons/accommodation - mobile.png" alt="icon" width="30"
+                                        height="30">
+                                </div>
+                                <span class="fw-bold">Fusion Original Saigon</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 dest-option"
+                                data-value="An Lam Retreats Saigon River" style="cursor: pointer;">
+                                <div class="bg-light rounded-3 d-flex align-items-center justify-content-center"
+                                    style="width: 48px; height: 48px;">
+                                    <img src="assets/images/icons/accommodation - mobile.png" alt="icon" width="30"
+                                        height="30">
+                                </div>
+                                <span class="fw-bold">An Lam Retreats Saigon River</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 dest-option" data-value="Park Hyatt"
+                                style="cursor: pointer;">
+                                <div class="bg-light rounded-3 d-flex align-items-center justify-content-center"
+                                    style="width: 48px; height: 48px;">
+                                    <img src="assets/images/icons/accommodation - mobile.png" alt="icon" width="30"
+                                        height="30">
+                                </div>
+                                <span class="fw-bold">Park Hyatt</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 dest-option" data-value="The Reverie"
+                                style="cursor: pointer;">
+                                <div class="bg-light rounded-3 d-flex align-items-center justify-content-center"
+                                    style="width: 48px; height: 48px;">
+                                    <img src="assets/images/icons/accommodation - mobile.png" alt="icon" width="30"
+                                        height="30">
+                                </div>
+                                <span class="fw-bold">The Reverie</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3 border-top">
+                        <button class="btn-gradient w-100 py-3 close-modal">Done</button>
+                    </div>
+                </div>
+
+                <!-- Date Modal -->
+                <div id="dateModalMobile" class="mobile-modal">
+                    <div
+                        class="d-flex align-items-center bg-color-gray justify-content-center p-3 border-bottom position-relative">
+                        <h5 class="fw-bold mb-0">Calendar</h5>
+                        <button class="btn btn-link position-absolute end-0 close-modal text-dark"><i
+                                class="fa-solid fa-xmark fs-4"></i></button>
+                    </div>
+                    <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
+                        <span id="startDateMobile" class="fw-bold">Start date</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <span id="endDateMobile" class="fw-bold">End date</span>
+                    </div>
+                    <div class="flex-grow-1 overflow-auto p-3 no-scrollbar">
+                        <div class="d-flex flex-column gap-5">
+                            <div>
+                                <h6 id="month1TitleMobile" class="fw-bold text-center mb-3"></h6>
+                                <div class="calendar-grid mb-2">
+                                    <div class="calendar-header">Su</div>
+                                    <div class="calendar-header">Mo</div>
+                                    <div class="calendar-header">Tu</div>
+                                    <div class="calendar-header">We</div>
+                                    <div class="calendar-header">Th</div>
+                                    <div class="calendar-header">Fr</div>
+                                    <div class="calendar-header">Sa</div>
+                                </div>
+                                <div id="calendar1Mobile" class="calendar-grid"></div>
+                            </div>
+                            <div>
+                                <h6 id="month2TitleMobile" class="fw-bold text-center mb-3"></h6>
+                                <div class="calendar-grid mb-2">
+                                    <div class="calendar-header">Su</div>
+                                    <div class="calendar-header">Mo</div>
+                                    <div class="calendar-header">Tu</div>
+                                    <div class="calendar-header">We</div>
+                                    <div class="calendar-header">Th</div>
+                                    <div class="calendar-header">Fr</div>
+                                    <div class="calendar-header">Sa</div>
+                                </div>
+                                <div id="calendar2Mobile" class="calendar-grid"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3 border-top bg-white">
+                        <div class="d-flex gap-2 overflow-auto no-scrollbar pb-3">
+                            <button class="quick-btn mobile-quick-btn active" data-mode="exact">Exact dates</button>
+                            <button class="quick-btn mobile-quick-btn" data-days="1">± 1 day</button>
+                            <button class="quick-btn mobile-quick-btn" data-days="2">± 2 days</button>
+                            <button class="quick-btn mobile-quick-btn" data-days="7">± 7 days</button>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button id="clearBtnMobile" class="btn btn-outline-dark flex-grow-1">Clear</button>
+                            <button id="doneBtnMobile" class="btn-gradient flex-grow-1 py-3"
+                                style="flex: 2;">Done</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Travelers Modal -->
+                <div id="travModalMobile" class="mobile-modal">
+                    <div
+                        class="d-flex align-items-center bg-color-gray justify-content-center p-3 border-bottom position-relative">
+                        <h5 class="fw-bold mb-0">Travelers</h5>
+                        <button class="btn btn-link position-absolute end-0 close-modal text-dark"><i
+                                class="fa-solid fa-xmark fs-4"></i></button>
+                    </div>
+                    <div class="flex-grow-1 p-3">
+                        <div class="d-flex flex-column gap-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="fw-bold mb-0">Rooms</p>
+                                <div class="d-flex align-items-center gap-3">
+                                    <button class="counter-btn fw-bold text-18 decrement"
+                                        data-target="roomsMobile">-</button>
+                                    <span id="roomsMobile" class="fw-bold"
+                                        style="width: 24px; text-align: center;">1</span>
+                                    <button class="counter-btn fw-bold text-18 increment"
+                                        data-target="roomsMobile">+</button>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="fw-bold mb-0">Adults</p>
+                                <div class="d-flex align-items-center gap-3">
+                                    <button class="counter-btn fw-bold text-18 decrement"
+                                        data-target="adultsMobile">-</button>
+                                    <span id="adultsMobile" class="fw-bold"
+                                        style="width: 24px; text-align: center;">2</span>
+                                    <button class="counter-btn fw-bold text-18 increment"
+                                        data-target="adultsMobile">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3 border-top">
+                        <button class="btn-gradient w-100 py-3 close-modal">Done</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section-2__product-category-4-page Banner -->
+            <section class="section-2__product-category-4-page-banner">
+                <div class="container">
+                    <div class="section-2__product-category-4-page-content"
+                        style="background-image: url('assets/images/uploads/section-2__product-category-4-page-banner.png');">
+                        <div class="section-2__product-category-4-page-text text-end">
+                            <h1 class="section-title text-white text-40px mb-1">Xplore Xclusive Xperience</h1>
+                            <p class="text-white">Experience Things you may have Never Tried before Uniquely</p>
+                            <button class="btn-gradient">Unlock Deals</button>
+                        </div>
+                    </div>
+
+                    <!-- slide carousel -->
+                    <div class="section-3__product-category-4-page-swiper relative mt-5" data-swiper data-loop="true"
+                        data-space="15" data-slides-mobile="2" data-slides-desktop="3"
+                        data-prev=".section-3__product-category-4-page-prev"
+                        data-next=".section-3__product-category-4-page-next">
+
+                        <div class="swiper-button-prev-border section-3__product-category-4-page-prev"></div>
+                        <div class="swiper-button-next-border section-3__product-category-4-page-next"></div>
+
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <!-- Slide 1 -->
+                                <div class="swiper-slide">
+                                    <div class="promo-card">
+                                        <div class="promo-info">
+                                            <h3>Bundles & Saves</h3>
+                                            <p>Get More, Spend Less when Travelling Together in Groups & Couples</p>
+                                        </div>
+                                        <div class="promo-img">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-180.png" alt="img">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Slide 2 -->
+                                <div class="swiper-slide">
+                                    <div class="promo-card">
+                                        <div class="promo-info">
+                                            <h3>Early Birds</h3>
+                                            <p>Save up to 25% | Book by August 31, Travel by November 31, 2025.*</p>
+                                        </div>
+                                        <div class="promo-img">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-181.png" alt="img">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Slide 3 -->
+                                <div class="swiper-slide">
+                                    <div class="promo-card">
+                                        <div class="promo-info">
+                                            <h3>Digital Nomads</h3>
+                                            <p>Make the most of summer and sign in or join to save up to 40% on select
+                                                hotels</p>
+                                        </div>
+                                        <div class="promo-img">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-182.png" alt="img">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Slide 4 -->
+                                <div class="swiper-slide">
+                                    <div class="promo-card">
+                                        <div class="promo-info">
+                                            <h3>Digital Nomads</h3>
+                                            <p>Make the most of summer and sign in or join to save up to 40% on select
+                                                hotels</p>
+                                        </div>
+                                        <div class="promo-img">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-182.png" alt="img">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section-4__product-category-4-page -->
+            <section class="section-4__product-category-4-page">
+                <div class="container">
+                    <!-- Header -->
+                    <div class="mb-4 section-4__product-category-4-title text-center">
+                        <h2 class="section-title m-0">Save up to 25%: Book by Aug 31</h2>
+                        <a class="" href="#">
+                            See more deals @ Luxtrips.vn
+                            <img class="ml-13" src="assets/images/icons/arrow-next.svg" alt="">
+                        </a>
+                    </div>
+                    <div id="section-4__product-category-4-page-swiper" class="relative" data-swiper data-loop="true"
+                        data-space="30" data-slides-mobile="2" data-slides-desktop="4" data-prev=".swiper4-prev"
+                        data-next=".swiper4-next">
+                        <div class="swiper-button-prev-border swiper4-prev"></div>
+                        <div class="swiper-button-next-border swiper4-next"></div>
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+
+                                <!-- Slide 1 -->
+                                <div class="swiper-slide">
+                                    <a class="activity-card text-decoration-none">
+                                        <div class="activity-image">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-183.png"
+                                                alt="Four Seasons The Nam Hai Hoi An">
+                                        </div>
+                                        <div class="activity-content">
+                                            <h6 class="activity-title">Four Seasons The Nam Hai Hoi An</h6>
+                                            <p class="activity-location">Da Nang Municipality, Vietnam</p>
+
+                                            <div class="activity-rating">
+                                                <span class="stars">★ <span>4.5</span></span>
+                                                <span class="rating-count">(2,418)</span>
+                                                <span class="booked-count"> | 90K+ booked</span>
+                                            </div>
+
+                                            <div class="activity-price">
+                                                <span class="price-label">From $1,820</span>
+                                                <span class="badge-sale">25% OFF</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Slide 2 -->
+                                <div class="swiper-slide">
+                                    <a class="activity-card text-decoration-none">
+                                        <div class="activity-image">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-184.png"
+                                                alt="InterContinental Danang Sun Peninsula Resort">
+                                        </div>
+                                        <div class="activity-content">
+                                            <h6 class="activity-title">InterContinental® Danang Sun Peninsula Resort
+                                            </h6>
+                                            <p class="activity-location">Da Nang Municipality, Vietnam</p>
+
+                                            <div class="activity-rating">
+                                                <span class="stars">★ <span>4.6</span></span>
+                                                <span class="rating-count">(1,798)</span>
+                                                <span class="booked-count"> | 30K+ booked</span>
+                                            </div>
+
+                                            <div class="activity-price">
+                                                <span class="price-label">From $1,604</span>
+                                                <span class="badge-sale">15% OFF</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Slide 3 -->
+                                <div class="swiper-slide">
+                                    <a class="activity-card text-decoration-none">
+                                        <div class="activity-image">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-185.png"
+                                                alt="Six Senses Ninh Van Bay">
+                                        </div>
+                                        <div class="activity-content">
+                                            <h6 class="activity-title">Six Senses Ninh Van Bay</h6>
+                                            <p class="activity-location">Khanh Hoa Province, Vietnam</p>
+
+                                            <div class="activity-rating">
+                                                <span class="stars">★ <span>4.8</span></span>
+                                                <span class="rating-count">(969)</span>
+                                                <span class="booked-count"> | 7K+ booked</span>
+                                            </div>
+
+                                            <div class="activity-price">
+                                                <span class="price-label">From $1,185</span>
+                                                <span class="badge-sale">10% OFF</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Slide 4 -->
+                                <div class="swiper-slide">
+                                    <a class="activity-card text-decoration-none">
+                                        <div class="activity-image">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-186.png"
+                                                alt="Zannier Bai San Ho">
+                                        </div>
+                                        <div class="activity-content">
+                                            <h6 class="activity-title">Zannier Bai San Ho</h6>
+                                            <p class="activity-location">Phu Yen Province, Vietnam</p>
+
+                                            <div class="activity-rating">
+                                                <span class="stars">★ <span>4.7</span></span>
+                                                <span class="rating-count">(1,418)</span>
+                                                <span class="booked-count"> | 20K+ booked</span>
+                                            </div>
+
+                                            <div class="activity-price">
+                                                <span class="price-label">From $1,320</span>
+                                                <span class="badge-sale">20% OFF</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Slide 5 -->
+                                <div class="swiper-slide">
+                                    <a class="activity-card text-decoration-none">
+                                        <div class="activity-image">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-186.png"
+                                                alt="Zannier Bai San Ho">
+                                        </div>
+                                        <div class="activity-content">
+                                            <h6 class="activity-title">Zannier Bai San Ho</h6>
+                                            <p class="activity-location">Phu Yen Province, Vietnam</p>
+
+                                            <div class="activity-rating">
+                                                <span class="stars">★ <span>4.7</span></span>
+                                                <span class="rating-count">(1,418)</span>
+                                                <span class="booked-count"> | 20K+ booked</span>
+                                            </div>
+
+                                            <div class="activity-price">
+                                                <span class="price-label">From $1,320</span>
+                                                <span class="badge-sale">20% OFF</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section-5__product-category-4-page -->
+            <section class="">
+                <div class="container">
+                    <h2 class="section-title">Your recent searches</h2>
+                    <div class="section-5__product-category-4-page-swiper relative" data-loop="true" data-swiper
+                        data-space="20" data-slides-mobile="2" data-slides-desktop="5" data-prev=".search-prev"
+                        data-next=".search-next">
+                        <div class="swiper-button-prev-border search-prev"></div>
+                        <div class="swiper-button-next-border search-next"></div>
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="search-item"><img src="assets/images/icons/destination.png"
+                                            alt=""><span>Hanoi</span></div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="search-item"><img src="assets/images/icons/destination.png"
+                                            alt=""><span>Ho
+                                            Chi Minh City</span></div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="search-item"><img src="assets/images/icons/Experiences.png"
+                                            alt=""><span>Ha Giang Exclusive Trips</span></div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="search-item"><img
+                                            src="assets/images/icons/Airport Transfer - mobile.png"
+                                            alt=""><span>Helicopter</span></div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="search-item"><img src="assets/images/icons/accommodation - mobile.png"
+                                            alt=""><span>JW Marriott Phu Quoc</span></div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="search-item"><img src="assets/images/icons/accommodation - mobile.png"
+                                            alt=""><span>JW Marriott Phu Quoc</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <h2 class="section-title">Your recent views</h2>
+                    <div class="section-5-2__product-category-4-page-swiper relative" data-loop="true" data-swiper
+                        data-space="30" data-slides-mobile="2" data-slides-desktop="3" data-prev=".view-prev"
+                        data-next=".view-next">
+                        <div class="swiper-button-prev-border view-prev"></div>
+                        <div class="swiper-button-next-border view-next"></div>
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="view-card">
+                                        <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-188.png" class="view-img"
+                                            alt="">
+                                        <div class="view-info">
+                                            <h4>JW Marriott Phu Quoc Emerald Bay</h4>
+                                            <p>Phu Quoc Island, Kien Giang Province</p>
+                                            <div class="stars">5* Resort</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="view-card">
+                                        <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-190.png" class="view-img"
+                                            alt="">
+                                        <div class="view-info">
+                                            <h4>Six Senses Ninh Van Bay</h4>
+                                            <p>Khanh Hoa Province</p>
+                                            <div class="stars">5* Resort</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="view-card">
+                                        <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-191.png" class="view-img"
+                                            alt="">
+                                        <div class="view-info">
+                                            <h4>JW Marriott Phu Quoc</h4>
+                                            <p>Phu Quoc Island</p>
+                                            <div class="stars">5* Resort</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="view-card">
+                                        <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-191.png" class="view-img"
+                                            alt="">
+                                        <div class="view-info">
+                                            <h4>JW Marriott Phu Quoc</h4>
+                                            <p>Phu Quoc Island</p>
+                                            <div class="stars">5* Resort</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section-6__product-category-4-page -->
+            <section class="section-4">
+                <div class="container tab-swiper-wrapper">
+                    <!-- Header -->
+                    <div class="mb-4 text-center">
+                        <h2 class="section-title mb-3">Explore stays in Popular destinations</h2>
+                        <p class="text-left">Average prices based on current calendar month</p>
+                    </div>
+                    <!-- TABS -->
+                    <ul class="section-4-tabs product-category-tabs">
+                        <li class="active" data-tab="beach">Beach</li>
+                        <li data-tab="culture">Culture</li>
+                        <li data-tab="family">Family</li>
+                        <li data-tab="couples">Couples</li>
+                        <li data-tab="wellness">Wellness and Relaxation</li>
+                    </ul>
+
+                    <div id="section-4-swiper" class="relative" data-swiper data-loop="true" data-space="30"
+                        data-slides-mobile="2" data-slides-desktop="5" data-prev=".swiper4-prev"
+                        data-next=".swiper4-next">
+                        <div class="swiper-button-prev-border swiper4-prev"></div>
+                        <div class="swiper-button-next-border swiper4-next"></div>
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+
+                                <!-- BEACH -->
+                                <div class="swiper-slide" data-tab="beach">
+                                    <a href="#" class="text-decoration-none text-reset">
+                                        <div class="card h-100 section-4-card min-height-auto">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-191.png"
+                                                class="card-img-top img-fluid fit-cover" alt="Da Nang Beach">
+                                            <div class="card-body w-100">
+                                                <h3 class="h6 card-title fw-500 min-height-auto">Da Nang</h3>
+                                                <p class="card-text text-muted min-height-auto mb-0">
+                                                    Da Nang Municipality, Vietnam
+                                                </p>
+                                                <div>
+                                                    <span class="text-18 fw-500">$45</span><br>
+                                                    <span class="text-muted text-sm">avg. nightly price</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide" data-tab="beach">
+                                    <a href="#" class="text-decoration-none text-reset">
+                                        <div class="card h-100 section-4-card min-height-auto">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-192.png"
+                                                class="card-img-top img-fluid fit-cover" alt="Nha Trang Beach">
+                                            <div class="card-body w-100">
+                                                <h3 class="h6 card-title fw-500 min-height-auto">Nha Trang</h3>
+                                                <p class="card-text text-muted min-height-auto mb-0">
+                                                    Khanh Hoa Province, Vietnam
+                                                </p>
+                                                <div>
+                                                    <span class="text-18 fw-500">$52</span><br>
+                                                    <span class="text-muted text-sm">avg. nightly price</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide" data-tab="beach">
+                                    <a href="#" class="text-decoration-none text-reset">
+                                        <div class="card h-100 section-4-card min-height-auto">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-193.png"
+                                                class="card-img-top img-fluid fit-cover" alt="Hoi An Ancient Town">
+                                            <div class="card-body w-100">
+                                                <h3 class="h6 card-title fw-500 min-height-auto">Hoi An</h3>
+                                                <p class="card-text text-muted min-height-auto mb-0">
+                                                    Quang Nam Province, Vietnam
+                                                </p>
+                                                <div>
+                                                    <span class="text-18 fw-500">$34</span><br>
+                                                    <span class="text-muted text-sm">avg. nightly price</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide" data-tab="beach">
+                                    <a href="#" class="text-decoration-none text-reset">
+                                        <div class="card h-100 section-4-card min-height-auto">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-194.png"
+                                                class="card-img-top img-fluid fit-cover" alt="Da Lat">
+                                            <div class="card-body w-100">
+                                                <h3 class="h6 card-title fw-500 min-height-auto">Da Lat</h3>
+                                                <p class="card-text text-muted min-height-auto mb-0">
+                                                    Lam Dong Province, Vietnam
+                                                </p>
+                                                <div>
+                                                    <span class="text-18 fw-500">$41</span><br>
+                                                    <span class="text-muted text-sm">avg. nightly price</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide" data-tab="beach">
+                                    <a href="#" class="text-decoration-none text-reset">
+                                        <div class="card h-100 section-4-card min-height-auto">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-194.png"
+                                                class="card-img-top img-fluid fit-cover" alt="Phu Quoc">
+                                            <div class="card-body w-100">
+                                                <h3 class="h6 card-title fw-500 min-height-auto">Phu Quoc</h3>
+                                                <p class="card-text text-muted min-height-auto mb-0">
+                                                    Kien Giang Province, Vietnam
+                                                </p>
+                                                <div>
+                                                    <span class="text-18 fw-500">$58</span><br>
+                                                    <span class="text-muted text-sm">avg. nightly price</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide" data-tab="beach">
+                                    <a href="#" class="text-decoration-none text-reset">
+                                        <div class="card h-100 section-4-card min-height-auto">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-194.png"
+                                                class="card-img-top img-fluid fit-cover" alt="Ninh Binh">
+                                            <div class="card-body w-100">
+                                                <h3 class="h6 card-title fw-500 min-height-auto">Ninh Binh</h3>
+                                                <p class="card-text text-muted min-height-auto mb-0">
+                                                    Ninh Binh Province, Vietnam
+                                                </p>
+                                                <div>
+                                                    <span class="text-18 fw-500">$36</span><br>
+                                                    <span class="text-muted text-sm">avg. nightly price</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- CULTURE -->
+                                <div class="swiper-slide" data-tab="culture">
+                                    <a href="#" class="text-decoration-none text-reset">
+                                        <div class="card h-100 section-4-card min-height-auto">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-193.png"
+                                                class="card-img-top img-fluid fit-cover" alt="Hoi An Ancient Town">
+                                            <div class="card-body w-100">
+                                                <h3 class="h6 card-title fw-500 min-height-auto">Hoi An</h3>
+                                                <p class="card-text text-muted min-height-auto mb-0">
+                                                    Quang Nam Province, Vietnam
+                                                </p>
+                                                <div>
+                                                    <span class="text-18 fw-500">$34</span><br>
+                                                    <span class="text-muted text-sm">avg. nightly price</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- FAMILY -->
+                                <div class="swiper-slide" data-tab="family">
+                                    <a href="#" class="text-decoration-none text-reset">
+                                        <div class="card h-100 section-4-card min-height-auto">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-194.png"
+                                                class="card-img-top img-fluid fit-cover" alt="Da Lat">
+                                            <div class="card-body w-100">
+                                                <h3 class="h6 card-title fw-500 min-height-auto">Da Lat</h3>
+                                                <p class="card-text text-muted min-height-auto mb-0">
+                                                    Lam Dong Province, Vietnam
+                                                </p>
+                                                <div>
+                                                    <span class="text-18 fw-500">$41</span><br>
+                                                    <span class="text-muted text-sm">avg. nightly price</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- COUPLES -->
+                                <div class="swiper-slide" data-tab="couples">
+                                    <a href="#" class="text-decoration-none text-reset">
+                                        <div class="card h-100 section-4-card min-height-auto">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-195.png"
+                                                class="card-img-top img-fluid fit-cover" alt="Phu Quoc">
+                                            <div class="card-body w-100">
+                                                <h3 class="h6 card-title fw-500 min-height-auto">Phu Quoc</h3>
+                                                <p class="card-text text-muted min-height-auto mb-0">
+                                                    Kien Giang Province, Vietnam
+                                                </p>
+                                                <div>
+                                                    <span class="text-18 fw-500">$58</span><br>
+                                                    <span class="text-muted text-sm">avg. nightly price</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- WELLNESS -->
+                                <div class="swiper-slide" data-tab="wellness">
+                                    <a href="#" class="text-decoration-none text-reset">
+                                        <div class="card h-100 section-4-card min-height-auto">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-196.png"
+                                                class="card-img-top img-fluid fit-cover" alt="Ninh Binh">
+                                            <div class="card-body w-100">
+                                                <h3 class="h6 card-title fw-500 min-height-auto">Ninh Binh</h3>
+                                                <p class="card-text text-muted min-height-auto mb-0">
+                                                    Ninh Binh Province, Vietnam
+                                                </p>
+                                                <div>
+                                                    <span class="text-18 fw-500">$36</span><br>
+                                                    <span class="text-muted text-sm">avg. nightly price</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section-7__product-category-4-page -->
+            <section class="mb-5">
+                <div class="container">
+                    <h2 class="section-title">Discover your New favorite stay</h2>
+                    <div class="section-7__product-category-4-page-swiper relative" data-loop="true" data-swiper
+                        data-space="20" data-slides-mobile="2" data-slides-desktop="4" data-prev=".cat-prev"
+                        data-next=".cat-next">
+                        <div class="swiper-button-prev-border cat-prev"></div>
+                        <div class="swiper-button-next-border cat-next"></div>
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="style-card"
+                                        style="background-image: url('assets/images/uploads/5. PRODUCT CATEGORY 4-195.png')">
+                                        <span>Resort</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="style-card"
+                                        style="background-image: url('assets/images/uploads/5. PRODUCT CATEGORY 4-196.png')">
+                                        <span>Ocean View</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="style-card"
+                                        style="background-image: url('assets/images/uploads/5. PRODUCT CATEGORY 4-197.png')">
+                                        <span>Mountain</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="style-card"
+                                        style="background-image: url('assets/images/uploads/5. PRODUCT CATEGORY 4-198.png')">
+                                        <span>Exclusive</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="style-card"
+                                        style="background-image: url('assets/images/uploads/5. PRODUCT CATEGORY 4-198.png')">
+                                        <span>Exclusive</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section-8__product-category-4-page -->
+            <section class="section-8__product-category-4-page">
+                <div class="container tab-swiper-wrapper">
+                    <!-- Header -->
+                    <div class="mb-4 text-center">
+                        <div
+                            class="section-8__product-category-4-title d-flex align-items-center justify-content-between">
+                            <h2 class="section-title mb-3">Bundles & Saves in top destinations!</h2>
+                            <a class="" href="#">
+                                More about package savings
+                                <img class="ml-13" src="assets/images/icons/arrow-next.svg" alt="">
+                            </a>
+                        </div>
+                        <p class="text-left">We found great package prices in the last 48 hours for two adults &
+                            groups
+                            traveling. Check for pricing updates!</p>
+                    </div>
+                    <ul class="section-8__product-category-4-page-tabs product-category-tabs">
+                        <li class="active" data-tab="danang">Da Nang</li>
+                        <li data-tab="quynhon">Quy Nhon</li>
+                        <li data-tab="hanoi">Hanoi</li>
+                        <li data-tab="nhatrang">Nha Trang</li>
+                    </ul>
+
+
+                    <div id="section-8__product-category-4-page-swiper" class="relative" data-swiper data-loop="true"
+                        data-space="30" data-slides-mobile="2" data-slides-desktop="4"
+                        data-prev=".section-8__product-category-4-prev" data-next=".section-8__product-category-4-next">
+                        <div class="swiper-button-prev-border section-8__product-category-4-prev"></div>
+                        <div class="swiper-button-next-border section-8__product-category-4-next"></div>
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+
+                                <!-- Four Seasons The Nam Hai Hoi An -->
+                                <div class="swiper-slide" data-tab="danang">
+                                    <a class="activity-card text-decoration-none">
+                                        <div class="activity-image">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-199.png"
+                                                alt="Four Seasons The Nam Hai Hoi An">
+                                        </div>
+
+                                        <div class="activity-content">
+                                            <h6 class="activity-title">Four Seasons The Nam Hai Hoi An</h6>
+                                            <p class="activity-location">
+                                                5★ Resort, Da Nang Municipality, Vietnam
+                                            </p>
+
+                                            <div class="activity-rating">
+                                                <span class="stars">★ <span>4.5</span></span>
+                                                <span class="rating-count">(2,418)</span>
+                                                <span class="booked-count"> | 90K+ booked</span>
+                                            </div>
+
+                                            <div class="activity-price">
+                                                <span class="price-label">From $1,820</span>
+                                                <span class="badge-sale">25% OFF</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- InterContinental Danang Sun Peninsula -->
+                                <div class="swiper-slide" data-tab="danang">
+                                    <a class="activity-card text-decoration-none">
+                                        <div class="activity-image">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-200.png"
+                                                alt="InterContinental Danang Sun Peninsula Resort">
+                                        </div>
+
+                                        <div class="activity-content">
+                                            <h6 class="activity-title">
+                                                InterContinental® Danang Sun Peninsula Resort
+                                            </h6>
+                                            <p class="activity-location">
+                                                5★ Resort, Da Nang Municipality, Vietnam
+                                            </p>
+
+                                            <div class="activity-rating">
+                                                <span class="stars">★ <span>4.6</span></span>
+                                                <span class="rating-count">(1,798)</span>
+                                                <span class="booked-count"> | 30K+ booked</span>
+                                            </div>
+
+                                            <div class="activity-price">
+                                                <span class="price-label">From $1,604</span>
+                                                <span class="badge-sale">15% OFF</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Anantara Hoi An Resort -->
+                                <div class="swiper-slide" data-tab="danang">
+                                    <a class="activity-card text-decoration-none">
+                                        <div class="activity-image">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-201.png"
+                                                alt="Anantara Hoi An Resort">
+                                        </div>
+
+                                        <div class="activity-content">
+                                            <h6 class="activity-title">Anantara Hoi An Resort</h6>
+                                            <p class="activity-location">
+                                                5★ Resort, Da Nang Municipality, Vietnam
+                                            </p>
+
+                                            <div class="activity-rating">
+                                                <span class="stars">★ <span>4.8</span></span>
+                                                <span class="rating-count">(969)</span>
+                                                <span class="booked-count"> | 7K+ booked</span>
+                                            </div>
+
+                                            <div class="activity-price">
+                                                <span class="price-label">From $1,185</span>
+                                                <span class="badge-sale">10% OFF</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Banyan Tree Lang Co -->
+                                <div class="swiper-slide" data-tab="danang">
+                                    <a class="activity-card text-decoration-none">
+                                        <div class="activity-image">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-202.png"
+                                                alt="Banyan Tree Lang Co">
+                                        </div>
+
+                                        <div class="activity-content">
+                                            <h6 class="activity-title">Banyan Tree Lang Co</h6>
+                                            <p class="activity-location">
+                                                5★ Resort, Da Nang Municipality, Vietnam
+                                            </p>
+
+                                            <div class="activity-rating">
+                                                <span class="stars">★ <span>4.7</span></span>
+                                                <span class="rating-count">(1,418)</span>
+                                                <span class="booked-count"> | 20K+ booked</span>
+                                            </div>
+
+                                            <div class="activity-price">
+                                                <span class="price-label">From $1,320</span>
+                                                <span class="badge-sale">20% OFF</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide" data-tab="danang">
+                                    <a class="activity-card text-decoration-none">
+                                        <div class="activity-image">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-202.png"
+                                                alt="Banyan Tree Lang Co">
+                                        </div>
+
+                                        <div class="activity-content">
+                                            <h6 class="activity-title">Banyan Tree Lang Co</h6>
+                                            <p class="activity-location">
+                                                5★ Resort, Da Nang Municipality, Vietnam
+                                            </p>
+
+                                            <div class="activity-rating">
+                                                <span class="stars">★ <span>4.7</span></span>
+                                                <span class="rating-count">(1,418)</span>
+                                                <span class="booked-count"> | 20K+ booked</span>
+                                            </div>
+
+                                            <div class="activity-price">
+                                                <span class="price-label">From $1,320</span>
+                                                <span class="badge-sale">20% OFF</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide" data-tab="quynhon">
+                                    <a class="activity-card text-decoration-none">
+                                        <div class="activity-image">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-202.png"
+                                                alt="Banyan Tree Lang Co">
+                                        </div>
+
+                                        <div class="activity-content">
+                                            <h6 class="activity-title">Banyan Tree Lang Co</h6>
+                                            <p class="activity-location">
+                                                5★ Resort, Da Nang Municipality, Vietnam
+                                            </p>
+
+                                            <div class="activity-rating">
+                                                <span class="stars">★ <span>4.7</span></span>
+                                                <span class="rating-count">(1,418)</span>
+                                                <span class="booked-count"> | 20K+ booked</span>
+                                            </div>
+
+                                            <div class="activity-price">
+                                                <span class="price-label">From $1,320</span>
+                                                <span class="badge-sale">20% OFF</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide" data-tab="hanoi">
+                                    <a class="activity-card text-decoration-none">
+                                        <div class="activity-image">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-202.png"
+                                                alt="Banyan Tree Lang Co">
+                                        </div>
+
+                                        <div class="activity-content">
+                                            <h6 class="activity-title">Banyan Tree Lang Co</h6>
+                                            <p class="activity-location">
+                                                5★ Resort, Da Nang Municipality, Vietnam
+                                            </p>
+
+                                            <div class="activity-rating">
+                                                <span class="stars">★ <span>4.7</span></span>
+                                                <span class="rating-count">(1,418)</span>
+                                                <span class="booked-count"> | 20K+ booked</span>
+                                            </div>
+
+                                            <div class="activity-price">
+                                                <span class="price-label">From $1,320</span>
+                                                <span class="badge-sale">20% OFF</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide" data-tab="nhatrang">
+                                    <a class="activity-card text-decoration-none">
+                                        <div class="activity-image">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-202.png"
+                                                alt="Banyan Tree Lang Co">
+                                        </div>
+
+                                        <div class="activity-content">
+                                            <h6 class="activity-title">Banyan Tree Lang Co</h6>
+                                            <p class="activity-location">
+                                                5★ Resort, Da Nang Municipality, Vietnam
+                                            </p>
+
+                                            <div class="activity-rating">
+                                                <span class="stars">★ <span>4.7</span></span>
+                                                <span class="rating-count">(1,418)</span>
+                                                <span class="booked-count"> | 20K+ booked</span>
+                                            </div>
+
+                                            <div class="activity-price">
+                                                <span class="price-label">From $1,320</span>
+                                                <span class="badge-sale">20% OFF</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section-9 -->
+            <section class="section-9__product-category-4-page">
+                <div class="container">
+                    <div class="section-9__product-category-4-page-content"
+                        style="background-image: url('assets/images/uploads/5. PRODUCT CATEGORY 4-203.png');"
+                        bis_skin_checked="1">
+                        <div class="section-9__product-category-4-page-text text-left" bis_skin_checked="1">
+                            <h1 class="section-title text-white text-40px mb-1">Cruise More, Spend Less</h1>
+                            <p class="text-white">Unlock More Value at Sea With Member Prices</p>
+                            <button class="btn-gradient">See Cruise Deals</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section-10__product-category-4-page -->
+            <section class="section-10__product-category-4-page">
+                <div class="container">
+                    <!-- Header -->
+                    <h2 class="section-title">Explore these Unique stays</h2>
+                    <div id="section-10__product-category-4-page-swiper" class="relative" data-swiper data-loop="true"
+                        data-space="30" data-slides-mobile="2" data-slides-desktop="4" data-prev=".swiper10-prev"
+                        data-next=".swiper10-next">
+                        <div class="swiper-button-prev-border swiper10-prev"></div>
+                        <div class="swiper-button-next-border swiper10-next"></div>
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+
+                                <!-- Slide 1: Amanoi Resort -->
+                                <div class="swiper-slide">
+                                    <a class="activity-card text-decoration-none">
+                                        <div class="activity-image">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-205.png"
+                                                alt="Amanoi Resort">
+                                        </div>
+                                        <div class="activity-content">
+                                            <h6 class="activity-title">Amanoi Resort</h6>
+                                            <p class="activity-location">5* Resort, Khanh Hoa Province, Vietnam</p>
+
+                                            <div class="activity-rating">
+                                                <span class="stars">★ <span>4.5</span></span>
+                                                <span class="rating-count">(2,418)</span>
+                                                <span class="booked-count"> | 90K+ booked</span>
+                                            </div>
+
+                                            <div class="activity-price">
+                                                <span class="price-label">From $1,820</span>
+                                                <span class="badge-sale">25% OFF</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Slide 2: Garrya Mu Cang Chai -->
+                                <div class="swiper-slide">
+                                    <a class="activity-card text-decoration-none">
+                                        <div class="activity-image">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-206.png"
+                                                alt="Garrya Mu Cang Chai">
+                                        </div>
+                                        <div class="activity-content">
+                                            <h6 class="activity-title">Garrya Mu Cang Chai</h6>
+                                            <p class="activity-location">5* Resort, Lao Cai Province, Vietnam</p>
+
+                                            <div class="activity-rating">
+                                                <span class="stars">★ <span>4.6</span></span>
+                                                <span class="rating-count">(1,798)</span>
+                                                <span class="booked-count"> | 30K+ booked</span>
+                                            </div>
+
+                                            <div class="activity-price">
+                                                <span class="price-label">From $1,604</span>
+                                                <span class="badge-sale">15% OFF</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Slide 3: Avana Retreat -->
+                                <div class="swiper-slide">
+                                    <a class="activity-card text-decoration-none">
+                                        <div class="activity-image">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-207.png"
+                                                alt="Avana Retreat">
+                                        </div>
+                                        <div class="activity-content">
+                                            <h6 class="activity-title">Avana Retreat</h6>
+                                            <p class="activity-location">5* Resort, Hoa Binh Province, Vietnam</p>
+
+                                            <div class="activity-rating">
+                                                <span class="stars">★ <span>4.8</span></span>
+                                                <span class="rating-count">(969)</span>
+                                                <span class="booked-count"> | 7K+ booked</span>
+                                            </div>
+
+                                            <div class="activity-price">
+                                                <span class="price-label">From $1,185</span>
+                                                <span class="badge-sale">10% OFF</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Slide 4: Legacy Yen Tu - MGallery -->
+                                <div class="swiper-slide">
+                                    <a class="activity-card text-decoration-none">
+                                        <div class="activity-image">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-207.png"
+                                                alt="Legacy Yen Tu – MGallery">
+                                        </div>
+                                        <div class="activity-content">
+                                            <h6 class="activity-title">Legacy Yen Tu – MGallery</h6>
+                                            <p class="activity-location">5* Resort, Quang Ninh Province, Vietnam</p>
+
+                                            <div class="activity-rating">
+                                                <span class="stars">★ <span>4.7</span></span>
+                                                <span class="rating-count">(1,418)</span>
+                                                <span class="booked-count"> | 20K+ booked</span>
+                                            </div>
+
+                                            <div class="activity-price">
+                                                <span class="price-label">From $1,320</span>
+                                                <span class="badge-sale">20% OFF</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a class="activity-card text-decoration-none">
+                                        <div class="activity-image">
+                                            <img src="assets/images/uploads/5. PRODUCT CATEGORY 4-207.png"
+                                                alt="Legacy Yen Tu – MGallery">
+                                        </div>
+                                        <div class="activity-content">
+                                            <h6 class="activity-title">Legacy Yen Tu – MGallery</h6>
+                                            <p class="activity-location">5* Resort, Quang Ninh Province, Vietnam</p>
+
+                                            <div class="activity-rating">
+                                                <span class="stars">★ <span>4.7</span></span>
+                                                <span class="rating-count">(1,418)</span>
+                                                <span class="booked-count"> | 20K+ booked</span>
+                                            </div>
+
+                                            <div class="activity-price">
+                                                <span class="price-label">From $1,320</span>
+                                                <span class="badge-sale">20% OFF</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--------------------- 7. ABOUT TEXT + CTA --------------------->
+            <section class="section-7">
+                <div class="container">
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="section-title accordion-button collapsed p-0" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                    aria-controls="flush-collapseOne">
+                                    More Information
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to
+                                    demonstrate the <code>.accordion-flush</code> class. This is the first item's
+                                    accordion body.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section 8 breadcrumb -->
+            <section>
+                <div class="container">
+                    <div class="breadcrumb mb-30px">
+                        <span>Home</span>
+                        <span class="px-2">/</span>
+                        <a class="breadcrumb-link color-body" href="#">Destinations</a>
+                    </div>
+                    <div class="border-top border-secondary"></div>
+                </div>
+            </section>
+
+            <!--------------------- 3. WHAT YOU'LL RECEIVE ----->
+            <div id="section-benefits"></div>
+
+            <!-- section 6 Excellent -->
+            <section class="section-6-product-2">
+                <div class="container">
+                    <div class="trustpilot-section row">
+                        <div class="trustpilot-header text-center col-12 col-lg-4">
+                            <h2 class="rating-title">Excellent</h2>
+                            <div class="stars mb-15px">
+                                <img src="assets/images/icons/stars-5.svg" width="230" alt="start 5">
+                            </div>
+                            <p class="review-count">Based on 1,803 reviews</p>
+                            <div class="trustpilot-logo">
+                                <img src="assets/images/icons/favicon-32x32.png" alt="icon">
+                                <span>Trustpilot</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-8 d-lg-block d-none">
+                            <div class="reviewsSwiper relative" data-swiper data-slides-mobile="2"
+                                data-slides-desktop="2" data-space="30" data-loop="true"
+                                data-next=".swiper-button-next-review-product"
+                                data-prev=".swiper-button-prev-review-product">
+                                <div class="swiper-button-next-border swiper-button-next-review-product"></div>
+                                <div class="swiper-button-prev-border swiper-button-prev-review-product"></div>
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="review-card">
+                                                <div class="review-stars">
+                                                    <div class="review-star">
+                                                        <img src="assets/images/icons/stars-5.svg" width="100"
+                                                            alt="start 5">
+                                                    </div>
+                                                </div>
+                                                <h3 class="review-title">Great service and knowledge</h3>
+                                                <p class="review-text">Moe was on top of everything and never ever
+                                                    showed
+                                                    any
+                                                    frustration with any ques...</p>
+                                                <div class="review-author">
+                                                    <span class="author-name">customer, 2 days ago</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="swiper-slide">
+                                            <div class="review-card">
+                                                <div class="review-stars">
+                                                    <div class="review-star">
+                                                        <img src="assets/images/icons/stars-5.svg" width="100"
+                                                            alt="start 5">
+                                                    </div>
+                                                </div>
+                                                <h3 class="review-title">Worry free travel is possible!</h3>
+                                                <p class="review-text">Our recent trip to Scotland was a dream thanks to
+                                                    Alexi's
+                                                    careful planning. All...</p>
+                                                <div class="review-author">
+                                                    <span class="author-name">Craig Howell, 3 days ago</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="swiper-slide">
+                                            <div class="review-card">
+                                                <div class="review-stars">
+                                                    <div class="review-star">
+                                                        <img src="assets/images/icons/stars-5.svg" width="100"
+                                                            alt="start 5">
+                                                    </div>
+                                                </div>
+                                                <h3 class="review-title">Amazing experience</h3>
+                                                <p class="review-text">The team went above and beyond to ensure our trip
+                                                    was
+                                                    perfect. Highly recommend their services!</p>
+                                                <div class="review-author">
+                                                    <span class="author-name">Sarah Johnson, 5 days ago</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="swiper-slide">
+                                            <div class="review-card">
+                                                <div class="review-stars">
+                                                    <div class="review-star">
+                                                        <img src="assets/images/icons/stars-5.svg" width="100"
+                                                            alt="start 5">
+                                                    </div>
+                                                </div>
+                                                <h3 class="review-title">Professional and reliable</h3>
+                                                <p class="review-text">From start to finish, everything was handled
+                                                    professionally.
+                                                    Would definitely use again!</p>
+                                                <div class="review-author">
+                                                    <span class="author-name">Michael Chen, 1 week ago</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="review-footer mt-3">
+                                Showing our 4 & 5 star reviews
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <div id="footer"></div>
@@ -91,8 +1691,8 @@
             <div class="nav-container bottom-menu">
                 <a href="index.html" class="nav-item" id="home">
                     <div class="nav-icon">
-                        <img class="current-page" src="assets/images/icons/homepage - mobile.png" width="25"
-                            height="25" alt="icon home">
+                        <img class="current-page" src="assets/images/icons/homepage - mobile.png" width="25" height="25"
+                            alt="icon home">
                         <img class="not-current" src="assets/images/icons/homepage-mobile-white.png" width="25"
                             height="25" alt="icon home">
                     </div>
@@ -137,6 +1737,8 @@
     <script src="assets/js/lib/swiper-bundle.min.js"></script>
 
     <script src="assets/js/custom-swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
+    <script src="assets/js/filter-product.js"></script>
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 

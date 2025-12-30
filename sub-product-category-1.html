@@ -46,7 +46,10 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css">
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="assets/css/lib/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="assets/css/lib/swiper-bundle.min.css" />
+
+    <!-- phone input css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
 
     <!-- Style -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -1881,7 +1884,7 @@
                     <div class="accordion accordion-flush" id="accordionFlushExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingOne">
-                                <button class="section-title accordion-button collapsed p-0 m-0" type="button"
+                                <button class="section-title accordion-button collapsed p-0" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
                                     aria-controls="flush-collapseOne">
                                     More Information
@@ -1929,7 +1932,7 @@
                             </div>
                         </div>
                         <div class="col-12 col-lg-8 d-lg-block d-none">
-                            <div class="reviewsSwiper relative">
+                            <div class="reviewsSwiper relative" data-swiper data-slides-mobile="2" data-slides-desktop="2" data-space="30" data-loop="true" data-next=".swiper-button-next-review-product" data-prev=".swiper-button-prev-review-product">
                                 <div class="swiper-button-next-border swiper-button-next-review-product"></div>
                                 <div class="swiper-button-prev-border swiper-button-prev-review-product"></div>
                                 <div class="swiper">
@@ -2089,6 +2092,7 @@
     <script src="assets/js/lib/swiper-bundle.min.js"></script>
 
     <script src="assets/js/custom-swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
 
     <!-- filter date  -->
     <script src="assets/js/filter-date-sidebar.js"></script>

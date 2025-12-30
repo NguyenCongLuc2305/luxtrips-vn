@@ -307,12 +307,12 @@
 
  .btn-clear {
      background: white;
-     border: 1px solid #e5e5e5;
+     border: 1px solid var(--bs-border-color);
      color: #1a1a1a;
  }
 
  .btn-clear:hover {
-     background-color: #f0f0f0;
+     background-color: rgba(26, 26, 26, 0.1);
  }
 
  .btn-done {

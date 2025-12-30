@@ -46,7 +46,10 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css">
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="assets/css/lib/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="assets/css/lib/swiper-bundle.min.css" />
+
+    <!-- phone input css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
 
     <!-- Style -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -282,7 +285,9 @@
                         <p class="text-20 fw-600 text-left mb-4">Our Most FAVOURITE EXPERIENCES in the North of Vietnam
                         </p>
                     </div>
-                    <div id="section-4-swiper" class="relative">
+                    <div id="section-4-swiper" class="relative" data-swiper data-loop="true" data-space="30"
+                        data-slides-mobile="2" data-slides-desktop="4" data-prev=".swiper4-prev"
+                        data-next=".swiper4-next">
                         <div class="swiper-button-prev-border swiper4-prev"></div>
                         <div class="swiper-button-next-border swiper4-next"></div>
                         <div class="swiper">
@@ -396,7 +401,11 @@
                     </div>
 
                     <p class="text-20 fw-600 text-left sub-title">Our Expert Recommendations for Center of Vietnam</p>
-                    <div id="section-4__product--group-2" class="relative">
+
+                    <div id="section-4__product--group-2" class="relative" data-swiper data-loop="true"
+                        data-speed="1000" data-space="30" data-effect="slide" data-slides-mobile="2"
+                        data-slides-desktop="3" data-next=".swiper4__product-2--next"
+                        data-prev=".swiper4__product-2--prev">
                         <div class="swiper-button-prev-border swiper4__product-2--prev"></div>
                         <div class="swiper-button-next-border swiper4__product-2--next"></div>
                         <div class="swiper">
@@ -510,7 +519,12 @@
                     </div>
 
                     <p class="text-20 fw-600 text-left sub-title">Fascinating Ways to Experience Southern Vietnam</p>
-                    <div id="section-4__product--group-3" class="relative">
+
+                    <div id="section-4__product--group-3" class=" py-4 py-4 relative" data-swiper data-loop="true"
+                        data-speed="1000" data-space="30" data-effect="slide" data-slides-mobile="2"
+                        data-slides-desktop="3" data-next=".swiper4__product-3--next"
+                        data-prev=".swiper4__product-3--prev">
+                        
                         <div class="swiper-button-prev-border swiper4__product-3--prev"></div>
                         <div class="swiper-button-next-border swiper4__product-3--next"></div>
                         <div class="swiper">
@@ -634,7 +648,7 @@
                     <div class="accordion accordion-flush" id="accordionFlushExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingOne">
-                                <button class="section-title accordion-button collapsed p-0 m-0" type="button"
+                                <button class="section-title accordion-button collapsed p-0" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
                                     aria-controls="flush-collapseOne">
                                     More Information
@@ -682,7 +696,7 @@
                             </div>
                         </div>
                         <div class="col-12 col-lg-8 d-lg-block d-none">
-                            <div class="reviewsSwiper relative">
+                            <div class="reviewsSwiper relative" data-swiper data-slides-mobile="2" data-slides-desktop="2" data-space="30" data-loop="true" data-next=".swiper-button-next-review-product" data-prev=".swiper-button-prev-review-product">
                                 <div class="swiper-button-next-border swiper-button-next-review-product"></div>
                                 <div class="swiper-button-prev-border swiper-button-prev-review-product"></div>
                                 <div class="swiper">
@@ -842,6 +856,7 @@
     <script src="assets/js/lib/swiper-bundle.min.js"></script>
 
     <script src="assets/js/custom-swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 

@@ -51,6 +51,10 @@ a {
   --bs-modal-zindex: 10550;
 }
 
+.bg-color-gray{
+    background-color: rgba(26, 26, 26, 0.1);
+}
+
 a:hover{
     color: var(--bs-primary);
 }
@@ -105,6 +109,12 @@ ul li{
 .border-bottom{
     border-bottom: 1px solid var(--bs-body-color) !important;
 }
+.border-1px{
+    border: 1px solid var(--bs-border-color);
+}
+.border-radius{
+    border-radius: var(--bs-border-radius);
+}
 .color-primary {
     color: var(--bs-primary) !important;
 }
@@ -157,6 +167,9 @@ ul li{
 .text-21{
     font-size: 21px !important;
 }
+.text-40px {
+    font-size: 40px;
+}
 
 .fw-bold {
     font-weight: bold;
@@ -176,6 +189,12 @@ ul li{
 
 .line-height-1{
     line-height: 1;
+}
+.min-height-315px{
+    min-height: 315px;
+}
+.min-height-auto{
+    min-height: auto !important;
 }
 
 
@@ -256,6 +275,9 @@ ul li{
 .pb-67px{
     padding-bottom: 67px;
 }
+.p-10px{
+    padding: 10px;
+}
 
 /* margin */
 .mr-7px{
@@ -308,4 +330,8 @@ ul li{
 .mx-8px{
     margin-left: 8px;
     margin-right: 8px;
+}
+
+.height-50px{
+    height: 50px;
 }
