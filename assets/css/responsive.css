@@ -701,6 +701,9 @@
   .section-3__sub-product-1--content img {
     max-width: 80px;
   }
+  .section__2-swiper {
+    padding-bottom: 0;
+  }
 }
 
 @media (max-width: 1199px) {

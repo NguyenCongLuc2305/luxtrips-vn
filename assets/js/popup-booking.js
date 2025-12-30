@@ -98,7 +98,7 @@ function validateStep(step) {
       const email = document.getElementById("email").value.trim();
       const firstName = document.getElementById("firstName").value.trim();
       const lastName = document.getElementById("lastName").value.trim();
-      const phone = document.getElementById("phone").value.trim();
+      const phone = document.getElementById("phone-booking").value.trim();
       return (
         email !== "" && firstName !== "" && lastName !== "" && phone !== ""
       );
@@ -214,8 +214,20 @@ document.querySelectorAll('input[name="priority"]').forEach((input) => {
 document.getElementById("email").addEventListener("input", updateButtons);
 document.getElementById("firstName").addEventListener("input", updateButtons);
 document.getElementById("lastName").addEventListener("input", updateButtons);
-document.getElementById("phone").addEventListener("input", updateButtons);
+document.getElementById("phone-booking").addEventListener("input", updateButtons);
 
 // Initialize
 updateProgressBar();
 updateButtons();
+
+
+// select phone input
+const phoneInput = document.querySelector("#phone-booking");
+
+const iti = window.intlTelInput(phoneInput, {
+  initialCountry: "vn", // mặc định Việt Nam
+  separateDialCode: true, // hiện +84 riêng
+  preferredCountries: ["vn", "us", "gb", "au"],
+  utilsScript:
+    "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/utils.js",
+});

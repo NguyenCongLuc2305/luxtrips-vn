@@ -95,11 +95,17 @@
          flex-direction: row;
          gap: 40px;
      } */
+      .selected-dates {
+        overflow-y: auto;
+      }
+      .filter-sidebar-container .date-pill {
+        font-size: 12px;
+      }
  }
 
  .calendar-month {
      flex: 1;
-     min-width: 300px;
+     /* min-width: 300px; */
  }
 
  /* Month Header */
